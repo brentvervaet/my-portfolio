@@ -7,7 +7,6 @@ export default function Home() {
     return (
         <main className="max-w-3xl mx-auto px-4 py-12">
             <Header/>
-
             {/* Hero Section */}
             <section className="py-16 space-y-8">
                 <div className="flex flex-col md:flex-row items-center gap-6">
@@ -28,7 +27,7 @@ export default function Home() {
                     </div>
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                    A passionate developer focused on creating beautiful and functional web experiences.
+                    A full-stack developer focused on creating beautiful and functional web and mobile experiences.
                 </p>
 
 
