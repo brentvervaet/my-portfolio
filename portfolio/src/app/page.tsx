@@ -7,6 +7,7 @@ import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import React from "react";
+import Experience from "@/components/Experience";
 
 export default function Home() {
     return (
@@ -37,11 +38,15 @@ export default function Home() {
                         {/*</Button>*/}
                     </div>
 
+                    <Experience/>
+
                 </Card>
+
             </section>
             {/* Skills Section */}
             <Skills/>
             {/* Projects Section */}
+
             <section id="projects" className="py-8">
                 <h2 className="text-2xl font-bold font-mono mb-6">Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
