@@ -15,36 +15,37 @@ export default function Home() {
             <Header/>
             {/* Hero Section */}
             <section className="py-16 space-y-8">
-                <Card className="p-6">
-                    <div className="flex flex-col md:flex-row items-center gap-6">
-                        <Avatar className="w-24 h-24 border-2">
-                            <AvatarImage src="/images/brent-vervaet.JPG" alt="Brent Vervaet"/>
-                            <AvatarFallback>BV</AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col items-center md:items-start">
-                            <h1 className="text-3xl font-bold font-mono">Hi, I'm Brent 👋🏽</h1>
-                            <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                                A full-stack developer focused on creating beautiful and functional web and mobile
-                                experiences.
-                            </p>
-                            <SocialLinks className="mt-2"/>
-                        </div>
-                        {/*TODO*/}
-                        {/*<Button size="sm" variant="outline" className="ml-2 font-mono text-xs" asChild>*/}
-                        {/*    <a href="/resume.pdf" download>*/}
-                        {/*        <Download className="mr-2 h-3 w-3"/>*/}
-                        {/*        Resume*/}
-                        {/*    </a>*/}
-                        {/*</Button>*/}
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                    <Avatar className="w-24 h-24 border-2">
+                        <AvatarImage src="/images/brent-vervaet.JPG" alt="Brent Vervaet"/>
+                        <AvatarFallback>BV</AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col items-center md:items-start">
+                        <h1 className="text-3xl font-bold font-mono">Hi, I'm Brent 👋🏽</h1>
+                        <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                            A full-stack developer focused on creating beautiful and functional web and mobile
+                            experiences.
+                        </p>
+                        <SocialLinks className="mt-2"/>
                     </div>
-
-                    <Experience/>
-
-                </Card>
+                    {/*TODO*/}
+                    {/*<Button size="sm" variant="outline" className="ml-2 font-mono text-xs" asChild>*/}
+                    {/*    <a href="/resume.pdf" download>*/}
+                    {/*        <Download className="mr-2 h-3 w-3"/>*/}
+                    {/*        Resume*/}
+                    {/*    </a>*/}
+                    {/*</Button>*/}
+                </div>
 
             </section>
+            {/* Experience Section */}
+            <section>
+                <Experience/>
+            </section>
             {/* Skills Section */}
-            <Skills/>
+            <section>
+                <Skills/>
+            </section>
             {/* Projects Section */}
 
             <section id="projects" className="py-8">

@@ -36,11 +36,10 @@ const Skills: React.FC<SkillsProps> = ({
                                        }) => {
     return (
         <section id="skills" className={`py-8 ${className}`}>
-            <Card>
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold font-mono">Skills</CardTitle>
+                    <h2 className="text-2xl font-mono font-bold mb-8">Skills</h2>
                 </CardHeader>
-                <CardContent>
+                <Card>
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
                         {skills.map((skill) => (
                             <a
@@ -57,8 +56,7 @@ const Skills: React.FC<SkillsProps> = ({
                             </a>
                         ))}
                     </div>
-                </CardContent>
-            </Card>
+                </Card>
         </section>
     );
 };
