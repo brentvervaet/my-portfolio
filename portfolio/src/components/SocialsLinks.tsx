@@ -1,5 +1,7 @@
 // src/components/SocialsLinks.tsx
 import React from 'react';
+import {Button} from "@/components/ui/button";
+import {Download} from "lucide-react"; // Import the Download icon
 
 type SocialLink = {
     href: string;
@@ -10,9 +12,10 @@ type SocialLink = {
 
 type SocialLinksProps = {
     className?: string;
+    showResumeButton?: boolean;
 };
 
-export default function SocialLinks({className = ''}: Readonly<SocialLinksProps>) {
+export default function SocialLinks({className = '', showResumeButton = true}: Readonly<SocialLinksProps>) {
     const socialLinks: SocialLink[] = [
         {
             href: "https://github.com/brentvervaet",
@@ -51,7 +54,7 @@ export default function SocialLinks({className = ''}: Readonly<SocialLinksProps>
     ];
 
     return (
-        <div className={`flex space-x-3 text-zinc-800 dark:text-zinc-200 ${className}`}>
+        <div className={`flex items-center space-x-3 text-zinc-800 dark:text-zinc-200 ${className}`}>
             {socialLinks.map((link) => (
                 <a
                     key={link.ariaLabel}

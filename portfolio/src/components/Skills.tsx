@@ -1,26 +1,64 @@
 // src/components/Skills.tsx
 import React from 'react';
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython} from "react-icons/fa";
+import {SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring} from "react-icons/si";
+
+interface Skill {
+    name: string;
+    icon: React.ReactNode;
+    url: string;
+}
 
 interface SkillsProps {
-    skills?: string[];
+    skills?: Skill[];
     className?: string;
 }
 
+const defaultSkills: Skill[] = [
+    {name: 'JavaScript', icon: <FaJs/>, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'},
+    {name: 'React', icon: <FaReact/>, url: 'https://reactjs.org/'},
+    {name: 'Tailwind CSS', icon: <SiTailwindcss/>, url: 'https://tailwindcss.com/'},
+    {name: 'Next.js', icon: <SiNextdotjs/>, url: 'https://nextjs.org/'},
+    {name: 'Node.js', icon: <FaNodeJs/>, url: 'https://nodejs.org/'},
+    {name: 'Java', icon: <FaJava/>, url: 'https://www.java.com/'},
+    {name: 'Spring', icon: <SiSpring/>, url: 'https://spring.io/'},
+    {name: 'Swift', icon: <FaSwift/>, url: 'https://developer.apple.com/swift/'},
+    {name: 'Python', icon: <FaPython/>, url: 'https://www.python.org/'},
+    {name: 'Git', icon: <FaGitAlt/>, url: 'https://git-scm.com/'},
+    {name: 'MySQL', icon: <SiMysql/>, url: 'https://www.mysql.com/'},
+    {name: 'MongoDB', icon: <SiMongodb/>, url: 'https://www.mongodb.com/'},
+];
+
 const Skills: React.FC<SkillsProps> = ({
-                                           skills = ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js'],
+                                           skills = defaultSkills,
                                            className = ''
                                        }) => {
     return (
         <section id="skills" className={`py-8 ${className}`}>
-            <h2 className="text-2xl font-bold font-mono mb-6">Skills</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4">
-                {skills.map((skill) => (
-                    <div key={skill} className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                        <span className="font-mono text-sm">{skill}</span>
+            <Card>
+                <CardHeader>
+                    <CardTitle className="text-2xl font-bold font-mono">Skills</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
+                        {skills.map((skill) => (
+                            <a
+                                key={skill.name}
+                                href={skill.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex justify-center items-center"
+                                title={`Learn more about ${skill.name}`}
+                            >
+                                <div className="text-3xl md:text-4xl hover:text-red-500 transition-colors">
+                                    {skill.icon}
+                                </div>
+                            </a>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </CardContent>
+            </Card>
         </section>
     );
 };
