@@ -66,7 +66,14 @@ export default function SocialLinks({className = '', showResumeButton = true}: R
                 >
                     {link.icon}
                 </a>
+
             ))}
+            <Button size="sm" variant="outline" className="ml-2 font-mono text-xs" asChild>
+                <a href="/resume.pdf" download>
+                    <Download className="mr-2 h-3 w-3"/>
+                    Resume
+                </a>
+            </Button>
         </div>
     );
 }

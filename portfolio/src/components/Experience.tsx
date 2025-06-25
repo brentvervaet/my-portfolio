@@ -28,28 +28,20 @@ const workExperience: ExperienceItem[] = [
         responsibilities: [
             "Still a student, but looking for internship opportunities."
         ],
-        skills: ["React", "TypeScript", "JavaScript"],
-        logo: "/hogent-logo.png"
+        skills: ["React", "JavaScript", 'Java', "Spring"],
+        logo: "/images/hogent.png"
     }
 ];
 
 const education: ExperienceItem[] = [
     {
         id: 1,
-        title: "Bachelor of Science in Computer Science",
-        organization: "HOGENT University",
-        period: "2022 - Present",
-        description: "Mobile Enterprise Development",
-        logo: "/hogent-logo.png"
-    },
-    {
-        id: 2,
         title: "Bachelor of Science in Applied Informatics",
         organization: "HOGENT University",
-        period: "2019 - 2022",
+        period: "2022 - Present",
         description: "Focus on web and mobile development.",
-        skills: ["JavaScript", "React", "Node.js", "Java", "Spring"],
-        logo: "/hogent-logo.png"
+        skills: [],
+        logo: "/images/hogent.png"
     }
 ];
 
@@ -93,7 +85,7 @@ const Experience = () => {
                                                             <img
                                                                 className="aspect-square h-full w-full bg-background object-contain"
                                                                 alt={item.organization}
-                                                                src={item.logo || "/placeholder-logo.png"}
+                                                                src={item.logo}
                                                             />
                                                         </span>
                                             </a>
