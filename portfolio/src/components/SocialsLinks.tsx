@@ -41,7 +41,7 @@ export default function SocialLinks({className = '', showResumeButton = true}: R
             ),
         },
         {
-            href: "mailto:brent.vervaet@gmail.com",
+            href: "mailto:brent.vervaet@icloud.com",
             ariaLabel: "Email",
             hoverColor: "hover:text-[#8cc8e6]",
             icon: (
