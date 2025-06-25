@@ -55,6 +55,10 @@ export default function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
+                    <div className="absolute bottom-4 right-4">
+                        <ThemeToggle/>
+                    </div>
+
                     <div className="flex flex-col items-center space-y-8 text-lg font-mono mt-12">
                         <Link
                             href="#projects"
@@ -70,10 +74,9 @@ export default function Header() {
                         >
                             About
                         </Link>
-                        {/* Theme toggle */}
-                        <ThemeToggle/>
                         {/* Social links */}
-                        <SocialLinks/>
+                        <SocialLinks showResumeButton={false}/>
+                        {/* Removed ThemeToggle from here */}
                     </div>
                 </SheetContent>
             </Sheet>
