@@ -3,6 +3,7 @@
 import {useState, useEffect} from 'react';
 import Link from 'next/link';
 import SocialLinks from "@/components/SocialsLinks";
+import ThemeToggle from "@/components/ThemeToggle";
 import {Button} from "@/components/ui/button";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 
@@ -69,6 +70,8 @@ export default function Header() {
                         >
                             About
                         </Link>
+                        {/* Theme toggle */}
+                        <ThemeToggle/>
                         {/* Social links */}
                         <SocialLinks/>
                     </div>
@@ -76,7 +79,7 @@ export default function Header() {
             </Sheet>
 
             {/* Desktop navigation */}
-            <div className="hidden md:flex space-x-6 text-sm font-mono">
+            <div className="hidden md:flex items-center space-x-6 text-sm font-mono">
                 <Link
                     href="#projects"
                     className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-500'}`}
@@ -89,6 +92,7 @@ export default function Header() {
                 >
                     About
                 </Link>
+                <ThemeToggle/>
             </div>
         </nav>
     );
