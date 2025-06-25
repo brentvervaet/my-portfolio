@@ -1,6 +1,6 @@
 // src/components/Skills.tsx
 import React from 'react';
-import {Card, CardHeader} from "@/components/ui/card";
+import {Card} from "@/components/ui/card";
 import {FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython} from "react-icons/fa";
 import {SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring} from "react-icons/si";
 
@@ -32,16 +32,12 @@ const defaultSkills: Skill[] = [
 
 // Modified Skills.tsx
 const Skills: React.FC<SkillsProps> = ({
-                                           skills = defaultSkills,
-                                           className = ''
+                                           skills = defaultSkills
                                        }) => {
     return (
         <section className="py-8">
             <div className="container mx-auto px-4">
                 <div className="w-full max-w-4xl mx-auto">
-                    <CardHeader>
-                        <h2 className="text-2xl font-mono font-bold mb-4">Skills</h2>
-                    </CardHeader>
                     <Card>
                         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
                             {skills.map((skill) => (

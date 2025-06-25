@@ -15,7 +15,7 @@ export default function Footer() {
                     </div>
 
                     {/* Social Links */}
-                   <SocialLinks />
+                   <SocialLinks showResumeButton={false} />
 
                 </div>
 

@@ -141,7 +141,7 @@ const Experience = () => {
                                                             <img
                                                                 className="aspect-square h-full w-full bg-background object-contain"
                                                                 alt={item.organization}
-                                                                src={item.logo || "/placeholder-logo.png"}
+                                                                src={item.logo ?? "/placeholder-logo.png"}
                                                             />
                                                         </span>
                                             </a>
