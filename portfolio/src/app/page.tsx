@@ -12,7 +12,12 @@ export default function Home() {
             <section className="py-16 space-y-8">
                 <div className="flex flex-col md:flex-row items-center gap-6">
                     <div className="w-25 h-25 rounded-full overflow-hidden flex-shrink-0 border-2">
-                        {/* Your photo here */}
+                        <img
+                            src="/images/brent-vervaet.JPG"
+                            alt="Brent Vervaet"
+                            className="w-full h-full object-cover"
+
+                        />
                         <div className="h-full w-full flex items-center justify-center text-sm text-zinc-500">
                             Your Photo
                         </div>
