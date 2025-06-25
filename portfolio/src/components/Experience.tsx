@@ -55,25 +55,26 @@ const education: ExperienceItem[] = [
 
 const Experience = () => {
     return (
-        <section className="py-16">
+        <section className="py-4">
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl font-mono font-bold mb-8">Experience</h2>
 
-                <Tabs defaultValue="work" className="w-full max-w-4xl mx-auto">
+                <Tabs defaultValue="education" className="w-full max-w-4xl mx-auto">
                     <TabsList
                         className="h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground mb-2 grid w-full grid-cols-2">
-                        <TabsTrigger
-                            value="work"
-                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                        >
-                            Work
-                        </TabsTrigger>
                         <TabsTrigger
                             value="education"
                             className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
                         >
                             Education
                         </TabsTrigger>
+                        <TabsTrigger
+                            value="work"
+                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+                        >
+                            Work
+                        </TabsTrigger>
+
                     </TabsList>
 
                     <TabsContent value="work" className="mt-2">

@@ -1,8 +1,8 @@
 // src/components/Skills.tsx
 import React from 'react';
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardHeader} from "@/components/ui/card";
 import {FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython} from "react-icons/fa";
-import {SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring} from "react-icons/si";
+import {SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring} from "react-icons/si";
 
 interface Skill {
     name: string;
@@ -30,33 +30,38 @@ const defaultSkills: Skill[] = [
     {name: 'MongoDB', icon: <SiMongodb/>, url: 'https://www.mongodb.com/'},
 ];
 
+// Modified Skills.tsx
 const Skills: React.FC<SkillsProps> = ({
                                            skills = defaultSkills,
                                            className = ''
                                        }) => {
     return (
-        <section id="skills" className={`py-8 ${className}`}>
-                <CardHeader>
-                    <h2 className="text-2xl font-mono font-bold mb-8">Skills</h2>
-                </CardHeader>
-                <Card>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
-                        {skills.map((skill) => (
-                            <a
-                                key={skill.name}
-                                href={skill.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex justify-center items-center"
-                                title={`Learn more about ${skill.name}`}
-                            >
-                                <div className="text-3xl md:text-4xl hover:text-red-500 transition-colors">
-                                    {skill.icon}
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </Card>
+        <section className="py-8">
+            <div className="container mx-auto px-4">
+                <div className="w-full max-w-4xl mx-auto">
+                    <CardHeader>
+                        <h2 className="text-2xl font-mono font-bold mb-4">Skills</h2>
+                    </CardHeader>
+                    <Card>
+                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
+                            {skills.map((skill) => (
+                                <a
+                                    key={skill.name}
+                                    href={skill.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex justify-center items-center"
+                                    title={`Learn more about ${skill.name}`}
+                                >
+                                    <div className="text-3xl md:text-4xl hover:text-red-500 transition-colors">
+                                        {skill.icon}
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </Card>
+                </div>
+            </div>
         </section>
     );
 };
