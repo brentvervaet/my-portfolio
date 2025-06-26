@@ -4,15 +4,16 @@ import React, {useState} from 'react';
 import {Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
+import Image from "next/image";
 
 interface Project {
     title: string;
     description: string;
     tags: string[];
-    image: string;
+    images: string[]; // Changed from single image to array of images
     link?: string;
     sourceCodeLink?: string;
-    date: Date; // Added date field
+    date: Date;
 }
 
 interface ProjectsProps {
@@ -24,7 +25,13 @@ const defaultProjects: Project[] = [
         title: "TuneWithMe",
         description: "A tuner web application that allows users to tune their instruments and keep a library of their favorite tunings and instruments.",
         tags: ["React", "JavaScript", "Node.js", "Vite", "Tailwind CSS", "MUI", "MySQL"],
-        image: "/placeholder.jpg",
+        images: ["/images/Projects/TuneWithMe/TuneWithMe01.png",
+            "/images/Projects/TuneWithMe/TuneWithMe02.png",
+            "/images/Projects/TuneWithMe/TuneWithMe03.png",
+            "/images/Projects/TuneWithMe/TuneWithMe04.png",
+            "/images/Projects/TuneWithMe/TuneWithMe05.png",
+            "/images/Projects/TuneWithMe/TuneWithMe06.png",
+            "/images/Projects/TuneWithMe/TuneWithMe07.png"],
         link: "https://tunewithme.onrender.com/home",
         sourceCodeLink: "https://github.com/brentvervaet/TuneWithMe.git",
         date: new Date('2024-12-10')
@@ -33,7 +40,7 @@ const defaultProjects: Project[] = [
         title: "iOS App",
         description: "A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.",
         tags: ["Swift", "SwiftUI", "Some DB"],
-        image: "/placeholder.jpg",
+        images: ["https://placehold.co/1920x1080.png"],
         sourceCodeLink: "git@github.com:brentvervaet/iOS-app.git",
         date: new Date('2025-08-20')
     },
@@ -41,7 +48,7 @@ const defaultProjects: Project[] = [
         title: "Portfolio Website",
         description: "This very website! A responsive portfolio showcasing my projects and skills, built with modern web technologies.",
         tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Shadcn/UI"],
-        image: "/placeholder.jpg",
+        images: ["/images/Projects/Portfolio/Portfolio01.png"],
         link: "https://brentvervaet-portfolio.com",
         sourceCodeLink: "https://github.com/brentvervaet/my-portfolio.git",
         date: new Date('2025-06-25')
@@ -50,11 +57,76 @@ const defaultProjects: Project[] = [
         title: "IT-conference App",
         description: "A Spring Boot app to manage IT conference events, speakers, and rooms. Users can view and favorite events; admins manage the content.",
         tags: ["Java", "Spring", "Thymeleaf", "MySQL"],
-        image: "/placeholder.jpg",
+        images: ["https://placehold.co/1920x1080.png"],
         sourceCodeLink: "git@github.com:brentvervaet/IT-conference-app.git",
         date: new Date('2025-05-10')
     }
 ];
+
+const ProjectImageCarousel = ({images}: { images: string[] }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const goToNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const goToPrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    return (
+        <div className="relative group">
+            <div className="relative overflow-hidden">
+                <Image
+                    className="object-cover w-full h-full"
+                    alt="Project screenshot"
+                    src={images[currentIndex] || "/placeholder.png"}
+                    width={4000}
+                    height={4000}
+                    style={{objectFit: 'cover'}}
+                />
+            </div>
+
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={goToPrev}
+                        className="absolute left-2 top-1/2 -translate-y-1/2  text-white p-1 rounded-full
+                                  opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
+                        aria-label="Previous image"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m15 18-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button
+                        onClick={goToNext}
+                        className="absolute right-2 top-1/2 -translate-y-1/2  text-white p-1 rounded-full
+                                  opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
+                        aria-label="Next image"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentIndex(index)}
+                                className={`h-1 ${currentIndex === index ? 'bg-white w-4' : 'bg-white/50 w-2'} 
+                                          rounded-sm transition-all duration-200 opacity-60`}
+                                aria-label={`Go to image ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
 
 const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
     const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
@@ -111,12 +183,8 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                         {sortedProjects.map((project, i) => (
                             <Card key={i}
                                   className="overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
-                                <div className="aspect-video bg-zinc-100 dark:bg-zinc-800 overflow-hidden border-b">
-                                    {/* Project image */}
-                                    <div
-                                        className="h-full w-full flex items-center justify-center text-sm text-zinc-500">
-                                        Project Image
-                                    </div>
+                                <div className="border-b">
+                                    <ProjectImageCarousel images={project.images}/>
                                 </div>
                                 <CardHeader>
                                     <div className="flex justify-between items-start">
@@ -124,11 +192,11 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                                             {project.title}
                                         </CardTitle>
                                         <span className="text-xs text-zinc-500">
-                                            {project.date.toLocaleDateString('en-US', {
-                                                year: 'numeric',
-                                                month: 'short'
-                                            })}
-                                        </span>
+                                                                    {project.date.toLocaleDateString('en-US', {
+                                                                        year: 'numeric',
+                                                                        month: 'short'
+                                                                    })}
+                                                                </span>
                                     </div>
                                     <CardDescription>{project.description}</CardDescription>
                                 </CardHeader>
