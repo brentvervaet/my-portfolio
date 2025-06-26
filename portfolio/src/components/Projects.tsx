@@ -92,7 +92,7 @@ const ProjectImageCarousel = ({images}: { images: string[] }) => {
                     <button
                         onClick={goToPrev}
                         className="absolute left-2 top-1/2 -translate-y-1/2  text-white p-1 rounded-full
-                                  opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
+                                  md:opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
                         aria-label="Previous image"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -103,7 +103,7 @@ const ProjectImageCarousel = ({images}: { images: string[] }) => {
                     <button
                         onClick={goToNext}
                         className="absolute right-2 top-1/2 -translate-y-1/2  text-white p-1 rounded-full
-                                  opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
+                                  md:opacity-0 group-hover:opacity-70 hover:opacity-100 transition-opacity"
                         aria-label="Next image"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
