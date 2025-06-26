@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 import {Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
-import Image from "next/image";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
 
 interface Project {
