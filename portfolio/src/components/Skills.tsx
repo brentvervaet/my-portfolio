@@ -35,7 +35,7 @@ const Skills: React.FC<SkillsProps> = ({
                                            skills = defaultSkills
                                        }) => {
     return (
-        <section className="py-8">
+        <div className="py-8">
             <div className="container mx-auto px-4">
                 <div className="w-full max-w-4xl mx-auto">
                     <Card>
@@ -58,7 +58,7 @@ const Skills: React.FC<SkillsProps> = ({
                     </Card>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
