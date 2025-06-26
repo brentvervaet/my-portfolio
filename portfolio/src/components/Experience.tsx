@@ -1,6 +1,7 @@
 import React from 'react';
 import {Tabs, TabsList, TabsTrigger, TabsContent} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
+import Image from 'next/image';
 
 interface ExperienceItem {
     id: number;
@@ -29,7 +30,8 @@ const workExperience: ExperienceItem[] = [
             "Still a student, but looking for internship opportunities."
         ],
         skills: ["React", "JavaScript", 'Java', "Spring"],
-        logo: "/images/hogent.png"
+        logo: "/images/hogent.png",
+        website: "https://www.hogent.be/en/"
     }
 ];
 
@@ -41,17 +43,19 @@ const education: ExperienceItem[] = [
         period: "2022 - Present",
         description: "Focus on web and mobile development.",
         skills: [],
-        logo: "/images/hogent.png"
+        logo: "/images/hogent.png",
+        website: "https://www.hogent.be/en/"
     }
 ];
 
 const Experience = () => {
     return (
-        <section className="py-4">
+        <div className="py-4">
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl font-mono font-bold mb-8">Experience</h2>
 
                 <Tabs defaultValue="education" className="w-full max-w-4xl mx-auto">
+                    {/* Education and Work Tabs */}
                     <TabsList
                         className="h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground mb-2 grid w-full grid-cols-2">
                         <TabsTrigger
@@ -66,9 +70,9 @@ const Experience = () => {
                         >
                             Work
                         </TabsTrigger>
-
                     </TabsList>
 
+                    {/*Work*/}
                     <TabsContent value="work" className="mt-2">
                         <div className="rounded-xl border bg-card text-card-foreground shadow">
                             <div className="p-0">
@@ -82,11 +86,13 @@ const Experience = () => {
                                             >
                                                         <span
                                                             className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
-                                                            <img
-                                                                className="aspect-square h-full w-full bg-background object-contain"
-                                                                alt={item.organization}
-                                                                src={item.logo}
-                                                            />
+                                                                 <Image
+                                                                     className="aspect-square h-full w-full bg-background object-contain"
+                                                                     alt={item.organization}
+                                                                     src={item.logo ?? "/placeholder-logo.png"}
+                                                                     width={10}
+                                                                     height={10}
+                                                                 />
                                                         </span>
                                             </a>
                                             <div className="flex flex-1 flex-col justify-start gap-1">
@@ -138,10 +144,12 @@ const Experience = () => {
                                             >
                                                         <span
                                                             className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
-                                                            <img
+                                                            <Image
                                                                 className="aspect-square h-full w-full bg-background object-contain"
                                                                 alt={item.organization}
                                                                 src={item.logo ?? "/placeholder-logo.png"}
+                                                                width={10}
+                                                                height={10}
                                                             />
                                                         </span>
                                             </a>
@@ -173,9 +181,10 @@ const Experience = () => {
                             </div>
                         </div>
                     </TabsContent>
+
                 </Tabs>
             </div>
-        </section>
+        </div>
     );
 };
 
