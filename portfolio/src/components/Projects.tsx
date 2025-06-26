@@ -49,7 +49,7 @@ const defaultProjects: Project[] = [
         description: "This very website! A responsive portfolio showcasing my projects and skills, built with modern web technologies.",
         tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Shadcn/UI"],
         images: ["/images/Projects/Portfolio/Portfolio01.png"],
-        link: "https://brentvervaet-portfolio.com",
+        link: "https://brentv-dev.vercel.app",
         sourceCodeLink: "https://github.com/brentvervaet/my-portfolio.git",
         date: new Date('2025-06-25')
     },
