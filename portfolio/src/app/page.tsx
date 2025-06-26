@@ -16,7 +16,7 @@ export default function Home() {
             <section className="py-16 space-y-8">
                 <div className="flex flex-col md:flex-row items-center gap-6">
                     <Avatar className="w-24 h-24 border-2">
-                        <AvatarImage src="/images/brent-vervaet.JPG" alt="Brent Vervaet"/>
+                        <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet"/>
                         <AvatarFallback>BV</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col items-center md:items-start">

@@ -30,7 +30,7 @@ const workExperience: ExperienceItem[] = [
             "Still a student, but looking for internship opportunities."
         ],
         skills: ["React", "JavaScript", 'Java', "Spring"],
-        logo: "/images/hogent.png",
+        logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
     }
 ];
@@ -43,7 +43,7 @@ const education: ExperienceItem[] = [
         period: "2022 - Present",
         description: "Focus on web and mobile development.",
         skills: [],
-        logo: "/images/hogent.png",
+        logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
     }
 ];
