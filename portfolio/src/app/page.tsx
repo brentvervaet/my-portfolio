@@ -1,4 +1,4 @@
-oi// src/app/page.tsx
+// src/app/page.tsx
 import Header from '@/components/Header';
 import SocialLinks from "@/components/SocialsLinks";
 import Skills from "@/components/Skills";
