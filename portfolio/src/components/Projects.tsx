@@ -43,7 +43,7 @@ const defaultProjects: Project[] = [
         tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Shadcn/UI"],
         image: "/placeholder.jpg",
         link: "https://brentvervaet-portfolio.com",
-        sourceCodeLink: "https://github.com/brentvervaet/portfolio.git",
+        sourceCodeLink: "https://github.com/brentvervaet/my-portfolio.git",
         date: new Date('2025-06-25')
     },
     {
