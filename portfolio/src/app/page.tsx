@@ -1,4 +1,4 @@
-// src/app/page.tsx
+oi// src/app/page.tsx
 import Header from '@/components/Header';
 import SocialLinks from "@/components/SocialsLinks";
 import Skills from "@/components/Skills";
@@ -20,7 +20,7 @@ export default function Home() {
                         <AvatarFallback>BV</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col items-center md:items-start">
-                        <h1 className="text-3xl font-bold font-mono">Hi, I&apos;m Brent 👋🏽</h1>
+                        <h1 className="text-3xl font-bold font-mono">Hi, I&apos;m Brent 👋</h1>
                         <p className="text-zinc-600 dark:text-zinc-400 mb-4">
                             A full-stack developer focused on creating beautiful and functional web and mobile
                             experiences.
