@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className="scroll-smooth">
-        <body className={`${inter.className} bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white antialiased`}>
+        <body className={`${inter.className} bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-white antialiased`}>
         <ThemeProvider>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {children}

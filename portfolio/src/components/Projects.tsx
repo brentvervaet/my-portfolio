@@ -40,8 +40,8 @@ const defaultProjects: Project[] = [
     {
         title: "iOS App",
         description: "A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.",
-        tags: ["Swift", "SwiftUI", "Some DB"],
-        images: ["https://placehold.co/1920x1080.png"],
+        tags: ["Swift", "SwiftUI"],
+        images: ["/images/Projects/iOS-app/iOS99.png"],
         sourceCodeLink: "git@github.com:brentvervaet/iOS-app.git",
         date: new Date('2025-08-20')
     },
@@ -122,7 +122,7 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {sortedProjects.map((project, i) => (
                             <Card key={i}
-                                  className="overflow-hidden group hover:shadow-lg transition-all duration-300 flex flex-col">
+                                  className="overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col dark:bg-zinc-800">
                                 <div className="border-b">
                                     <ProjectImageCarousel images={project.images}/>
                                 </div>
@@ -143,7 +143,7 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                                 <CardContent className="flex-grow">
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map(tag => (
-                                            <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                                            <Badge key={tag} variant="secondary" className="text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow">{tag}</Badge>
                                         ))}
                                     </div>
                                 </CardContent>
