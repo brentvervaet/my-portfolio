@@ -57,7 +57,7 @@ const defaultProjects: Project[] = [
         title: "IT-conference App",
         description: "A Spring Boot app to manage IT conference events, speakers, and rooms. Users can view and favorite events; admins manage the content.",
         tags: ["Java", "Spring", "Thymeleaf", "MySQL"],
-        images: ["https://placehold.co/1920x1080.png"],
+        images: ["/images/Projects/ItConferenceApp/ItConferenceApp99.png"],
         sourceCodeLink: "git@github.com:brentvervaet/IT-conference-app.git",
         date: new Date('2025-05-10')
     }
@@ -78,7 +78,7 @@ const ProjectImageCarousel = ({images}: { images: string[] }) => {
         <div className="relative group">
             <div className="relative overflow-hidden">
                 <Image
-                    className="object-cover w-full h-full"
+                    className="object-cover rounded-xl aspect-auto"
                     alt="Project screenshot"
                     src={images[currentIndex] || "/placeholder.png"}
                     width={4000}
