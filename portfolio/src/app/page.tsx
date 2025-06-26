@@ -27,9 +27,7 @@ export default function Home() {
                         </p>
                         <SocialLinks className="mt-2"/>
                     </div>
-
                 </div>
-
             </section>
 
             {/* Experience Section */}
