@@ -5,7 +5,7 @@ import Link from 'next/link';
 import SocialLinks from "@/components/SocialsLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import {Button} from "@/components/ui/button";
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {Sheet, SheetContent, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
 
 export default function Header() {
     const [activeSection, setActiveSection] = useState('');
@@ -37,7 +37,7 @@ export default function Header() {
     };
 
     return (
-        <nav className="relative flex items-center justify-between py-4">
+        <nav className="relative flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold font-mono">
                 <span className="sm:inline hidden">Brent Vervaet</span>
                 <span className="sm:hidden inline">BV</span>
@@ -55,9 +55,12 @@ export default function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
+
                     <div className="absolute bottom-4 right-4">
                         <ThemeToggle/>
                     </div>
+
+                    <SheetTitle/>
 
                     <div className="flex flex-col items-center space-y-8 text-lg font-mono mt-12">
                         <Link
