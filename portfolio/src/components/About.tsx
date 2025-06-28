@@ -1,5 +1,7 @@
-// src/components/About.tsx
+// Update in src/components/About.tsx
+'use client';
 import React from 'react';
+import {motion} from 'motion/react';
 
 const About = () => {
     return (
@@ -10,18 +12,27 @@ const About = () => {
                         <h2 className="text-2xl font-mono font-bold mb-4">About</h2>
                     </div>
                     <div className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                        <p>
-                            I’m a full-stack development student with a passion for modern web technologies. I focus on
+                        <motion.p
+                            initial={{opacity: 0, x: -20}}
+                            whileInView={{opacity: 1, x: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.5}}
+                        >
+                            I'm a full-stack development student with a passion for modern web technologies. I focus on
                             writing clean, efficient code and crafting thoughtful designs to deliver seamless and
                             engaging user experiences.
-
-                        </p>
-                        <p>
+                        </motion.p>
+                        <motion.p
+                            initial={{opacity: 0, x: -20}}
+                            whileInView={{opacity: 1, x: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.5, delay: 0.2}}
+                        >
                             Outside of coding, I make music with my band <a href="https://linktr.ee/pinkonred"
                                                                             target="_blank" rel="noopener noreferrer"
                                                                             className="text-red-500 font-bold hover:underline">Pink
                             on Red</a> —whether we&apos;re jamming, performing
-                        </p>
+                        </motion.p>
                     </div>
                 </div>
             </div>
