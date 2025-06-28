@@ -1,5 +1,7 @@
-// src/components/About.tsx
+// Update in src/components/About.tsx
+'use client';
 import React from 'react';
+import {motion} from 'motion/react';
 
 const About = () => {
     return (
@@ -16,7 +18,7 @@ const About = () => {
                             viewport={{once: true}}
                             transition={{duration: 0.5}}
                         >
-                            I&aptos;m a full-stack development student with a passion for modern web technologies. I focus on
+                            I'm a full-stack development student with a passion for modern web technologies. I focus on
                             writing clean, efficient code and crafting thoughtful designs to deliver seamless and
                             engaging user experiences.
                         </motion.p>
