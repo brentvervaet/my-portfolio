@@ -41,7 +41,7 @@ const Skills: React.FC<SkillsProps> = ({skills = defaultSkills}) => {
 
                     <Card className="dark:bg-zinc-800">
                         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
-                            {skills.map((skill, index) => (
+                            {skills.map((skill) => (
                                 <motion.a
                                     key={skill.name}
                                     href={skill.url}
