@@ -16,11 +16,20 @@ const About = () => {
                             engaging user experiences.
 
                         </p>
+
                         <p>
-                            Outside of coding, I make music with my band <a href="https://linktr.ee/pinkonred"
-                                                                            target="_blank" rel="noopener noreferrer"
-                                                                            className="text-red-500 font-bold hover:underline">Pink
-                            on Red</a> —whether we&apos;re jamming, performing
+                            When I'm not coding, I love to play music with my band, <a
+                            href="https://linktr.ee/pinkonred"
+                            target="_blank" rel="noopener noreferrer"
+                            className="text-red-500 font-bold hover:underline">Pink
+                            on Red</a> whether it's jamming with friends or
+                            performing live
+                            or cracking a cold one with the boys.
+                            If I need to unwind, you can find me playing video
+                            games
+                            or reading a good book. I believe in the power of creativity and collaboration, both in
+                            music
+                            and software development.
                         </p>
                     </div>
                 </div>
