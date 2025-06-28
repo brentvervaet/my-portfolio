@@ -3,12 +3,12 @@
 import React, {useEffect, useState} from 'react';
 import {Button} from "@/components/ui/button";
 import {Moon, Sun} from "lucide-react";
+import {motion} from "framer-motion";
 
 export default function ThemeToggle() {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     useEffect(() => {
-        // Check for saved theme preference or use system preference
         const savedTheme = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -41,11 +41,19 @@ export default function ThemeToggle() {
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             className="rounded-full"
         >
-            {theme === 'light' ? (
-                <Moon className="h-5 w-5"/>
-            ) : (
-                <Sun className="h-5 w-5"/>
-            )}
+            <motion.div
+                initial={{scale: 0.8, opacity: 0}}
+                animate={{scale: 1, opacity: 1}}
+                exit={{scale: 0.8, opacity: 0}}
+                key={theme}
+                transition={{duration: 0.3}}
+            >
+                {theme === 'light' ? (
+                    <Moon className="h-5 w-5"/>
+                ) : (
+                    <Sun className="h-5 w-5"/>
+                )}
+            </motion.div>
         </Button>
     );
 }
