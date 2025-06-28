@@ -18,11 +18,11 @@ const About = () => {
                         </p>
 
                         <p>
-                            When I'm not coding, I love to play music with my band, <a
+                            When I&apos;m not coding, I love to play music with my band, <a
                             href="https://linktr.ee/pinkonred"
                             target="_blank" rel="noopener noreferrer"
                             className="text-red-500 font-bold hover:underline">Pink
-                            on Red</a> whether it's jamming with friends or
+                            on Red</a> whether it&apos;s jamming with friends or
                             performing live
                             or cracking a cold one with the boys.
                             If I need to unwind, you can find me playing video
