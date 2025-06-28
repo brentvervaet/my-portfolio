@@ -20,9 +20,7 @@ export default function Home() {
     return (
         <main className="max-w-3xl mx-auto px-4 py-12">
             <Header/>
-
-            {/* Hero Section with Animation - No scroll animation for first section */}
-            <AnimatedSection once={false}>
+            <AnimatedSection>
                 <section className="py-16 space-y-8">
                     <div className="flex flex-col md:flex-row items-center gap-6">
                         <Avatar className="w-24 h-24 border-2">

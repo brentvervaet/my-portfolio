@@ -20,7 +20,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
         <motion.div
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
-            viewport={{once, margin: "-100px"}}
+            viewport={{once, margin: "-50px"}}
             transition={{duration: 0.6, delay}}
             className={className}
         >
