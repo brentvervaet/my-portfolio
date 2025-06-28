@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import {motion} from 'motion/react';
 import {Tabs, TabsList, TabsTrigger, TabsContent} from '@/components/ui/tabs';
 import {Badge} from '@/components/ui/badge';
 import Image from 'next/image';
@@ -32,6 +34,33 @@ const workExperience: ExperienceItem[] = [
         skills: ["React", "JavaScript", 'Java', "Spring"],
         logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
+    },
+    //TODO comment out for production
+    {
+        id: 2,
+        title: "Student Software Developer",
+        organization: "HOGENT University",
+        period: "2022 - Present",
+        description: "Software Development Internship",
+        responsibilities: [
+            "Still a student, but looking for internship opportunities."
+        ],
+        skills: ["React", "JavaScript", 'Java', "Spring"],
+        logo: "/images/home/hogent.png",
+        website: "https://www.hogent.be/en/"
+    },
+    {
+        id: 3,
+        title: "Student Software Developer",
+        organization: "HOGENT University",
+        period: "2022 - Present",
+        description: "Software Development Internship",
+        responsibilities: [
+            "Still a student, but looking for internship opportunities."
+        ],
+        skills: ["React", "JavaScript", 'Java', "Spring"],
+        logo: "/images/home/hogent.png",
+        website: "https://www.hogent.be/en/"
     }
 ];
 
@@ -45,6 +74,17 @@ const education: ExperienceItem[] = [
         skills: [],
         logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
+    },
+    //TODO comment out for production
+    {
+        id: 2,
+        title: "ASO modern languages and sciences",
+        organization: "Sint-Lodewijkscollege",
+        period: "2012 - 2018",
+        description: "Graduated with a focus on science and language.",
+        skills: [],
+        logo: "/images/home/hogent.png",
+        website: "https://www.sintlodewijkscollege.be/"
     }
 ];
 
@@ -76,12 +116,18 @@ const Experience = () => {
                             <div className="p-0">
                                 <ul className="ml-10 border-l">
                                     {education.map(item => (
-                                        <li key={item.id} className="relative ml-10 py-4">
-                                            <a
-                                                target="_blank"
-                                                className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
-                                                href={item.website}
-                                            >
+                                        <motion.li
+                                            key={item.id}
+                                            className="relative ml-10 py-4"
+                                            initial={{opacity: 0, x: -20}}
+                                            whileInView={{opacity: 1, x: 0}}
+                                            viewport={{once: true}}
+                                            transition={{duration: 0.5, delay: item.id * 0.2}}
+                                        ><a
+                                            target="_blank"
+                                            className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
+                                            href={item.website}
+                                        >
                                                         <span
                                                             className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
                                                             <Image
@@ -92,7 +138,7 @@ const Experience = () => {
                                                                 height={10}
                                                             />
                                                         </span>
-                                            </a>
+                                        </a>
                                             <div className="flex flex-1 flex-col justify-start gap-1">
                                                 <time className="text-xs text-muted-foreground">
                                                     <span>{item.period.split(" - ")[0]}</span>
@@ -115,7 +161,7 @@ const Experience = () => {
                                                     ))}
                                                 </div>
                                             )}
-                                        </li>
+                                        </motion.li>
                                     ))}
                                 </ul>
                             </div>
@@ -124,7 +170,8 @@ const Experience = () => {
 
                     {/*Work*/}
                     <TabsContent value="work" className="mt-2 ">
-                        <div className="rounded-xl border dark:border-0 bg-card text-card-foreground shadow-md dark:bg-zinc-800">
+                        <div
+                            className="rounded-xl border dark:border-0 bg-card text-card-foreground shadow-md dark:bg-zinc-800">
                             <div className="p-0">
                                 <ul className="ml-10 border-l">
                                     {workExperience.map(item => (
