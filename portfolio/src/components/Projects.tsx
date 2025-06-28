@@ -5,8 +5,10 @@ import {Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent} f
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
+import Link from "next/link";
 
 interface Project {
+    id: number;
     title: string;
     description: string;
     tags: string[];
@@ -20,8 +22,9 @@ interface ProjectsProps {
     projects?: Project[];
 }
 
-const defaultProjects: Project[] = [
+export const defaultProjects: Project[] = [
     {
+        id: 1,
         title: "TuneWithMe",
         description: "A tuner web application that allows users to tune their instruments and keep a library of their favorite tunings and instruments.",
         tags: ["React", "JavaScript", "Node.js", "Vite", "Tailwind CSS", "MUI", "MySQL"],
@@ -37,6 +40,7 @@ const defaultProjects: Project[] = [
         date: new Date('2024-12-10')
     },
     {
+        id: 2,
         title: "iOS App",
         description: "A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.",
         tags: ["Swift", "SwiftUI"],
@@ -45,6 +49,7 @@ const defaultProjects: Project[] = [
         date: new Date('2025-08-20')
     },
     {
+        id: 3,
         title: "Portfolio Website",
         description: "This very website! A responsive portfolio showcasing my projects and skills, built with modern web technologies.",
         tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Shadcn/UI"],
@@ -54,6 +59,7 @@ const defaultProjects: Project[] = [
         date: new Date('2025-06-25')
     },
     {
+        id: 4,
         title: "IT-conference App",
         description: "A Spring Boot app to manage IT conference events, speakers, and rooms. Users can view and favorite events; admins manage the content.",
         tags: ["Java", "Spring", "Thymeleaf", "MySQL"],
@@ -62,7 +68,7 @@ const defaultProjects: Project[] = [
             "/images/Projects/ItConferenceApp/ITCONF03.png",
             "/images/Projects/ItConferenceApp/ITCONF04.png",
             "/images/Projects/ItConferenceApp/ITCONF05.png"],
-        sourceCodeLink: "git@github.com:brentvervaet/IT-conference-app.git",
+        sourceCodeLink: "https://github.com/brentvervaet/IT-conference-app.git",
         date: new Date('2025-05-10')
     }
 ];
@@ -120,32 +126,39 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {sortedProjects.map((project, i) => (
+
                             <Card key={i}
                                   className="overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col dark:bg-zinc-800">
+
                                 <div className="border-b">
                                     <ProjectImageCarousel images={project.images}/>
                                 </div>
-                                <CardHeader>
-                                    <div className="flex justify-between items-start">
-                                        <CardTitle className="font-mono group-hover:text-red-500 transition">
-                                            {project.title}
-                                        </CardTitle>
-                                        <span className="text-xs text-zinc-500">
+                                <Link href={`/projects/${i}`} className="cursor-pointer">
+                                    <CardHeader>
+                                        <div className="flex justify-between items-start">
+                                            <CardTitle className="font-mono group-hover:text-red-500 transition">
+                                                {project.title}
+                                            </CardTitle>
+                                            <span className="text-xs text-zinc-500">
                                                                     {project.date.toLocaleDateString('en-US', {
                                                                         year: 'numeric',
                                                                         month: 'short'
                                                                     })}
                                                                 </span>
-                                    </div>
-                                    <CardDescription>{project.description}</CardDescription>
-                                </CardHeader>
+                                        </div>
+                                        <CardDescription>{project.description}</CardDescription>
+                                    </CardHeader>
+                                </Link>
+
                                 <CardContent className="flex-grow">
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map(tag => (
-                                            <Badge key={tag} variant="secondary" className="text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow">{tag}</Badge>
+                                            <Badge key={tag} variant="secondary"
+                                                   className="text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow">{tag}</Badge>
                                         ))}
                                     </div>
                                 </CardContent>
+
                                 <CardFooter className="flex gap-4 mt-auto">
                                     {project.link && (
                                         <a
@@ -155,7 +168,8 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                                             className="text-sm flex items-center gap-1 text-zinc-500 hover:text-red-500 transition"
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                 strokeWidth="2"
                                                  strokeLinecap="round" strokeLinejoin="round"
                                                  className="lucide lucide-external-link">
                                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -174,7 +188,8 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                                             className="text-sm flex items-center gap-1 text-zinc-500 hover:text-red-500 transition"
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                 strokeWidth="2"
                                                  strokeLinecap="round" strokeLinejoin="round"
                                                  className="lucide lucide-github">
                                                 <path
@@ -186,6 +201,7 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                                     )}
                                 </CardFooter>
                             </Card>
+
                         ))}
                     </div>
                 </div>
