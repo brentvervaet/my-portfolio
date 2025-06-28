@@ -35,33 +35,32 @@ const workExperience: ExperienceItem[] = [
         logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
     },
-    //TODO comment out for production
-    {
-        id: 2,
-        title: "Student Software Developer",
-        organization: "HOGENT University",
-        period: "2022 - Present",
-        description: "Software Development Internship",
-        responsibilities: [
-            "Still a student, but looking for internship opportunities."
-        ],
-        skills: ["React", "JavaScript", 'Java', "Spring"],
-        logo: "/images/home/hogent.png",
-        website: "https://www.hogent.be/en/"
-    },
-    {
-        id: 3,
-        title: "Student Software Developer",
-        organization: "HOGENT University",
-        period: "2022 - Present",
-        description: "Software Development Internship",
-        responsibilities: [
-            "Still a student, but looking for internship opportunities."
-        ],
-        skills: ["React", "JavaScript", 'Java', "Spring"],
-        logo: "/images/home/hogent.png",
-        website: "https://www.hogent.be/en/"
-    }
+    // {
+    //     id: 2,
+    //     title: "Student Software Developer",
+    //     organization: "HOGENT University",
+    //     period: "2022 - Present",
+    //     description: "Software Development Internship",
+    //     responsibilities: [
+    //         "Still a student, but looking for internship opportunities."
+    //     ],
+    //     skills: ["React", "JavaScript", 'Java', "Spring"],
+    //     logo: "/images/home/hogent.png",
+    //     website: "https://www.hogent.be/en/"
+    // },
+    // {
+    //     id: 3,
+    //     title: "Student Software Developer",
+    //     organization: "HOGENT University",
+    //     period: "2022 - Present",
+    //     description: "Software Development Internship",
+    //     responsibilities: [
+    //         "Still a student, but looking for internship opportunities."
+    //     ],
+    //     skills: ["React", "JavaScript", 'Java', "Spring"],
+    //     logo: "/images/home/hogent.png",
+    //     website: "https://www.hogent.be/en/"
+    // }
 ];
 
 const education: ExperienceItem[] = [
@@ -75,7 +74,6 @@ const education: ExperienceItem[] = [
         logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
     },
-    //TODO comment out for production
     {
         id: 2,
         title: "ASO modern languages and sciences",

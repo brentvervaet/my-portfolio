@@ -9,7 +9,6 @@ import Experience from "@/components/Experience";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import AnimatedSection from '@/components/AnimatedSection';
-import type {Metadata} from "next";
 
 export const metadata: Metadata = {
     title: 'Brent Vervaet | Portfolio',
