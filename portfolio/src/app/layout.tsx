@@ -1,6 +1,5 @@
 // src/app/layout.tsx
 'use client'
-import type {Metadata} from 'next';
 import { motion, AnimatePresence } from 'motion/react';
 import {Inter} from 'next/font/google';
 import './globals.css';

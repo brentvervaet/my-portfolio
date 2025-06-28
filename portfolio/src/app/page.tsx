@@ -1,4 +1,5 @@
 // src/app/page.tsx
+import type {Metadata} from 'next';
 import Header from '@/components/Header';
 import SocialLinks from "@/components/SocialsLinks";
 import Skills from "@/components/Skills";
