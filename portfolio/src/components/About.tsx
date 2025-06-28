@@ -18,13 +18,16 @@ const About = () => {
                         </p>
 
                         <p>
-                            When I’m not coding, you’ll find me making music with my band, <a
+                            When I&apos;m not coding, I love to play music with my band, <a
                             href="https://linktr.ee/pinkonred"
                             target="_blank" rel="noopener noreferrer"
-                            className="text-red-500 font-bold hover:underline">Pink on Red</a> — whether we’re jamming,
-                            playing live shows, or just cracking a cold one with the crew. To unwind, I dive into video
-                            games or get lost in a good book. I believe creativity and collaboration are at the heart of
-                            both music and software, and I try to bring that energy into everything I do.
+                            className="text-red-500 font-bold hover:underline">Pink
+                            on Red</a> whether it&apos;s jamming with friends or
+                            performing live
+                            or cracking a cold one with the boys.
+                            If I need to unwind, you can find me playing video
+                            games
+                            or reading a good book.
                         </p>
                     </div>
                 </div>
