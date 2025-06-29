@@ -8,7 +8,6 @@ import React from "react";
 import Experience from "@/components/Experience";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
     title: 'Brent Vervaet | Portfolio',
@@ -20,7 +19,6 @@ export default function Home() {
     return (
         <main className="max-w-3xl mx-auto px-4 py-12">
             <Header/>
-            <AnimatedSection>
                 <section className="py-16 space-y-8">
                     <div className="flex flex-col md:flex-row items-center gap-6">
                         <Avatar className="w-24 h-24 border-2">
@@ -37,27 +35,14 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-            </AnimatedSection>
 
-            {/* Experience Section with scroll-triggered Animation */}
-            <AnimatedSection delay={0.2}>
                 <Experience/>
-            </AnimatedSection>
 
-            {/* Skills Section with scroll-triggered Animation */}
-            <AnimatedSection delay={0.3}>
                 <Skills/>
-            </AnimatedSection>
 
-            {/* Projects Section with scroll-triggered Animation */}
-            <AnimatedSection delay={0.4}>
                 <Projects/>
-            </AnimatedSection>
 
-            {/* About Section with scroll-triggered Animation */}
-            <AnimatedSection delay={0.5}>
                 <About/>
-            </AnimatedSection>
         </main>
     );
 }
