@@ -1,16 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-  CardContent,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import ProjectImageCarousel from "@/components/ProjectImageCarousel";
+'use client';
+import React, { useState } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import ProjectImageCarousel from '@/components/ProjectImageCarousel';
 
 interface Project {
   title: string;
@@ -28,72 +21,64 @@ interface ProjectsProps {
 
 const defaultProjects: Project[] = [
   {
-    title: "TuneWithMe",
+    title: 'TuneWithMe',
     description:
-      "A tuner web application that allows users to tune their instruments and keep a library of their favorite tunings and instruments.",
-    tags: [
-      "React",
-      "JavaScript",
-      "Node.js",
-      "Vite",
-      "Tailwind CSS",
-      "MUI",
-      "MySQL",
-    ],
+      'A tuner web application that allows users to tune their instruments and keep a library of their favorite tunings and instruments.',
+    tags: ['React', 'JavaScript', 'Node.js', 'Vite', 'Tailwind CSS', 'MUI', 'MySQL'],
     images: [
-      "/images/Projects/TuneWithMe/TuneWithMe01.png",
-      "/images/Projects/TuneWithMe/TuneWithMe02.png",
-      "/images/Projects/TuneWithMe/TuneWithMe03.png",
-      "/images/Projects/TuneWithMe/TuneWithMe04.png",
-      "/images/Projects/TuneWithMe/TuneWithMe05.png",
-      "/images/Projects/TuneWithMe/TuneWithMe06.png",
-      "/images/Projects/TuneWithMe/TuneWithMe07.png",
+      '/images/Projects/TuneWithMe/TuneWithMe01.png',
+      '/images/Projects/TuneWithMe/TuneWithMe02.png',
+      '/images/Projects/TuneWithMe/TuneWithMe03.png',
+      '/images/Projects/TuneWithMe/TuneWithMe04.png',
+      '/images/Projects/TuneWithMe/TuneWithMe05.png',
+      '/images/Projects/TuneWithMe/TuneWithMe06.png',
+      '/images/Projects/TuneWithMe/TuneWithMe07.png',
     ],
-    link: "https://tunewithme.onrender.com/home",
-    sourceCodeLink: "https://github.com/brentvervaet/TuneWithMe.git",
-    date: new Date("2024-12-10"),
+    link: 'https://tunewithme.onrender.com/home',
+    sourceCodeLink: 'https://github.com/brentvervaet/TuneWithMe.git',
+    date: new Date('2024-12-10'),
   },
   {
-    title: "iOS App",
+    title: 'iOS App',
     description:
-      "A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.",
-    tags: ["Swift", "SwiftUI"],
-    images: ["/images/Projects/iOS-app/iOS99.png"],
-    sourceCodeLink: "git@github.com:brentvervaet/iOS-app.git",
-    date: new Date("2025-08-20"),
+      'A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.',
+    tags: ['Swift', 'SwiftUI'],
+    images: ['/images/Projects/iOS-app/iOS99.png'],
+    sourceCodeLink: 'git@github.com:brentvervaet/iOS-app.git',
+    date: new Date('2025-08-20'),
   },
   {
-    title: "Portfolio Website",
+    title: 'Portfolio Website',
     description:
-      "This very website! A responsive portfolio showcasing my projects and skills, built with modern web technologies.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Shadcn/UI"],
-    images: ["/images/Projects/Portfolio/Portfolio01.png"],
-    link: "https://brentv-dev.vercel.app",
-    sourceCodeLink: "https://github.com/brentvervaet/my-portfolio.git",
-    date: new Date("2025-06-25"),
+      'This very website! A responsive portfolio showcasing my projects and skills, built with modern web technologies.',
+    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn/UI'],
+    images: ['/images/Projects/Portfolio/Portfolio01.png'],
+    link: 'https://brentv-dev.vercel.app',
+    sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
+    date: new Date('2025-06-25'),
   },
   {
-    title: "IT-conference App",
+    title: 'IT-conference App',
     description:
-      "A Spring Boot app to manage IT conference events, speakers, and rooms. Users can view and favorite events; admins manage the content.",
-    tags: ["Java", "Spring", "Thymeleaf", "MySQL"],
+      'A Spring Boot app to manage IT conference events, speakers, and rooms. Users can view and favorite events; admins manage the content.',
+    tags: ['Java', 'Spring', 'Thymeleaf', 'MySQL'],
     images: [
-      "/images/Projects/ItConferenceApp/ITCONF01.png",
-      "/images/Projects/ItConferenceApp/ITCONF02.png",
-      "/images/Projects/ItConferenceApp/ITCONF03.png",
-      "/images/Projects/ItConferenceApp/ITCONF04.png",
-      "/images/Projects/ItConferenceApp/ITCONF05.png",
+      '/images/Projects/ItConferenceApp/ITCONF01.png',
+      '/images/Projects/ItConferenceApp/ITCONF02.png',
+      '/images/Projects/ItConferenceApp/ITCONF03.png',
+      '/images/Projects/ItConferenceApp/ITCONF04.png',
+      '/images/Projects/ItConferenceApp/ITCONF05.png',
     ],
-    sourceCodeLink: "git@github.com:brentvervaet/IT-conference-app.git",
-    date: new Date("2025-05-10"),
+    sourceCodeLink: 'git@github.com:brentvervaet/IT-conference-app.git',
+    date: new Date('2025-05-10'),
   },
 ];
 
 const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
-  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
 
   const sortedProjects = [...projects].sort((a, b) => {
-    if (sortOrder === "newest") {
+    if (sortOrder === 'newest') {
       return b.date.getTime() - a.date.getTime();
     } else {
       return a.date.getTime() - b.date.getTime();
@@ -101,7 +86,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
   });
 
   const toggleSortOrder = () => {
-    setSortOrder(sortOrder === "newest" ? "oldest" : "newest");
+    setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest');
   };
 
   return (
@@ -115,13 +100,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
               size="sm"
               onClick={toggleSortOrder}
               className="text-xs flex items-center gap-1"
-              title={
-                sortOrder === "newest"
-                  ? "Sort by oldest first"
-                  : "Sort by latest first"
-              }
+              title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
             >
-              {sortOrder === "newest" ? (
+              {sortOrder === 'newest' ? (
                 <>
                   Latest
                   <svg
@@ -163,7 +144,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
             </Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sortedProjects.map((project) => (
+            {sortedProjects.map(project => (
               <Card
                 key={project.title}
                 className="overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col dark:bg-zinc-800"
@@ -173,13 +154,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                 </div>
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <CardTitle className="font-mono group-hover:text-red-500 transition">
-                      {project.title}
-                    </CardTitle>
+                    <CardTitle className="font-mono group-hover:text-red-500 transition">{project.title}</CardTitle>
                     <span className="text-xs text-zinc-500">
-                      {project.date.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
+                      {project.date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
                       })}
                     </span>
                   </div>
@@ -187,7 +166,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
+                    {project.tags.map(tag => (
                       <Badge
                         key={tag}
                         variant="secondary"
