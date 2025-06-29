@@ -24,7 +24,7 @@ const workExperience: ExperienceItem[] = [
     {
         id: 1,
         title: "Student Software Developer",
-        organization: "HOGENT University",
+        organization: "HOGENT",
         period: "2022 - Present",
         description: "Software Development Internship",
         responsibilities: [
@@ -44,7 +44,7 @@ const education: ExperienceItem[] = [
         period: "2022 - Present",
         description: "Focus on web and mobile enterprise development.",
         logo: "/images/home/experience/hogent.png",
-        website: "https://www.hogent.be/en/"
+        website: "https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/"
     },
     {
         id: 2,
@@ -130,8 +130,8 @@ const Experience = () => {
                                                             className="aspect-square h-full w-full bg-background object-contain"
                                                             alt={item.organization}
                                                             src={item.logo ?? "/placeholder-logo.png"}
-                                                            width={10}
-                                                            height={10}
+                                                            width={1000}
+                                                            height={1000}
                                                         />
                                                     </span>
                                                 </a>
