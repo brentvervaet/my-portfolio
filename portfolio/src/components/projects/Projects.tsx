@@ -90,16 +90,16 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
   };
 
   return (
-    <section id="projects" className="py-8">
+    <section id="projects" className="py-4">
       <div className="container mx-auto px-4">
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold font-mono">Projects</h2>
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="font-mono text-2xl font-bold">Projects</h2>
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleSortOrder}
-              className="text-xs flex items-center gap-1"
+              className="flex items-center gap-1 text-xs"
               title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
             >
               {sortOrder === 'newest' ? (
@@ -143,18 +143,18 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
               )}
             </Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {sortedProjects.map(project => (
               <Card
                 key={project.title}
-                className="overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col dark:bg-zinc-800"
+                className="group flex flex-col overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg dark:bg-zinc-800"
               >
                 <div className="border-b">
                   <ProjectImageCarousel images={project.images} />
                 </div>
                 <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="font-mono group-hover:text-red-500 transition">{project.title}</CardTitle>
+                  <div className="flex items-start justify-between">
+                    <CardTitle className="font-mono transition group-hover:text-red-500">{project.title}</CardTitle>
                     <span className="text-xs text-zinc-500">
                       {project.date.toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -170,20 +170,20 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       <Badge
                         key={tag}
                         variant="secondary"
-                        className="text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow"
+                        className="bg-primary text-primary-foreground border-transparent text-xs font-semibold shadow transition-colors"
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex gap-4 mt-auto">
+                <CardFooter className="mt-auto flex gap-4">
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-zinc-500 hover:text-red-500 transition"
+                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-red-500"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +210,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       href={project.sourceCodeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-zinc-500 hover:text-red-500 transition"
+                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-red-500"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

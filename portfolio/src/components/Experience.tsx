@@ -106,7 +106,7 @@ const Experience = () => {
             </TabsTrigger>
           </TabsList>
 
-          <div className="relative" style={{ minHeight: '300px' }}>
+          <div className="relative">
             <TabsContent value="education" className="mt-2">
               <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
                 <div className="p-0">
