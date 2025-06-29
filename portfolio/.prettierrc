@@ -5,5 +5,7 @@
   "tabWidth": 2,
   "printWidth": 120,
   "bracketSpacing": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "plugins": [
+    "prettier-plugin-tailwindcss"]
 }

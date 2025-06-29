@@ -83,16 +83,16 @@ const Experience = () => {
   };
 
   return (
-    <div className="py-4 border-0">
+    <div className="border-0 py-4">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-mono font-bold mb-8">Experience</h2>
-        <Tabs defaultValue="education" className="w-full max-w-4xl mx-auto" onValueChange={handleTabChange}>
+        <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
+        <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
           {/* Education and Work Tabs */}
-          <TabsList className="h-9 items-center justify-center rounded-lg bg-transparant p-1 text-muted-foreground mb-2 grid w-full grid-cols-2">
+          <TabsList className="bg-transparant text-muted-foreground mb-2 grid h-9 w-full grid-cols-2 items-center justify-center rounded-lg p-1">
             {/*education*/}
             <TabsTrigger
               value="education"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              className="ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow focus-visible:dark:shadow-sm"
             >
               <span className={activeTab === 'education' ? 'font-bold' : ''}>Education</span>
             </TabsTrigger>
@@ -100,7 +100,7 @@ const Experience = () => {
             {/*work*/}
             <TabsTrigger
               value="work"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              className="ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow focus-visible:dark:shadow-sm"
             >
               <span className={activeTab === 'work' ? 'font-bold' : ''}>Work</span>
             </TabsTrigger>
@@ -108,19 +108,19 @@ const Experience = () => {
 
           <div className="relative" style={{ minHeight: '300px' }}>
             <TabsContent value="education" className="mt-2">
-              <div className="rounded-xl bg-card text-card-foreground shadow-md dark:bg-zinc-800">
+              <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
                 <div className="p-0">
                   <ul className="ml-10 border-l">
                     {education.map(item => (
                       <li key={item.id} className="relative ml-10 py-4">
                         <a
                           target="_blank"
-                          className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
+                          className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                           href={item.website}
                         >
-                          <span className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
+                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border">
                             <Image
-                              className="aspect-square h-full w-full bg-background object-contain"
+                              className="bg-background aspect-square h-full w-full object-contain"
                               alt={item.organization}
                               src={item.logo ?? '/placeholder-logo.png'}
                               width={1000}
@@ -129,21 +129,21 @@ const Experience = () => {
                           </span>
                         </a>
                         <div className="flex flex-1 flex-col justify-start gap-1">
-                          <time className="text-xs text-muted-foreground">
+                          <time className="text-muted-foreground text-xs">
                             <span>{item.period.split(' - ')[0]}</span>
                             <span> - </span>
                             <span>{item.period.split(' - ')[1]}</span>
                           </time>
-                          <h2 className="font-semibold leading-none">{item.organization}</h2>
-                          <p className="text-sm text-muted-foreground">{item.title}</p>
-                          <p className="prose pr-8 text-sm dark:prose-invert">{item.description}</p>
+                          <h2 className="leading-none font-semibold">{item.organization}</h2>
+                          <p className="text-muted-foreground text-sm">{item.title}</p>
+                          <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
                         </div>
                         {item.skills && item.skills.length > 0 && (
                           <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
                             {item.skills.map(skill => (
                               <Badge
                                 key={skill}
-                                className="items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
+                                className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
                               >
                                 {skill}
                               </Badge>
@@ -158,19 +158,19 @@ const Experience = () => {
             </TabsContent>
 
             <TabsContent value="work" className="mt-2">
-              <div className="rounded-xl border dark:border-0 bg-card text-card-foreground shadow-md dark:bg-zinc-800">
+              <div className="bg-card text-card-foreground rounded-xl border shadow-md dark:border-0 dark:bg-zinc-800">
                 <div className="p-0">
                   <ul className="ml-10 border-l">
                     {workExperience.map(item => (
                       <li key={item.id} className="relative ml-10 py-4">
                         <a
                           target="_blank"
-                          className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
+                          className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                           href={item.website}
                         >
-                          <span className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
+                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border">
                             <Image
-                              className="aspect-square h-full w-full bg-background object-contain"
+                              className="bg-background aspect-square h-full w-full object-contain"
                               alt={item.organization}
                               src={item.logo ?? '/placeholder-logo.png'}
                               width={10}
@@ -179,16 +179,16 @@ const Experience = () => {
                           </span>
                         </a>
                         <div className="flex flex-1 flex-col justify-start gap-1">
-                          <time className="text-xs text-muted-foreground">
+                          <time className="text-muted-foreground text-xs">
                             <span>{item.period.split(' - ')[0]}</span>
                             <span> - </span>
                             <span>{item.period.split(' - ')[1]}</span>
                           </time>
-                          <h2 className="font-semibold leading-none">{item.organization}</h2>
-                          <p className="text-sm text-muted-foreground">{item.title}</p>
+                          <h2 className="leading-none font-semibold">{item.organization}</h2>
+                          <p className="text-muted-foreground text-sm">{item.title}</p>
                           <ul className="ml-4 list-outside list-disc">
                             {item.responsibilities?.map((responsibility, idx) => (
-                              <li key={`${item.id}-resp-${idx}`} className="prose pr-8 text-sm dark:prose-invert">
+                              <li key={`${item.id}-resp-${idx}`} className="prose dark:prose-invert pr-8 text-sm">
                                 {responsibility}
                               </li>
                             ))}
@@ -199,7 +199,7 @@ const Experience = () => {
                             {item.skills.map(skill => (
                               <Badge
                                 key={skill}
-                                className="items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
+                                className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
                               >
                                 {skill}
                               </Badge>

@@ -5,9 +5,9 @@ const About = () => {
   return (
     <section id="about" className="py-8">
       <div className="container mx-auto px-4">
-        <div className="w-full max-w-4xl mx-auto  ">
+        <div className="mx-auto w-full max-w-4xl">
           <div>
-            <h2 className="text-2xl font-bold font-mono">About</h2>
+            <h2 className="font-mono text-2xl font-bold">About</h2>
           </div>
           <div className="dark:text-zinc-400">
             <p>
@@ -21,7 +21,7 @@ const About = () => {
                 href="https://linktr.ee/pinkonred"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-red-500 font-bold hover:underline"
+                className="font-bold text-red-500 hover:underline"
               >
                 Pink on Red
               </a>{' '}

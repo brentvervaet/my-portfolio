@@ -1,10 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import SocialLinks from '@/components/SocialsLinks';
-import ThemeToggle from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import Link from 'next/link';
+import SocialLinks from '@/components/SocialsLinks';
+import { useState, useEffect } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
+import { motion } from 'motion/react';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('');
@@ -40,16 +41,16 @@ export default function Header() {
 
   return (
     <nav className="relative flex items-center justify-between">
-      <Link href="/" className="text-2xl font-bold font-mono">
-        <span className="sm:inline hidden">Brent Vervaet</span>
-        <span className="sm:hidden inline">BV</span>
+      <Link href="/" className="font-mono text-2xl font-bold">
+        <span className="hidden sm:inline">Brent Vervaet</span>
+        <span className="inline sm:hidden">BV</span>
       </Link>
 
       {/* Mobile menu with Sheet component */}
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="md:hidden">
-            <div className="w-6 flex flex-col gap-1">
+            <div className="flex w-6 flex-col gap-1">
               <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
               <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
               <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
@@ -57,24 +58,24 @@ export default function Header() {
           </Button>
         </SheetTrigger>
         <SheetContent side="right">
-          <div className="absolute bottom-4 right-4">
+          <div className="absolute right-4 bottom-4">
             <ThemeToggle />
           </div>
 
           <SheetTitle />
 
-          <div className="flex flex-col items-center space-y-8 text-lg font-mono mt-12">
+          <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
             <Link
               href="#projects"
               onClick={handleLinkClick}
-              className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-500'}`}
+              className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
             >
               Projects
             </Link>
             <Link
               href="#about"
               onClick={handleLinkClick}
-              className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-500'}`}
+              className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
             >
               About
             </Link>
@@ -86,16 +87,16 @@ export default function Header() {
       </Sheet>
 
       {/* Desktop navigation */}
-      <div className="hidden md:flex items-center space-x-6 text-sm font-mono">
+      <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
         <Link
           href="#projects"
-          className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-500'}`}
+          className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
         >
           Projects
         </Link>
         <Link
           href="#about"
-          className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-500'}`}
+          className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
         >
           About
         </Link>

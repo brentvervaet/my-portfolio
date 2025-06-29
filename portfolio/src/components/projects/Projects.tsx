@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import ProjectImageCarousel from '@/components/ProjectImageCarousel';
+import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
 
 interface Project {
   title: string;

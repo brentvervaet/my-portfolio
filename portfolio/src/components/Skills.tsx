@@ -33,21 +33,21 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">
-        <div className="w-full max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold font-mono pb-4">Skills</h2>
+        <div className="mx-auto w-full max-w-4xl">
+          <h2 className="pb-4 font-mono text-2xl font-bold">Skills</h2>
 
           <Card className="dark:bg-zinc-800">
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
+            <div className="grid grid-cols-3 gap-8 sm:grid-cols-4 md:grid-cols-6">
               {skills.map(skill => (
                 <a
                   key={skill.name}
                   href={skill.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex justify-center items-center hover:scale-110 hover:text-red-500 transition-all"
+                  className="flex items-center justify-center transition-all hover:scale-110 hover:text-red-500"
                   title={`Learn more about ${skill.name}`}
                 >
-                  <div className="text-3xl md:text-4xl transition-colors">{skill.icon}</div>
+                  <div className="text-3xl transition-colors md:text-4xl">{skill.icon}</div>
                 </a>
               ))}
             </div>
