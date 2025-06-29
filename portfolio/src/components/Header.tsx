@@ -95,7 +95,7 @@ export default function Header() {
           Projects
         </Link>
         <Link
-          href="#about"
+          href="/about"
           className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
         >
           About

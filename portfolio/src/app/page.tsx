@@ -1,11 +1,9 @@
-// src/app/page.tsx
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import SocialLinks from '@/components/SocialsLinks';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import React from 'react';
 import Experience from '@/components/Experience';
-import About from '@/components/About';
 import Projects from '@/components/projects/Projects';
 import Skills from '@/components/Skills';
 
@@ -40,8 +38,6 @@ export default function Home() {
       <Skills />
 
       <Projects />
-
-      <About />
     </main>
   );
 }
