@@ -197,7 +197,7 @@ const Experience = () => {
                                                     <p className="text-sm text-muted-foreground">{item.title}</p>
                                                     <ul className="ml-4 list-outside list-disc">
                                                         {item.responsibilities?.map((responsibility, idx) => (
-                                                            <li key={idx}
+                                                            <li key={`${item.id}-resp-${idx}`}
                                                                 className="prose pr-8 text-sm dark:prose-invert">
                                                                 {responsibility}
                                                             </li>
