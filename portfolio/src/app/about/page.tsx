@@ -7,7 +7,6 @@ import Header from '@/components/Header';
 const Page = () => {
   return (
     <main className="mx-auto max-w-3xl px-4 py-12">
-      <Header />
       <section id="about" className="py-8">
         <div className="container mx-auto">
           <div className="mx-auto w-full max-w-4xl">

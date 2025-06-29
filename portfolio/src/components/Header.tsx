@@ -5,8 +5,6 @@ import Link from 'next/link';
 import SocialLinks from '@/components/SocialsLinks';
 import { useState, useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
-import { motion } from 'motion/react';
-
 export default function Header() {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="relative flex items-center justify-between">
+    <nav className="relative flex items-center justify-between px-4 pt-6">
       <Link href="/" className="font-mono text-2xl font-bold">
         <span className="hidden sm:inline">Brent Vervaet</span>
         <span className="inline sm:hidden">BV</span>
@@ -66,7 +64,7 @@ export default function Header() {
 
           <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
             <Link
-              href="#projects"
+              href="/app#projects"
               onClick={handleLinkClick}
               className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
             >

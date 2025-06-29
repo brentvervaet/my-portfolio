@@ -118,7 +118,7 @@ const Experience = () => {
                           className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                           href={item.website}
                         >
-                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border">
+                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
                             <Image
                               className="bg-background aspect-square h-full w-full object-contain"
                               alt={item.organization}

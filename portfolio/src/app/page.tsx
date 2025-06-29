@@ -15,8 +15,7 @@ export const metadata: Metadata = {
 // Update in src/app/page.tsx
 export default function Home() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12">
-      <Header />
+    <main className="mx-auto max-w-3xl px-4 py-4">
       <section className="space-y-8 py-16">
         <div className="flex flex-col items-center gap-8 md:flex-row">
           <Avatar className="h-24 w-24 border-2">

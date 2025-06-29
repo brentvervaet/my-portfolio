@@ -1,31 +1,23 @@
-'use client';
-import { motion, AnimatePresence } from 'motion/react';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/Footer';
-import ThemeProvider from '@/components/ThemeProvider';
+import { ThemeProvider } from 'next-themes';
 import React from 'react';
+import PageTransition from '@/components/PageTransition';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
       >
-        <ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {children}
-              </motion.div>
-            </AnimatePresence>
+            <Header />
+            <PageTransition>{children}</PageTransition>
           </div>
           <Footer />
         </ThemeProvider>
