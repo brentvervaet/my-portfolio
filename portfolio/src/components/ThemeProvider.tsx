@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+export default function ThemeProvider({ children }: Readonly<{ children: React.ReactNode }>) {
   useEffect(() => {
     // Initialize theme on first load
     const savedTheme = localStorage.getItem('theme');
