@@ -20,7 +20,7 @@ export default function Home() {
         <main className="max-w-3xl mx-auto px-4 py-12">
             <Header/>
                 <section className="py-16 space-y-8">
-                    <div className="flex flex-col md:flex-row items-center gap-6">
+                    <div className="flex flex-col md:flex-row items-center gap-8">
                         <Avatar className="w-24 h-24 border-2">
                             <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet"/>
                             <AvatarFallback>BV</AvatarFallback>

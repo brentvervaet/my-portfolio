@@ -7,7 +7,7 @@ const About = () => {
             <div className="container mx-auto px-4">
                 <div className="w-full max-w-4xl mx-auto">
                     <div>
-                        <h2 className="text-2xl font-mono font-bold mb-4">About</h2>
+                        <h2 className="text-2xl font-bold font-mono">About</h2>
                     </div>
                     <p>
                         I’m a full-stack development student with a passion for modern web technologies. I focus on
