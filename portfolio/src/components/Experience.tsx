@@ -35,32 +35,6 @@ const workExperience: ExperienceItem[] = [
         logo: "/images/home/hogent.png",
         website: "https://www.hogent.be/en/"
     },
-    // {
-    //     id: 2,
-    //     title: "Student Software Developer",
-    //     organization: "HOGENT University",
-    //     period: "2022 - Present",
-    //     description: "Software Development Internship",
-    //     responsibilities: [
-    //         "Still a student, but looking for internship opportunities."
-    //     ],
-    //     skills: ["React", "JavaScript", 'Java', "Spring"],
-    //     logo: "/images/home/hogent.png",
-    //     website: "https://www.hogent.be/en/"
-    // },
-    // {
-    //     id: 3,
-    //     title: "Student Software Developer",
-    //     organization: "HOGENT University",
-    //     period: "2022 - Present",
-    //     description: "Software Development Internship",
-    //     responsibilities: [
-    //         "Still a student, but looking for internship opportunities."
-    //     ],
-    //     skills: ["React", "JavaScript", 'Java', "Spring"],
-    //     logo: "/images/home/hogent.png",
-    //     website: "https://www.hogent.be/en/"
-    // }
 ];
 
 const education: ExperienceItem[] = [
@@ -69,19 +43,39 @@ const education: ExperienceItem[] = [
         title: "Bachelor of Science in Applied Informatics",
         organization: "HOGENT University",
         period: "2022 - Present",
-        description: "Focus on web and mobile development.",
+        description: "Focus on web and mobile enterprise development.",
         skills: [],
-        logo: "/images/home/hogent.png",
+        logo: "/images/home/experience/hogent.png",
         website: "https://www.hogent.be/en/"
     },
     {
         id: 2,
+        title: "Interior design",
+        organization: "LUCA School of Arts",
+        period: "2020 - 2021",
+        description: "Software Development Internship",
+        skills: ["React", "JavaScript", 'Java', "Spring"],
+        logo: "/images/home/experience/hogent.png",
+        website: "https://www.hogent.be/en/"
+    },
+    {
+        id: 3,
+        title: "Architecture",
+        organization: "KU Leuven",
+        period: "2018 - 2020",
+        description: "",
+        skills: ["React", "JavaScript", 'Java', "Spring"],
+        logo: "/images/home/experience/hogent.png",
+        website: "https://www.hogent.be/en/"
+    },
+    {
+        id: 4,
         title: "ASO modern languages and sciences",
         organization: "Sint-Lodewijkscollege",
         period: "2012 - 2018",
         description: "Graduated with a focus on science and language.",
         skills: [],
-        logo: "/images/home/hogent.png",
+        logo: "/images/home/experience/hogent.png",
         website: "https://www.sintlodewijkscollege.be/"
     }
 ];
