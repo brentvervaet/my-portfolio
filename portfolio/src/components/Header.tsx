@@ -73,7 +73,7 @@ export default function Header() {
               Projects
             </Link>
             <Link
-              href="#about"
+              href="/about"
               onClick={handleLinkClick}
               className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
             >
@@ -81,7 +81,6 @@ export default function Header() {
             </Link>
             {/* Social links */}
             <SocialLinks showResumeButton={false} />
-            {/* Removed ThemeToggle from here */}
           </div>
         </SheetContent>
       </Sheet>
