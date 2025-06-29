@@ -9,7 +9,7 @@ interface Project {
     title: string;
     description: string;
     tags: string[];
-    images: string[]; // Changed from single image to array of images
+    images: string[]; // Changed from a single image to an array of images
     link?: string;
     sourceCodeLink?: string;
     date: Date;
@@ -118,9 +118,9 @@ const Projects: React.FC<ProjectsProps> = ({projects = defaultProjects}) => {
                         </Button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {sortedProjects.map((project, i) => (
+                        {sortedProjects.map((project) => (
 
-                            <Card key={i}
+                            <Card key={project.title}
                                   className="overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col dark:bg-zinc-800">
                                 <div className="border-b">
                                     <ProjectImageCarousel images={project.images}/>

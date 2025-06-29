@@ -12,7 +12,6 @@ interface Skill {
 
 interface SkillsProps {
     skills?: Skill[];
-    className?: string;
 }
 
 const defaultSkills: Skill[] = [
