@@ -2,7 +2,6 @@
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import SocialLinks from '@/components/SocialsLinks';
-import Header from '@/components/Header';
 
 const Page = () => {
   return (
@@ -26,20 +25,20 @@ const Page = () => {
             <h1 className="mb-8 font-mono text-3xl font-bold">About Me</h1>
             <div className="space-y-6 dark:text-zinc-400">
               <p className="text-lg">
-                I'm a full-stack development student with a passion for modern web technologies. I focus on writing
+                I&apos;m a full-stack development student with a passion for modern web technologies. I focus on writing
                 clean, efficient code and crafting thoughtful designs to deliver seamless and engaging user experiences.
               </p>
 
               <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-white">Background</h3>
               <p>
-                My journey into web development began with a curiosity about how digital experiences are built. I've
-                since developed a strong foundation in both frontend and backend technologies, with a particular
-                interest in React and TypeScript.
+                My journey into web development began with a curiosity about how digital experiences are built.
+                I&apos;ve since developed a strong foundation in both frontend and backend technologies, with a
+                particular interest in React and TypeScript.
               </p>
 
               <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h3>
               <p>
-                When I'm not coding, I love to play music with my band,{' '}
+                When I&apos;m not coding, I love to play music with my band,{' '}
                 <a
                   href="https://linktr.ee/pinkonred"
                   target="_blank"
@@ -48,7 +47,7 @@ const Page = () => {
                 >
                   Pink on Red
                 </a>{' '}
-                whether it's jamming with friends or performing live. Music has always been a creative outlet that
+                whether it&apos;s jamming with friends or performing live. Music has always been a creative outlet that
                 complements my technical work.
               </p>
 
