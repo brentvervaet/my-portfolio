@@ -1,7 +1,6 @@
-// src/components/SocialsLinks.tsx
 import React from 'react';
 import {Button} from "@/components/ui/button";
-import {Download} from "lucide-react"; // Import the Download icon
+import {Download} from "lucide-react";
 
 type SocialLink = {
     href: string;

@@ -1,4 +1,3 @@
-// src/components/ThemeProvider.tsx
 'use client';
 import {useEffect} from 'react';
 

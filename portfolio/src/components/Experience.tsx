@@ -20,22 +20,8 @@ interface ExperienceItem {
     };
 }
 
-const workExperience: ExperienceItem[] = [
-    {
-        id: 1,
-        title: "Student Software Developer",
-        organization: "HOGENT",
-        period: "2022 - Present",
-        description: "Software Development Internship",
-        responsibilities: [
-            "Still a student, but looking for internship opportunities."
-        ],
-        skills: ["React", "JS", 'Java', "Spring"],
-        logo: "/images/home/hogent.png",
-        website: "https://www.hogent.be/en/"
-    },
-];
 
+//EDUCATION
 const education: ExperienceItem[] = [
     {
         id: 1,
@@ -75,6 +61,23 @@ const education: ExperienceItem[] = [
     }
 ];
 
+//WORK
+const workExperience: ExperienceItem[] = [
+    {
+        id: 1,
+        title: "Student Software Developer",
+        organization: "HOGENT",
+        period: "2022 - Present",
+        description: "Software Development Internship",
+        responsibilities: [
+            "Still a student, but looking for internship opportunities."
+        ],
+        skills: ["React", "JS", 'Java', "Spring"],
+        logo: "/images/home/hogent.png",
+        website: "https://www.hogent.be/en/"
+    },
+];
+
 const Experience = () => {
     const [activeTab, setActiveTab] = useState("education");
 
@@ -94,6 +97,8 @@ const Experience = () => {
                     {/* Education and Work Tabs */}
                     <TabsList
                         className="h-9 items-center justify-center rounded-lg bg-transparant p-1 text-muted-foreground mb-2 grid w-full grid-cols-2">
+
+                        {/*education*/}
                         <TabsTrigger
                             value="education"
                             className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
@@ -102,6 +107,8 @@ const Experience = () => {
                                 Education
                             </span>
                         </TabsTrigger>
+
+                        {/*work*/}
                         <TabsTrigger
                             value="work"
                             className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
