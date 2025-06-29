@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import {motion} from 'motion/react';
 import {Card} from "@/components/ui/card";
 import {FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython} from "react-icons/fa";
 import {SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring} from "react-icons/si";
@@ -31,7 +30,6 @@ const defaultSkills: Skill[] = [
     {name: 'MongoDB', icon: <SiMongodb/>, url: 'https://www.mongodb.com/'},
 ];
 
-// Modified Skills.tsx
 const Skills: React.FC<SkillsProps> = ({skills = defaultSkills}) => {
     return (
         <div className="py-8">
@@ -42,26 +40,18 @@ const Skills: React.FC<SkillsProps> = ({skills = defaultSkills}) => {
                     <Card className="dark:bg-zinc-800">
                         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
                             {skills.map((skill) => (
-                                <motion.a
+                                <a
                                     key={skill.name}
                                     href={skill.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex justify-center items-center"
+                                    className="flex justify-center items-center hover:scale-110 hover:text-red-500 transition-all"
                                     title={`Learn more about ${skill.name}`}
-                                    initial={{opacity: 0, scale: 0.8}}
-                                    animate={{opacity: 1, scale: 1}}
-                                    transition={{duration: 0.3}}
-                                    whileHover={{
-                                        scale: 1.2,
-                                        color: '#ef4444', // Red-500 color
-                                        transition: {duration: 0.2}
-                                    }}
                                 >
                                     <div className="text-3xl md:text-4xl transition-colors">
                                         {skill.icon}
                                     </div>
-                                </motion.a>
+                                </a>
                             ))}
                         </div>
                     </Card>
