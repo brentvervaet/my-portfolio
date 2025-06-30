@@ -33,6 +33,8 @@ export default function ThemeToggle() {
         {isDark ? (
           <motion.span
             key="sun"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             initial={{ rotate: -90, opacity: 0.5, scale: 0.8 }}
             animate={{ rotate: 0, opacity: 1, scale: 1 }}
             exit={{ rotate: 90, opacity: 0.5, scale: 0.8 }}
@@ -44,6 +46,8 @@ export default function ThemeToggle() {
         ) : (
           <motion.span
             key="moon"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
             initial={{ rotate: 90, opacity: 0, scale: 0.8 }}
             animate={{ rotate: 0, opacity: 1, scale: 1 }}
             exit={{ rotate: -90, opacity: 0, scale: 0.8 }}

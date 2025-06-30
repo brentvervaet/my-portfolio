@@ -70,7 +70,7 @@ const workExperience: ExperienceItem[] = [
     description: 'Software Development Internship',
     responsibilities: ['Still a student, but looking for internship opportunities.'],
     skills: ['React', 'JS', 'Java', 'Spring'],
-    logo: '/images/home/hogent.png',
+    logo: '/images/home/experience/hogent.png',
     website: 'https://www.hogent.be/en/',
   },
 ];
@@ -168,13 +168,13 @@ const Experience = () => {
                           className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                           href={item.website}
                         >
-                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border">
+                          <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
                             <Image
                               className="bg-background aspect-square h-full w-full object-contain"
                               alt={item.organization}
                               src={item.logo ?? '/placeholder-logo.png'}
-                              width={10}
-                              height={10}
+                              width={1000}
+                              height={1000}
                             />
                           </span>
                         </a>
