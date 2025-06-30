@@ -90,7 +90,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
   };
 
   return (
-    <section id="projects" className="py-4">
+    <section id="projects" className="py-6">
       <div className="container mx-auto px-4">
         <div className="mx-auto w-full max-w-4xl">
           <div className="mb-6 flex items-center justify-between">

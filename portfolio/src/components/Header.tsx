@@ -81,7 +81,7 @@ export default function Header() {
           <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
             <motion.div whileTap={{ scale: 0.8 }}>
               <Link
-                href="/app#projects"
+                href="/#projects"
                 onClick={handleLinkClick}
                 className={'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}
               >

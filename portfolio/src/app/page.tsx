@@ -44,11 +44,32 @@ export default function Home() {
         </div>
       </section>
 
-      <Experience />
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <Experience />
+      </motion.section>
 
-      <Skills />
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <Skills />
+      </motion.section>
 
-      <Projects />
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <Projects />
+      </motion.section>
     </main>
   );
 }

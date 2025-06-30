@@ -31,7 +31,7 @@ const defaultSkills: Skill[] = [
 
 const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
   return (
-    <div className="py-4">
+    <div className="py-6">
       <div className="container mx-auto px-4">
         <div className="mx-auto w-full max-w-4xl">
           <h2 className="pb-4 font-mono text-2xl font-bold">Skills</h2>

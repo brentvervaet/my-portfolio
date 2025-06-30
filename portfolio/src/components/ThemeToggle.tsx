@@ -12,22 +12,20 @@ export default function ThemeToggle() {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) {
-    return (
-      <Button variant="ghost" size="icon" disabled aria-hidden="true" className="pointer-events-none opacity-1">
-        <Sun className="h-5 w-5" />
-      </Button>
-    );
-  }
+  if (!isMounted) return null;
+
   const isDark = theme === 'dark';
 
   return (
     <motion.button
-      whileHover={{ scale: 1.3 }}
-      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, x: 140 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-      className="relative overflow-hidden rounded-full"
+      className="size-icon relative overflow-hidden"
     >
       <AnimatePresence mode="wait" initial={false}>
         {isDark ? (
@@ -39,7 +37,7 @@ export default function ThemeToggle() {
             transition={{ duration: 0.3 }}
             className="flex"
           >
-            <Sun className="h-5 w-5" />
+            <Sun className="h-4 w-4" />
           </motion.span>
         ) : (
           <motion.span
@@ -50,7 +48,7 @@ export default function ThemeToggle() {
             transition={{ duration: 0.3 }}
             className="flex"
           >
-            <Moon className="h-5 w-5" />
+            <Moon className="h-4 w-4" />
           </motion.span>
         )}
       </AnimatePresence>

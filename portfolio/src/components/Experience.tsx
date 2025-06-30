@@ -83,7 +83,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="border-0 py-4">
+    <div className="border-0 py-6">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
         <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
