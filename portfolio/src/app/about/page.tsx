@@ -1,7 +1,5 @@
 'use client';
 import React from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import SocialLinks from '@/components/SocialsLinks';
 
 const Page = () => {
   return (
