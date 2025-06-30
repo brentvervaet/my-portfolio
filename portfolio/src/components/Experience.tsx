@@ -65,22 +65,6 @@ const Experience = () => {
     setActiveTab(value);
   };
 
-  const listVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, y: 0, transition: { type: 'tween' } },
-  };
-
-  // @ts-ignore
   return (
     <div className="border-0 py-6">
       <div className="container mx-auto px-4">
