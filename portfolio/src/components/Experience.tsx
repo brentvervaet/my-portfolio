@@ -77,15 +77,7 @@ const Experience = () => {
               value="education"
               className="ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow focus-visible:dark:shadow-sm"
             >
-              <motion.span
-                whileTap={{ scale: 0.9 }}
-                animate={{
-                  color: activeTab === 'education' ? '#fff' : '#a1a1aa',
-                  fontWeight: activeTab === 'education' ? 700 : 400,
-                }}
-              >
-                Education
-              </motion.span>
+              <span className={activeTab === 'education' ? 'font-bold' : ''}>Education</span>
             </TabsTrigger>
 
             {/*work*/}
@@ -93,146 +85,122 @@ const Experience = () => {
               value="work"
               className="ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow focus-visible:dark:shadow-sm"
             >
-              <motion.span
-                whileTap={{ scale: 0.9 }}
-                animate={{
-                  color: activeTab === 'work' ? '#fff' : '#a1a1aa',
-                  fontWeight: activeTab === 'work' ? 700 : 400,
-                }}
-              >
-                Work
-              </motion.span>
+              <span className={activeTab === 'work' ? 'font-bold' : ''}>Work</span>
             </TabsTrigger>
           </TabsList>
 
           <div className="relative">
-            <TabsContent value="education" asChild>
-              <motion.div
-                key="education"
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 100 }}
-                transition={{ duration: 0.7, ease: 'easeInOut' }}
-                className="mt-2"
-              >
-                <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
-                  <div className="p-0">
-                    <ul className="ml-10 border-l">
-                      {education.map(item => (
-                        <li key={item.id} className="relative ml-10 py-4">
-                          <a
-                            target="_blank"
-                            className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
-                            href={item.website}
-                          >
-                            <motion.span
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3"
+            <div>
+              <TabsContent value="education" asChild>
+                <div key="education" className="mt-2">
+                  <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
+                    <div className="p-0">
+                      <ul className="ml-10 border-l">
+                        {education.map(item => (
+                          <li key={item.id} className="relative ml-10 py-4">
+                            <a
+                              target="_blank"
+                              className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
+                              href={item.website}
                             >
-                              <Image
-                                className="bg-background aspect-square h-full w-full object-contain"
-                                alt={item.organization}
-                                src={item.logo ?? '/placeholder-logo.png'}
-                                width={1000}
-                                height={1000}
-                              />
-                            </motion.span>
-                          </a>
-                          <div className="flex flex-1 flex-col justify-start gap-1">
-                            <time className="text-muted-foreground text-xs">
-                              <span>{item.period.split(' - ')[0]}</span>
-                              <span> - </span>
-                              <span>{item.period.split(' - ')[1]}</span>
-                            </time>
-                            <h2 className="leading-none font-semibold">{item.organization}</h2>
-                            <p className="text-muted-foreground text-sm">{item.title}</p>
-                            <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
-                          </div>
-                          {item.skills && item.skills.length > 0 && (
-                            <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-                              {item.skills.map(skill => (
-                                <Badge
-                                  key={skill}
-                                  className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
-                                >
-                                  {skill}
-                                </Badge>
-                              ))}
+                              <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
+                                <Image
+                                  className="bg-background aspect-square h-full w-full object-contain"
+                                  alt={item.organization}
+                                  src={item.logo ?? '/placeholder-logo.png'}
+                                  width={1000}
+                                  height={1000}
+                                />
+                              </span>
+                            </a>
+                            <div className="flex flex-1 flex-col justify-start gap-1">
+                              <time className="text-muted-foreground text-xs">
+                                <span>{item.period.split(' - ')[0]}</span>
+                                <span> - </span>
+                                <span>{item.period.split(' - ')[1]}</span>
+                              </time>
+                              <h2 className="leading-none font-semibold">{item.organization}</h2>
+                              <p className="text-muted-foreground text-sm">{item.title}</p>
+                              <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
                             </div>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
+                            {item.skills && item.skills.length > 0 && (
+                              <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                                {item.skills.map(skill => (
+                                  <Badge
+                                    key={skill}
+                                    className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
+                                  >
+                                    {skill}
+                                  </Badge>
+                                ))}
+                              </div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            </TabsContent>
+              </TabsContent>
 
-            <TabsContent value="work" asChild>
-              <motion.div
-                key="work"
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.7, ease: 'easeInOut' }}
-                className="mt-2"
-              >
-                <div className="bg-card text-card-foreground rounded-xl border shadow-md dark:border-0 dark:bg-zinc-800">
-                  <div className="p-0">
-                    <ul className="ml-10 border-l">
-                      {workExperience.map(item => (
-                        <li key={item.id} className="relative ml-10 py-4">
-                          <a
-                            target="_blank"
-                            className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
-                            href={item.website}
-                          >
-                            <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
-                              <Image
-                                className="bg-background aspect-square h-full w-full object-contain"
-                                alt={item.organization}
-                                src={item.logo ?? '/placeholder-logo.png'}
-                                width={1000}
-                                height={1000}
-                              />
-                            </span>
-                          </a>
-                          <div className="flex flex-1 flex-col justify-start gap-1">
-                            <time className="text-muted-foreground text-xs">
-                              <span>{item.period.split(' - ')[0]}</span>
-                              <span> - </span>
-                              <span>{item.period.split(' - ')[1]}</span>
-                            </time>
-                            <h2 className="leading-none font-semibold">{item.organization}</h2>
-                            <p className="text-muted-foreground text-sm">{item.title}</p>
-                            <ul className="ml-4 list-outside list-disc">
-                              {item.responsibilities?.map((responsibility, idx) => (
-                                <li key={`${item.id}-resp-${idx}`} className="prose dark:prose-invert pr-8 text-sm">
-                                  {responsibility}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          {item.skills && item.skills.length > 0 && (
-                            <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-                              {item.skills.map(skill => (
-                                <Badge
-                                  key={skill}
-                                  className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
-                                >
-                                  {skill}
-                                </Badge>
-                              ))}
+              <TabsContent value="work" asChild>
+                <div key="work" className="mt-2">
+                  <div className="bg-card text-card-foreground rounded-xl border shadow-md dark:border-0 dark:bg-zinc-800">
+                    <div className="p-0">
+                      <ul className="ml-10 border-l">
+                        {workExperience.map(item => (
+                          <li key={item.id} className="relative ml-10 py-4">
+                            <a
+                              target="_blank"
+                              className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
+                              href={item.website}
+                            >
+                              <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
+                                <Image
+                                  className="bg-background aspect-square h-full w-full object-contain"
+                                  alt={item.organization}
+                                  src={item.logo ?? '/placeholder-logo.png'}
+                                  width={1000}
+                                  height={1000}
+                                />
+                              </span>
+                            </a>
+                            <div className="flex flex-1 flex-col justify-start gap-1">
+                              <time className="text-muted-foreground text-xs">
+                                <span>{item.period.split(' - ')[0]}</span>
+                                <span> - </span>
+                                <span>{item.period.split(' - ')[1]}</span>
+                              </time>
+                              <h2 className="leading-none font-semibold">{item.organization}</h2>
+                              <p className="text-muted-foreground text-sm">{item.title}</p>
+                              <ul className="ml-4 list-outside list-disc">
+                                {item.responsibilities?.map((responsibility, idx) => (
+                                  <li key={`${item.id}-resp-${idx}`} className="prose dark:prose-invert pr-8 text-sm">
+                                    {responsibility}
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
+                            {item.skills && item.skills.length > 0 && (
+                              <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                                {item.skills.map(skill => (
+                                  <Badge
+                                    key={skill}
+                                    className="bg-primary text-primary-foreground hover:bg-primary/80 items-center rounded-md border border-transparent px-2.5 py-0.5 text-xs font-semibold shadow transition-colors"
+                                  >
+                                    {skill}
+                                  </Badge>
+                                ))}
+                              </div>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            </TabsContent>
+              </TabsContent>
+            </div>
           </div>
         </Tabs>
       </div>

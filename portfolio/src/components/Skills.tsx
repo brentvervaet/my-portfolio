@@ -42,6 +42,7 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
               {skills.map(skill => (
                 <motion.a
                   whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   key={skill.name}
                   href={skill.url}
                   target="_blank"
