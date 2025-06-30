@@ -93,7 +93,7 @@ export default function Header() {
               <Link
                 href="/about"
                 onClick={handleLinkClick}
-                className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
+                className={'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}
               >
                 About
               </Link>
@@ -130,10 +130,9 @@ export default function Header() {
           whileTap={{ scale: 0.9 }}
         >
           <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 40 }}>
-            {' '}
             <Link
               href="/about"
-              className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
+              className={'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}
             >
               About
             </Link>
