@@ -106,34 +106,26 @@ export default function Header() {
 
       {/* Desktop navigation */}
       <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          initial={{ opacity: 0, x: 300 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link
-            href="#projects"
-            className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
-          >
-            Projects
-          </Link>
+        <motion.div initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <Link
+              href="#projects"
+              className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
+            >
+              Projects
+            </Link>
+          </motion.div>
         </motion.div>
 
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          initial={{ opacity: 0, x: 210 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link
-            href="/about"
-            className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
-          >
-            About
-          </Link>
+        <motion.div initial={{ opacity: 0, x: 210 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <Link
+              href="/about"
+              className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
+            >
+              About
+            </Link>
+          </motion.div>
         </motion.div>
 
         <ThemeToggle />
