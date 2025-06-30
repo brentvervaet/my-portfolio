@@ -13,7 +13,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <HeroSection wave={wave} setWave={setWave} />
@@ -23,7 +23,7 @@ export default function Home() {
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
       >
         <Experience />
       </motion.section>
@@ -32,7 +32,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.6 }}
       >
         <Skills />
       </motion.section>
@@ -40,8 +40,8 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.6 }}
       >
         <Projects />
       </motion.section>

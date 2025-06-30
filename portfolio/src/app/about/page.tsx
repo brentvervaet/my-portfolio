@@ -11,6 +11,7 @@ const Page = () => {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-mono text-3xl font-bold">About Me</h1>
@@ -22,6 +23,7 @@ const Page = () => {
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-mono text-xl font-bold">Background</h3>
@@ -35,6 +37,7 @@ const Page = () => {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h3>
@@ -55,6 +58,7 @@ const Page = () => {
             <motion.p
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
               className="dark:text-zinc-400"
             >
@@ -65,7 +69,9 @@ const Page = () => {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
+              className="pb-4"
             >
               <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-white">My Approach</h3>
               <p className="dark:text-zinc-400">
@@ -76,8 +82,9 @@ const Page = () => {
             <motion.p
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="p-4 text-center text-sm font-light dark:text-zinc-400"
+              className="pt-4 text-center text-sm font-light dark:text-zinc-400"
             >
               Don&apos;t hesitate to reach out if you want to collaborate on a project or discuss ideas. I&apos;m always
               open to new opportunities and connections!
