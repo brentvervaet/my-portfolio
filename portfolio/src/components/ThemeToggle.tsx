@@ -22,7 +22,7 @@ export default function ThemeToggle() {
       whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, x: 140 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.2 }}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       className="size-icon relative overflow-hidden"

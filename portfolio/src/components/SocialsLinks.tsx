@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 type SocialLink = {
   href: string;
@@ -55,24 +57,30 @@ export default function SocialLinks({ className = '', showResumeButton = true }:
   return (
     <div className={`flex items-center space-x-3 text-zinc-800 dark:text-zinc-200 ${className}`}>
       {socialLinks.map(link => (
-        <a
+        <motion.a
           key={link.ariaLabel}
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.ariaLabel}
           className={`transition-colors ${link.hoverColor}`}
+          whileTap={{ scale: 0.9 }}
         >
           {link.icon}
-        </a>
+        </motion.a>
       ))}
-
       {showResumeButton && (
         <Button size="sm" variant="outline" className="ml-2 font-mono text-xs" asChild>
-          <a href="/resume.pdf" download>
+          <motion.a
+            whileTap={{ rotate: -2, scale: 0.5 }}
+            whileHover={{ rotate: 2, scale: 1.1 }}
+            transition={{ duration: 0.1 }}
+            href="/resume.pdf"
+            download
+          >
             <Download className="mr-2 h-3 w-3" />
             Resume
-          </a>
+          </motion.a>
         </Button>
       )}
     </div>

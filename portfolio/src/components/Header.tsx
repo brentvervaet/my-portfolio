@@ -47,6 +47,7 @@ export default function Header() {
             initial={{ opacity: 0, x: -300 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
+            whileTap={{ scale: 0.9 }}
           >
             <span className="hidden sm:inline">Brent Vervaet</span>
             <span className="inline sm:hidden">BV</span>
@@ -106,19 +107,30 @@ export default function Header() {
 
       {/* Desktop navigation */}
       <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
-        <motion.div initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <motion.div whileHover={{ y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+        <motion.div
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 40 }}>
             <Link
               href="#projects"
-              className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
+              className={'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}
             >
               Projects
             </Link>
           </motion.div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 210 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <motion.div whileHover={{ y: -5 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+        <motion.div
+          initial={{ opacity: 0, x: 210 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 40 }}>
+            {' '}
             <Link
               href="/about"
               className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
@@ -127,7 +139,6 @@ export default function Header() {
             </Link>
           </motion.div>
         </motion.div>
-
         <ThemeToggle />
       </div>
     </nav>
