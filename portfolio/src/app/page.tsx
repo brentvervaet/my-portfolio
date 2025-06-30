@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-3xl">
       <motion.div
-        layout
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -21,7 +20,6 @@ export default function Home() {
       </motion.div>
 
       <motion.section
-        layout
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -31,7 +29,6 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        layout
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -41,7 +38,6 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        layout
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
