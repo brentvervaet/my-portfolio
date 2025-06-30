@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 interface ExperienceItem {
   id: number;
