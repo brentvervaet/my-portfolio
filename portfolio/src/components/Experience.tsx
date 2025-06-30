@@ -33,24 +33,6 @@ const education: ExperienceItem[] = [
     website: 'https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/',
   },
   {
-    id: 2,
-    title: 'Interior design',
-    organization: 'LUCA School of Arts',
-    period: '2020 - 2021',
-    description: 'Did one and a half years of interior design before switching to software development.',
-    logo: '/images/home/experience/luca.png',
-    website: 'https://www.luca-arts.be/nl/interieurvormgeving-campus-brussel-sint-lukas-bachelor',
-  },
-  {
-    id: 3,
-    title: 'Architecture',
-    organization: 'KU Leuven',
-    period: '2018 - 2020',
-    description: 'Did one and a half years of architecture before switching to interior design.',
-    logo: '/images/home/experience/ku-leuven.png',
-    website: 'https://arch.kuleuven.be',
-  },
-  {
     id: 4,
     title: 'ASO modern languages and sciences',
     organization: 'Sint-Lodewijkscollege',
@@ -88,15 +70,17 @@ const Experience = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.4,
       },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, y: 0, transition: { type: 'linear' } },
+    visible: { opacity: 1, y: 0, transition: { type: 'tween' } },
   };
+
+  // @ts-ignore
   return (
     <div className="border-0 py-6">
       <div className="container mx-auto px-4">
@@ -149,17 +133,19 @@ const Experience = () => {
               >
                 <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
                   <div className="p-0">
-                    <motion.ul className="ml-10 border-l" variants={listVariants} initial="hidden" animate="visible">
-                      {' '}
+                    <ul className="ml-10 border-l">
                       {education.map(item => (
-                        <motion.li key={item.id} className="relative ml-10 py-4" variants={itemVariants}>
-                          {' '}
+                        <li key={item.id} className="relative ml-10 py-4">
                           <a
                             target="_blank"
                             className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                             href={item.website}
                           >
-                            <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3">
+                            <motion.span
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.9 }}
+                              className="relative flex size-12 shrink-0 overflow-hidden rounded-full border-3"
+                            >
                               <Image
                                 className="bg-background aspect-square h-full w-full object-contain"
                                 alt={item.organization}
@@ -167,7 +153,7 @@ const Experience = () => {
                                 width={1000}
                                 height={1000}
                               />
-                            </span>
+                            </motion.span>
                           </a>
                           <div className="flex flex-1 flex-col justify-start gap-1">
                             <time className="text-muted-foreground text-xs">
@@ -191,9 +177,9 @@ const Experience = () => {
                               ))}
                             </div>
                           )}
-                        </motion.li>
+                        </li>
                       ))}
-                    </motion.ul>
+                    </ul>
                   </div>
                 </div>
               </motion.div>
@@ -210,11 +196,9 @@ const Experience = () => {
               >
                 <div className="bg-card text-card-foreground rounded-xl border shadow-md dark:border-0 dark:bg-zinc-800">
                   <div className="p-0">
-                    <motion.ul className="ml-10 border-l" variants={listVariants} initial="hidden" animate="visible">
-                      {' '}
+                    <ul className="ml-10 border-l">
                       {workExperience.map(item => (
-                        <motion.li key={item.id} className="relative ml-10 py-4" variants={itemVariants}>
-                          {' '}
+                        <li key={item.id} className="relative ml-10 py-4">
                           <a
                             target="_blank"
                             className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
@@ -258,9 +242,9 @@ const Experience = () => {
                               ))}
                             </div>
                           )}
-                        </motion.li>
+                        </li>
                       ))}
-                    </motion.ul>
+                    </ul>
                   </div>
                 </div>
               </motion.div>

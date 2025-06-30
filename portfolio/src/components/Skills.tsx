@@ -3,6 +3,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 interface Skill {
   name: string;
@@ -39,16 +40,17 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
           <Card className="dark:bg-zinc-800">
             <div className="grid grid-cols-3 gap-8 sm:grid-cols-4 md:grid-cols-6">
               {skills.map(skill => (
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
                   key={skill.name}
                   href={skill.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center transition-all hover:scale-110 hover:text-red-500"
+                  className="flex items-center justify-center"
                   title={`Learn more about ${skill.name}`}
                 >
                   <div className="text-3xl transition-colors md:text-4xl">{skill.icon}</div>
-                </a>
+                </motion.a>
               ))}
             </div>
           </Card>
