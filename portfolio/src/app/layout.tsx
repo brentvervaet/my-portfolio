@@ -5,8 +5,14 @@ import { ThemeProvider } from 'next-themes';
 import React from 'react';
 import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Brent Vervaet | Portfolio',
+  description: 'Personal portfolio showcasing my projects and skills',
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

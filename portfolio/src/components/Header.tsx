@@ -56,15 +56,21 @@ export default function Header() {
 
       {/* Mobile menu with Sheet component */}
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <div className="flex w-6 flex-col gap-1">
-              <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-              <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-              <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-            </div>
-          </Button>
-        </SheetTrigger>
+        <motion.div
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <div className="flex w-6 flex-col gap-1">
+                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
+                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
+                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
+              </div>
+            </Button>
+          </SheetTrigger>
+        </motion.div>
         <SheetContent side="right">
           <div className="absolute right-4 bottom-4">
             <ThemeToggle />
