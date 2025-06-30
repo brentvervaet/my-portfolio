@@ -44,7 +44,7 @@ export default function Header() {
       <motion.div whileTap={{ scale: 0.9 }}>
         <Link href="/" className="font-mono text-2xl font-bold">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -300 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           >
@@ -99,13 +99,14 @@ export default function Header() {
       </Sheet>
 
       {/* Desktop navigation */}
-      <motion.div
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="hidden items-center space-x-6 font-mono text-sm md:flex"
-      >
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Link
             href="#projects"
             className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
@@ -114,7 +115,13 @@ export default function Header() {
           </Link>
         </motion.div>
 
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          initial={{ opacity: 0, x: 210 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <Link
             href="/about"
             className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}`}
@@ -124,7 +131,7 @@ export default function Header() {
         </motion.div>
 
         <ThemeToggle />
-      </motion.div>
+      </div>
     </nav>
   );
 }

@@ -5,23 +5,10 @@ import SocialLinks from '@/components/SocialsLinks';
 
 const Page = () => {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12">
+    <main className="mx-auto max-w-3xl px-4 py-4">
       <section id="about" className="py-8">
         <div className="container mx-auto">
           <div className="mx-auto w-full max-w-4xl">
-            <div className="mb-8 flex flex-col items-center gap-8 md:flex-row">
-              <Avatar className="h-32 w-32 border-2">
-                <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet" />
-                <AvatarFallback>BV</AvatarFallback>
-              </Avatar>
-
-              <div className="flex flex-col">
-                <h2 className="mb-2 font-mono text-2xl font-bold">Brent Vervaet</h2>
-                <p className="mb-4 dark:text-zinc-400">Full-Stack Developer</p>
-                <SocialLinks className="mt-2" />
-              </div>
-            </div>
-
             <h1 className="mb-8 font-mono text-3xl font-bold">About Me</h1>
             <div className="space-y-6 dark:text-zinc-400">
               <p className="text-lg">
@@ -33,7 +20,7 @@ const Page = () => {
               <p>
                 My journey into web development began with a curiosity about how digital experiences are built.
                 I&apos;ve since developed a strong foundation in both frontend and backend technologies, with a
-                particular interest in React and TypeScript.
+                particular interest in React, JS, Java & Spring.
               </p>
 
               <h3 className="font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h3>
