@@ -84,7 +84,7 @@ export default function Header() {
               <Link
                 href="/#projects"
                 onClick={handleLinkClick}
-                className={'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}
+                className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
               >
                 Projects
               </Link>
@@ -93,7 +93,7 @@ export default function Header() {
               <Link
                 href="/about"
                 onClick={handleLinkClick}
-                className={'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}
+                className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
               >
                 About
               </Link>
