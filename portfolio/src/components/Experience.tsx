@@ -88,7 +88,8 @@ const Experience = () => {
               <span className={activeTab === 'work' ? 'font-bold' : ''}>Work</span>
             </TabsTrigger>
           </TabsList>
-          <motion.div className="relative" layout transition={{ duration: 0.5, type: 'tween' }}>
+          <div className="relative">
+            {/*<motion.div className="relative" layout transition={{ duration: 0.5, type: 'tween' }}>*/}
             <TabsContent value="education" asChild>
               <div key="education" className="mt-2">
                 <div className="bg-card text-card-foreground rounded-xl shadow-md dark:bg-zinc-800">
@@ -140,7 +141,6 @@ const Experience = () => {
                 </div>
               </div>
             </TabsContent>
-
             <TabsContent value="work" asChild>
               <div key="work" className="mt-2">
                 <div className="bg-card text-card-foreground rounded-xl border shadow-md dark:border-0 dark:bg-zinc-800">
@@ -198,7 +198,8 @@ const Experience = () => {
                 </div>
               </div>
             </TabsContent>
-          </motion.div>
+          </div>
+          {/*</motion.div>*/}
         </Tabs>
       </div>
     </div>
