@@ -1,51 +1,56 @@
-// src/components/ThemeToggle.tsx
-'use client';
-import React, {useEffect, useState} from 'react';
-import {Button} from "@/components/ui/button";
-import {Moon, Sun} from "lucide-react";
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const { theme, setTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => {
-        // Check for saved theme preference or use system preference
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            setTheme('dark');
-            document.documentElement.classList.add('dark');
-        } else {
-            setTheme('light');
-            document.documentElement.classList.remove('dark');
-        }
-    }, []);
+  if (!isMounted) return null;
 
-    const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            setTheme('light');
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    };
+  const isDark = theme === 'dark';
 
-    return (
-        <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            className="rounded-full"
-        >
-            {theme === 'light' ? (
-                <Moon className="h-5 w-5"/>
-            ) : (
-                <Sun className="h-5 w-5"/>
-            )}
-        </Button>
-    );
+  return (
+    <motion.button
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, x: 140 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      className="size-icon relative overflow-hidden"
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        {isDark ? (
+          <motion.span
+            key="sun"
+            initial={{ rotate: -90, opacity: 0.5, scale: 0.8 }}
+            animate={{ rotate: 0, opacity: 1, scale: 1 }}
+            exit={{ rotate: 90, opacity: 0.5, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="flex"
+          >
+            <Sun className="h-4 w-4" />
+          </motion.span>
+        ) : (
+          <motion.span
+            key="moon"
+            initial={{ rotate: 90, opacity: 0, scale: 0.8 }}
+            animate={{ rotate: 0, opacity: 1, scale: 1 }}
+            exit={{ rotate: -90, opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="flex"
+          >
+            <Moon className="h-4 w-4" />
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
+  );
 }

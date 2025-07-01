@@ -1,190 +1,220 @@
-import React from 'react';
-import {Tabs, TabsList, TabsTrigger, TabsContent} from '@/components/ui/tabs';
-import {Badge} from '@/components/ui/badge';
+'use client';
+import React, { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface ExperienceItem {
-    id: number;
-    title: string;
-    organization: string;
-    period: string;
-    description: string;
-    responsibilities?: string[];
-    skills?: string[];
-    logo?: string;
-    website?: string;
-    projectLink?: {
-        url: string;
-        name: string;
-    };
+  id: number;
+  title: string;
+  organization: string;
+  period: string;
+  description: string;
+  responsibilities?: string[];
+  skills?: string[];
+  logo?: string;
+  website?: string;
+  projectLink?: {
+    url: string;
+    name: string;
+  };
 }
 
-const workExperience: ExperienceItem[] = [
-    {
-        id: 1,
-        title: "Student Software Developer",
-        organization: "HOGENT University",
-        period: "2022 - Present",
-        description: "Software Development Internship",
-        responsibilities: [
-            "Still a student, but looking for internship opportunities."
-        ],
-        skills: ["React", "JavaScript", 'Java', "Spring"],
-        logo: "/images/home/hogent.png",
-        website: "https://www.hogent.be/en/"
-    }
+//EDUCATION
+const education: ExperienceItem[] = [
+  // Your existing education data
+  {
+    id: 1,
+    title: 'Bachelor of Science in Applied Informatics',
+    organization: 'HOGENT University',
+    period: '2022 - Present',
+    description: 'Focus on web and mobile enterprise development.',
+    logo: '/images/home/experience/hogent.png',
+    website: 'https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/',
+  },
+  {
+    id: 4,
+    title: 'ASO modern languages and sciences',
+    organization: 'Sint-Lodewijkscollege',
+    period: '2012 - 2018',
+    description: 'Diploma in modern languages and sciences with four hours of mathematics per week.',
+    logo: '/images/home/experience/stlod.png',
+    website: 'https://www.sintlodewijkscollege.be/',
+  },
 ];
 
-const education: ExperienceItem[] = [
-    {
-        id: 1,
-        title: "Bachelor of Science in Applied Informatics",
-        organization: "HOGENT University",
-        period: "2022 - Present",
-        description: "Focus on web and mobile development.",
-        skills: [],
-        logo: "/images/home/hogent.png",
-        website: "https://www.hogent.be/en/"
-    }
+//WORK
+const workExperience: ExperienceItem[] = [
+  // Your existing work experience data
+  {
+    id: 1,
+    title: 'Student Software Developer',
+    organization: 'HOGENT',
+    period: '2022 - Present',
+    description: 'Software Development Internship',
+    responsibilities: ['Still a student, but looking for internship opportunities.'],
+    skills: ['React', 'JS', 'Java', 'Spring'],
+    logo: '/images/home/experience/hogent.png',
+    website: 'https://www.hogent.be/en/',
+  },
 ];
 
 const Experience = () => {
-    return (
-        <div className="py-4 border-0">
-            <div className="container mx-auto px-4">
-                <h2 className="text-2xl font-mono font-bold mb-8">Experience</h2>
-                <Tabs defaultValue="education" className="w-full max-w-4xl mx-auto">
-                    {/* Education and Work Tabs */}
-                    <TabsList
-                        className="h-9 items-center justify-center rounded-lg bg-transparant p-1  text-muted-foreground mb-2 grid w-full grid-cols-2">
-                        <TabsTrigger
-                            value="education"
-                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                        >
-                            Education
-                        </TabsTrigger>
-                        <TabsTrigger
-                            value="work"
-                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:dark:shadow-sm disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                        >
-                            Work
-                        </TabsTrigger>
-                    </TabsList>
+  const [activeTab, setActiveTab] = useState('education');
 
-                    <TabsContent value="education" className="mt-2">
-                        <div className="rounded-xl bg-card text-card-foreground shadow-md dark:bg-zinc-800">
-                            <div className="p-0">
-                                <ul className="ml-10 border-l">
-                                    {education.map(item => (
-                                        <li key={item.id} className="relative ml-10 py-4">
-                                            <a
-                                                target="_blank"
-                                                className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
-                                                href={item.website}
-                                            >
-                                                        <span
-                                                            className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
-                                                            <Image
-                                                                className="aspect-square h-full w-full bg-background object-contain"
-                                                                alt={item.organization}
-                                                                src={item.logo ?? "/placeholder-logo.png"}
-                                                                width={10}
-                                                                height={10}
-                                                            />
-                                                        </span>
-                                            </a>
-                                            <div className="flex flex-1 flex-col justify-start gap-1">
-                                                <time className="text-xs text-muted-foreground">
-                                                    <span>{item.period.split(" - ")[0]}</span>
-                                                    <span> - </span>
-                                                    <span>{item.period.split(" - ")[1]}</span>
-                                                </time>
-                                                <h2 className="font-semibold leading-none">{item.organization}</h2>
-                                                <p className="text-sm text-muted-foreground">{item.title}</p>
-                                                <p className="prose pr-8 text-sm dark:prose-invert">{item.description}</p>
-                                            </div>
-                                            {item.skills && item.skills.length > 0 && (
-                                                <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-                                                    {item.skills.map(skill => (
-                                                        <Badge
-                                                            key={skill}
-                                                            className="items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
-                                                        >
-                                                            {skill}
-                                                        </Badge>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+  };
+
+  return (
+    <div className="relative px-4 py-6">
+      {/* Decorative blurred gradient orbs in background */}
+      <motion.div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></motion.div>
+      <motion.div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-2xl"></motion.div>
+
+      <div className="relative container mx-auto">
+        <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
+        <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
+          {/* Glass-style TabsList */}
+          <TabsList className="mb-2 grid h-12 w-full grid-cols-2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-1 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/10">
+            {/*education*/}
+            <TabsTrigger
+              value="education"
+              className="ring-offset-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-xl px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white/20 data-[state=active]:shadow data-[state=active]:backdrop-blur-lg dark:data-[state=active]:bg-white/10"
+            >
+              <span className={activeTab === 'education' ? 'font-bold' : ''}>Education</span>
+            </TabsTrigger>
+
+            {/*work*/}
+            <TabsTrigger
+              value="work"
+              className="ring-offset-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-xl px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white/20 data-[state=active]:shadow data-[state=active]:backdrop-blur-lg dark:data-[state=active]:bg-white/10"
+            >
+              <span className={activeTab === 'work' ? 'font-bold' : ''}>Work</span>
+            </TabsTrigger>
+          </TabsList>
+
+          <div className="relative">
+            <TabsContent value="education" asChild>
+              <div key="education" className="mt-2">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                  <div className="p-0">
+                    <ul className="ml-10 border-l border-white/20 dark:border-white/10">
+                      {education.map(item => (
+                        <li key={item.id} className="relative ml-10 py-4 transition-all">
+                          <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            target="_blank"
+                            className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
+                            href={item.website}
+                          >
+                            <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border border-white/30 shadow-sm transition-all hover:shadow-md">
+                              <Image
+                                className="bg-background aspect-square h-full w-full object-contain"
+                                alt={item.organization}
+                                src={item.logo ?? '/placeholder-logo.png'}
+                                width={1000}
+                                height={1000}
+                              />
+                            </span>
+                          </motion.a>
+                          <div className="flex flex-1 flex-col justify-start gap-1">
+                            <time className="text-muted-foreground text-xs">
+                              <span>{item.period.split(' - ')[0]}</span>
+                              <span> - </span>
+                              <span>{item.period.split(' - ')[1]}</span>
+                            </time>
+                            <h2 className="leading-none font-semibold">{item.organization}</h2>
+                            <p className="text-muted-foreground text-sm">{item.title}</p>
+                            <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
+                          </div>
+
+                          {item.skills && item.skills.length > 0 && (
+                            <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                              {item.skills.map(skill => (
+                                <Badge
+                                  key={skill}
+                                  className="bg-primary/80 text-primary-foreground hover:bg-primary/70 items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
+                                >
+                                  {skill}
+                                </Badge>
+                              ))}
                             </div>
-                        </div>
-                    </TabsContent>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
 
-                    {/*Work*/}
-                    <TabsContent value="work" className="mt-2 ">
-                        <div className="rounded-xl border dark:border-0 bg-card text-card-foreground shadow-md dark:bg-zinc-800">
-                            <div className="p-0">
-                                <ul className="ml-10 border-l">
-                                    {workExperience.map(item => (
-                                        <li key={item.id} className="relative ml-10 py-4">
-                                            <a
-                                                target="_blank"
-                                                className="absolute -left-16 top-4 flex items-center justify-center rounded-full"
-                                                href={item.website}
-                                            >
-                                                        <span
-                                                            className="relative flex shrink-0 overflow-hidden rounded-full size-12 border">
-                                                                 <Image
-                                                                     className="aspect-square h-full w-full bg-background object-contain"
-                                                                     alt={item.organization}
-                                                                     src={item.logo ?? "/placeholder-logo.png"}
-                                                                     width={10}
-                                                                     height={10}
-                                                                 />
-                                                        </span>
-                                            </a>
-                                            <div className="flex flex-1 flex-col justify-start gap-1">
-                                                <time className="text-xs text-muted-foreground">
-                                                    <span>{item.period.split(" - ")[0]}</span>
-                                                    <span> - </span>
-                                                    <span>{item.period.split(" - ")[1]}</span>
-                                                </time>
-                                                <h2 className="font-semibold leading-none">{item.organization}</h2>
-                                                <p className="text-sm text-muted-foreground">{item.title}</p>
-                                                <ul className="ml-4 list-outside list-disc">
-                                                    {item.responsibilities?.map((responsibility, index) => (
-                                                        <li key={index}
-                                                            className="prose pr-8 text-sm dark:prose-invert">
-                                                            {responsibility}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                            {item.skills && item.skills.length > 0 && (
-                                                <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
-                                                    {item.skills.map(skill => (
-                                                        <Badge
-                                                            key={skill}
-                                                            className="items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80"
-                                                        >
-                                                            {skill}
-                                                        </Badge>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
+            <TabsContent value="work" asChild>
+              <div key="work" className="mt-2">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                  <div className="p-0">
+                    <ul className="ml-10 border-l border-white/20 dark:border-white/10">
+                      {workExperience.map(item => (
+                        <li key={item.id} className="relative ml-10 py-4 transition-all">
+                          <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            target="_blank"
+                            className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
+                            href={item.website}
+                          >
+                            <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border border-white/30 shadow-sm transition-all hover:shadow-md">
+                              <Image
+                                className="bg-background aspect-square h-full w-full object-contain"
+                                alt={item.organization}
+                                src={item.logo ?? '/placeholder-logo.png'}
+                                width={1000}
+                                height={1000}
+                              />
+                            </span>
+                          </motion.a>
+                          <div className="flex flex-1 flex-col justify-start gap-1">
+                            <time className="text-muted-foreground text-xs">
+                              <span>{item.period.split(' - ')[0]}</span>
+                              <span> - </span>
+                              <span>{item.period.split(' - ')[1]}</span>
+                            </time>
+                            <h2 className="leading-none font-semibold">{item.organization}</h2>
+                            <p className="text-muted-foreground text-sm">{item.title}</p>
+                            <ul className="ml-4 list-outside list-disc">
+                              {item.responsibilities?.map((responsibility, idx) => (
+                                <li key={`${item.id}-resp-${idx}`} className="prose dark:prose-invert pr-8 text-sm">
+                                  {responsibility}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          {item.skills && item.skills.length > 0 && (
+                            <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                              {item.skills.map(skill => (
+                                <Badge
+                                  key={skill}
+                                  className="bg-primary/80 text-primary-foreground hover:bg-primary/70 items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
+                                >
+                                  {skill}
+                                </Badge>
+                              ))}
                             </div>
-                        </div>
-                    </TabsContent>
-
-                </Tabs>
-            </div>
-        </div>
-    );
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </div>
+  );
 };
 
 export default Experience;

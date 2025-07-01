@@ -1,46 +1,50 @@
-// src/app/page.tsx
-import Header from '@/components/Header';
-import SocialLinks from "@/components/SocialsLinks";
-import Skills from "@/components/Skills";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import React from "react";
-import Experience from "@/components/Experience";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
+'use client';
+import React, { useState } from 'react';
+import Experience from '@/components/Experience';
+import Projects from '@/components/projects/Projects';
+import Skills from '@/components/Skills';
+import { motion } from 'framer-motion';
+import HeroSection from '@/components/HeroSection';
 
 export default function Home() {
-    return (
-        <main className="max-w-3xl mx-auto px-4 py-12">
-            <Header/>
-            {/* Hero Section */}
-            <section className="py-16 space-y-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                    <Avatar className="w-24 h-24 border-2">
-                        <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet"/>
-                        <AvatarFallback>BV</AvatarFallback>
-                    </Avatar>
-                    <div className="flex flex-col items-center md:items-start">
-                        <h1 className="text-3xl font-bold font-mono">Hi, I&apos;m Brent 👋</h1>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                            A full-stack developer focused on creating beautiful and functional web and mobile
-                            experiences.
-                        </p>
-                        <SocialLinks className="mt-2"/>
-                    </div>
-                </div>
-            </section>
+  const [wave, setWave] = useState(false);
+  return (
+    <main className="mx-auto max-w-3xl">
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <HeroSection wave={wave} setWave={setWave} />
+      </motion.div>
 
-            {/* Experience Section */}
-            <Experience/>
+      <motion.section
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <Experience />
+      </motion.section>
 
-            {/* Skills Section */}
-            <Skills/>
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Skills />
+      </motion.section>
 
-            {/* Projects Section */}
-            <Projects/>
-
-            {/* About Section */}
-            <About/>
-        </main>
-    );
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Projects />
+      </motion.section>
+    </main>
+  );
 }

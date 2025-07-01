@@ -1,105 +1,95 @@
-// src/components/Header.tsx
 'use client';
-import {useState, useEffect} from 'react';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Link from 'next/link';
-import SocialLinks from "@/components/SocialsLinks";
-import ThemeToggle from "@/components/ThemeToggle";
-import {Button} from "@/components/ui/button";
-import {Sheet, SheetContent, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
+import SocialLinks from '@/components/SocialsLinks';
+import { useState } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
+import { motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
 
 export default function Header() {
-    const [activeSection, setActiveSection] = useState('');
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ['projects', 'about', 'skills'];
-            const scrollPosition = window.scrollY + 100;
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element && scrollPosition >= element.offsetTop &&
-                    scrollPosition < element.offsetTop + element.offsetHeight) {
-                    setActiveSection(section);
-                    return;
-                }
-            }
+  return (
+    <nav className="relative z-100 flex items-center justify-between px-4 pt-6">
+      <motion.div whileTap={{ scale: 0.9 }}>
+        <Link href="/" className="font-mono text-2xl font-bold">
+          <motion.div
+            initial={{ opacity: 0, x: -300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <span className="hidden sm:inline">Brent Vervaet</span>
+            <span className="inline sm:hidden">BV</span>
+          </motion.div>
+        </Link>
+      </motion.div>
 
-            setActiveSection('');
-        };
+      {/* Mobile menu with Sheet component */}
+      <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+        {!isMenuOpen && (
+          <SheetTrigger asChild>
+            <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9, opacity: 0 }}>
+              <Button variant={'link'} size="icon" className="md:hidden" asChild>
+                <Menu className="size-lg h-6 w-6" />
+              </Button>
+            </motion.button>
+          </SheetTrigger>
+        )}
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        <SheetContent
+          side="right"
+          className="border-l border-white/20 bg-white/10 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-black/20"
+        >
+          <div className="absolute right-4 bottom-4">
+            <ThemeToggle />
+          </div>
 
-    const handleLinkClick = () => {
-        setIsMenuOpen(false);
-    };
+          <SheetTitle />
 
-    return (
-        <nav className="relative flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold font-mono">
-                <span className="sm:inline hidden">Brent Vervaet</span>
-                <span className="sm:hidden inline">BV</span>
+          <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
+            <motion.div whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}>
+              <Link href="/#projects" onClick={handleLinkClick} className="px-4 py-2">
+                Projects
+              </Link>
+            </motion.div>
+            <motion.div whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}>
+              <Link href="/about" onClick={handleLinkClick} className="px-4 py-2">
+                About
+              </Link>
+            </motion.div>
+
+            {/* Social links */}
+            <SocialLinks showResumeButton={false} />
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      {/* Desktop navigation */}
+      <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
+        <motion.div initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Link href="#projects" className="text-zinc-600 dark:text-zinc-400">
+              Projects
             </Link>
+          </motion.div>
+        </motion.div>
 
-            {/* Mobile menu with Sheet component */}
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-                <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="md:hidden">
-                        <div className="w-6 flex flex-col gap-1">
-                            <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-                            <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-                            <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-                        </div>
-                    </Button>
-                </SheetTrigger>
-                <SheetContent side="right">
-
-                    <div className="absolute bottom-4 right-4">
-                        <ThemeToggle/>
-                    </div>
-
-                    <SheetTitle/>
-
-                    <div className="flex flex-col items-center space-y-8 text-lg font-mono mt-12">
-                        <Link
-                            href="#projects"
-                            onClick={handleLinkClick}
-                            className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-500'}`}
-                        >
-                            Projects
-                        </Link>
-                        <Link
-                            href="#about"
-                            onClick={handleLinkClick}
-                            className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-500'}`}
-                        >
-                            About
-                        </Link>
-                        {/* Social links */}
-                        <SocialLinks showResumeButton={false}/>
-                        {/* Removed ThemeToggle from here */}
-                    </div>
-                </SheetContent>
-            </Sheet>
-
-            {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-6 text-sm font-mono">
-                <Link
-                    href="#projects"
-                    className={`transition ${activeSection === 'projects' ? 'text-red-500' : 'text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-500'}`}
-                >
-                    Projects
-                </Link>
-                <Link
-                    href="#about"
-                    className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-500'}`}
-                >
-                    About
-                </Link>
-                <ThemeToggle/>
-            </div>
-        </nav>
-    );
+        <motion.div initial={{ opacity: 0, x: 210 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Link href="/about" className="text-zinc-600 dark:text-zinc-400">
+              About
+            </Link>
+          </motion.div>
+        </motion.div>
+        <ThemeToggle />
+      </div>
+    </nav>
+  );
 }
