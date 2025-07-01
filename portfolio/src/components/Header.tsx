@@ -40,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="relative flex items-center justify-between px-4 pt-6">
+    <nav className="relative z-100 flex items-center justify-between px-4 pt-6">
       <motion.div whileTap={{ scale: 0.9 }}>
         <Link href="/" className="font-mono text-2xl font-bold">
           <motion.div
