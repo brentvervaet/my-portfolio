@@ -181,7 +181,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                     {project.tags.map(tag => (
                       <Badge
                         key={tag}
-                        className="bg-primary/80 text-primary-foreground hover:bg-primary/70 items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
+                        className="bg-primary/80 text-primary-foreground items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
                       >
                         {tag}
                       </Badge>
