@@ -3,8 +3,8 @@ import SocialLinks from '@/components/SocialsLinks';
 
 export default function Footer() {
   return (
-    <footer className="bg-transparent py-8">
-      <div className="mx-auto max-w-6xl px-4">
+    <footer className="bg-transparent">
+      <div className="mx-auto max-w-6xl p-8">
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           {/* Navigation Links */}
           <div className="flex space-x-6 font-mono text-sm text-zinc-600 dark:text-zinc-400">
