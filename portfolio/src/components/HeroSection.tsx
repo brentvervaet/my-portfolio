@@ -11,13 +11,21 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
-  <section className="space-y-8 py-16">
-    <div className="flex flex-col items-center gap-8 md:flex-row">
-      <motion.div whileHover={{ rotate: -10, scale: 1.1 }} whileTap={{ rotate: 10, scale: 0.9 }}>
+  <section className="relative space-y-8 py-16">
+    {/* Decorative blurred gradient orbs */}
+
+    <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row">
+      <motion.div
+        whileHover={{ rotate: -10, scale: 1.1 }}
+        whileTap={{ rotate: 10, scale: 0.9 }}
+        className="rounded-full border border-white/20 bg-white/10 p-1 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20"
+      >
         <Link href={'https://www.instagram.com/brentiedebentley/'} target="_blank" rel="noopener noreferrer">
-          <Avatar className="h-24 w-24 border-2">
+          <Avatar className="h-24 w-24 border-2 border-white/30 shadow-inner dark:border-white/20">
             <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet" />
-            <AvatarFallback>BV</AvatarFallback>
+            <AvatarFallback className="bg-gradient-to-br from-blue-400/30 to-purple-400/30 backdrop-blur-xl">
+              BV
+            </AvatarFallback>
           </Avatar>
         </Link>
       </motion.div>
