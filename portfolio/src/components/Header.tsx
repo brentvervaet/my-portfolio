@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Link from 'next/link';
 import SocialLinks from '@/components/SocialsLinks';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
