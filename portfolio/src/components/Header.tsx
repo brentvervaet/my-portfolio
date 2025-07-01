@@ -81,11 +81,7 @@ export default function Header() {
 
           <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
             <motion.div whileTap={{ scale: 0.8 }}>
-              <Link
-                href="/#projects"
-                onClick={handleLinkClick}
-                className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
-              >
+              <Link href="/#projects" onClick={handleLinkClick} className="text-zinc-800 dark:text-zinc-200">
                 Projects
               </Link>
             </motion.div>
@@ -107,33 +103,17 @@ export default function Header() {
 
       {/* Desktop navigation */}
       <div className="hidden items-center space-x-6 font-mono text-sm md:flex">
-        <motion.div
-          initial={{ opacity: 0, x: 300 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 40 }}>
-            <Link
-              href="#projects"
-              className={'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}
-            >
+        <motion.div initial={{ opacity: 0, x: 300 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Link href="#projects" className="text-zinc-600 dark:text-zinc-400">
               Projects
             </Link>
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 210 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <motion.div whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 40 }}>
-            <Link
-              href="/about"
-              className={'text-zinc-600 hover:text-red-500 dark:text-zinc-400 dark:hover:text-red-500'}
-            >
+        <motion.div initial={{ opacity: 0, x: 210 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Link href="/about" className="text-zinc-600 dark:text-zinc-400">
               About
             </Link>
           </motion.div>

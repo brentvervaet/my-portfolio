@@ -70,10 +70,15 @@ export default function SocialLinks({ className = '', showResumeButton = true }:
         </motion.a>
       ))}
       {showResumeButton && (
-        <Button size="sm" variant="outline" className="ml-2 font-mono text-xs" asChild>
+        <Button
+          size="sm"
+          variant="outline"
+          className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all dark:border-white/10 dark:bg-black/20"
+          asChild
+        >
           <motion.a
             whileTap={{ rotate: -2, scale: 0.5 }}
-            whileHover={{ rotate: 2, scale: 1.1 }}
+            whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.1 }}
             href="/resume.pdf"
             download

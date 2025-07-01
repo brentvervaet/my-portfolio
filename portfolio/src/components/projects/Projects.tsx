@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
@@ -9,7 +9,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  images: string[]; // Changed from a single image to an array of images
+  images: string[];
   link?: string;
   sourceCodeLink?: string;
   date: Date;
@@ -90,71 +90,79 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
   };
 
   return (
-    <section id="projects" className="py-6">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="relative px-4 py-6">
+      {/* Decorative blurred gradient orbs in background */}
+      <div className="absolute -top-20 left-1/4 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>
+      <div className="absolute right-1/4 -bottom-20 h-72 w-72 rounded-full bg-pink-400/20 blur-3xl"></div>
+
+      <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
           <div className="mb-6 flex items-center justify-between">
             <h2 className="font-mono text-2xl font-bold">Projects</h2>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleSortOrder}
-              className="flex items-center gap-1 text-xs"
-              title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
-            >
-              {sortOrder === 'newest' ? (
-                <>
-                  Latest
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-arrow-down"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <polyline points="19 12 12 19 5 12"></polyline>
-                  </svg>
-                </>
-              ) : (
-                <>
-                  Oldest
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-arrow-up"
-                  >
-                    <line x1="12" y1="19" x2="12" y2="5"></line>
-                    <polyline points="5 12 12 5 19 12"></polyline>
-                  </svg>
-                </>
-              )}
-            </Button>
+            <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.1 }}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleSortOrder}
+                className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all dark:border-white/10 dark:bg-black/20"
+                title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
+              >
+                {sortOrder === 'newest' ? (
+                  <>
+                    Latest
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-arrow-down"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                  </>
+                ) : (
+                  <>
+                    Oldest
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-arrow-up"
+                    >
+                      <line x1="12" y1="19" x2="12" y2="5"></line>
+                      <polyline points="5 12 12 5 19 12"></polyline>
+                    </svg>
+                  </>
+                )}
+              </Button>
+            </motion.div>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {sortedProjects.map(project => (
-              <Card
+              <div
                 key={project.title}
-                className="group flex flex-col overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg dark:bg-zinc-800"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-2 shadow-lg backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/20"
               >
-                <div className="border-b">
+                <div className="border-b border-white/10 py-1">
                   <ProjectImageCarousel images={project.images} />
                 </div>
-                <CardHeader>
+                <div className="p-4">
                   <div className="flex items-start justify-between">
-                    <CardTitle className="font-mono transition group-hover:text-red-500">{project.title}</CardTitle>
+                    <h3 className="font-mono text-lg font-semibold transition group-hover:text-red-500">
+                      {project.title}
+                    </h3>
                     <span className="text-xs text-zinc-500">
                       {project.date.toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -162,22 +170,21 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       })}
                     </span>
                   </div>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
+                  <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-300">{project.description}</p>
+                </div>
+                <div className="flex-grow px-4 pb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
                       <Badge
                         key={tag}
-                        variant="secondary"
-                        className="bg-primary text-primary-foreground border-transparent text-xs font-semibold shadow transition-colors"
+                        className="bg-primary/80 text-primary-foreground hover:bg-primary/70 items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
                       >
                         {tag}
                       </Badge>
                     ))}
                   </div>
-                </CardContent>
-                <CardFooter className="mt-auto flex gap-4">
+                </div>
+                <div className="mt-auto flex gap-4 border-t border-white/10 p-4">
                   {project.link && (
                     <a
                       href={project.link}
@@ -230,8 +237,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       Source Code
                     </a>
                   )}
-                </CardFooter>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
