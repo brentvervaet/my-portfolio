@@ -31,8 +31,8 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) =
                 className="aspect-auto rounded-xl object-cover"
                 alt="Project screenshot placeholder"
                 src="/placeholder.png"
-                width={2000}
-                height={2000}
+                width={1000}
+                height={1000}
                 style={{ objectFit: 'cover' }}
               />
             </CarouselItem>
@@ -40,8 +40,8 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) =
         </CarouselContent>
         {images.length > 1 && (
           <>
-            <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2" variant="ghost" />
-            <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 border-0" variant="ghost" />
+            <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30" />
+            <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30" />
           </>
         )}
       </Carousel>
