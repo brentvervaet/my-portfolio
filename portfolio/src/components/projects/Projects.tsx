@@ -123,7 +123,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                     {project.tags.map(tag => (
                       <Badge
                         key={tag}
-                        className="bg-primary/80 text-primary-foreground items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-normal text-zinc-800 shadow-sm backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-black/5 dark:text-zinc-300"
                       >
                         {tag}
                       </Badge>
