@@ -53,7 +53,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       'Ensuring cross-browser compatibility',
       'Optimizing for both desktop and mobile experiences',
     ],
-    technologies: project.tags,
+    technologies: project.technologies,
   };
 
   return <ProjectDetail project={enrichedProject} />;
