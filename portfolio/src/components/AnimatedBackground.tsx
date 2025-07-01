@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import React from 'react';
 
 export default function AnimatedBackground() {
   return (
@@ -16,6 +17,6 @@ export default function AnimatedBackground() {
         ease: 'linear',
       }}
       style={{ backgroundSize: '200% 200%' }}
-    />
+    ></motion.div>
   );
 }

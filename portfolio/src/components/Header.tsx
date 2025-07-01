@@ -6,34 +6,10 @@ import SocialLinks from '@/components/SocialsLinks';
 import { useState, useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['projects', 'about', 'skills'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (
-          element &&
-          scrollPosition >= element.offsetTop &&
-          scrollPosition < element.offsetTop + element.offsetHeight
-        ) {
-          setActiveSection(section);
-          return;
-        }
-      }
-
-      setActiveSection('');
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
@@ -57,22 +33,18 @@ export default function Header() {
 
       {/* Mobile menu with Sheet component */}
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <motion.div
-          initial={{ opacity: 0, x: 300 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-        >
+        {!isMenuOpen && (
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <div className="flex w-6 flex-col gap-1">
-                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-                <span className="block h-0.5 w-full bg-zinc-800 dark:bg-zinc-200"></span>
-              </div>
-            </Button>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="md:hidden">
+              <Menu className="size-lg h-6 w-6" />
+            </motion.button>
           </SheetTrigger>
-        </motion.div>
-        <SheetContent side="right">
+        )}
+
+        <SheetContent
+          side="right"
+          className="border-l border-white/20 bg-white/10 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-black/20"
+        >
           <div className="absolute right-4 bottom-4">
             <ThemeToggle />
           </div>
@@ -80,17 +52,13 @@ export default function Header() {
           <SheetTitle />
 
           <div className="mt-12 flex flex-col items-center space-y-8 font-mono text-lg">
-            <motion.div whileTap={{ scale: 0.8 }}>
-              <Link href="/#projects" onClick={handleLinkClick} className="text-zinc-800 dark:text-zinc-200">
+            <motion.div whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}>
+              <Link href="/#projects" onClick={handleLinkClick} className="px-4 py-2">
                 Projects
               </Link>
             </motion.div>
-            <motion.div whileTap={{ scale: 0.8 }}>
-              <Link
-                href="/about"
-                onClick={handleLinkClick}
-                className={`transition ${activeSection === 'about' ? 'text-red-500' : 'text-zinc-800 hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500'}`}
-              >
+            <motion.div whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}>
+              <Link href="/about" onClick={handleLinkClick} className="px-4 py-2">
                 About
               </Link>
             </motion.div>

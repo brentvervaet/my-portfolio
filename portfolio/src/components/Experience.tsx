@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface ExperienceItem {
   id: number;
@@ -69,8 +70,8 @@ const Experience = () => {
   return (
     <div className="relative px-4 py-6">
       {/* Decorative blurred gradient orbs in background */}
-      <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
-      <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-2xl"></div>
+      <motion.div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></motion.div>
+      <motion.div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-2xl"></motion.div>
 
       <div className="relative container mx-auto">
         <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
