@@ -72,7 +72,7 @@ const Experience = () => {
       <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
       <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-2xl"></div>
 
-      <div className="relative z-10 container mx-auto">
+      <div className="relative container mx-auto">
         <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
         <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
           {/* Glass-style TabsList */}
