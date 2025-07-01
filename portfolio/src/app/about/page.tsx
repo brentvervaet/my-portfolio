@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 const Page = () => {
   return (
     <main className="relative mx-auto max-w-3xl p-10">
-      <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
-      <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>
+      {/*Decorative blurred gradient orbs in background*/}
+      {/*TODO*/}
+      {/*<div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>*/}
+      {/*<div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>*/}
 
       <div className="container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
