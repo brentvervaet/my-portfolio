@@ -1,7 +1,10 @@
 export interface Project {
   title: string;
   description: string;
+  longDescription?: string;
   tags: string[];
+  features?: string[];
+  challenges?: string[];
   images: string[];
   link?: string;
   sourceCodeLink?: string;
