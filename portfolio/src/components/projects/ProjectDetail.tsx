@@ -10,7 +10,6 @@ interface ProjectDetailProps {
   project: {
     title: string;
     description: string;
-    tags: string[];
     images: string[];
     link?: string;
     sourceCodeLink?: string;
@@ -18,7 +17,7 @@ interface ProjectDetailProps {
     longDescription?: string;
     features?: string[];
     challenges?: string[];
-    technologies?: string[];
+    technologies: string[];
   };
 }
 
@@ -90,25 +89,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                 </span>
               </div>
               <p className="text-zinc-700 dark:text-zinc-300">{project.description}</p>
-            </motion.div>
-
-            {/* Tags */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-6"
-            >
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                  <Badge
-                    key={tag}
-                    className="bg-primary/80 text-primary-foreground items-center rounded-full border border-white/20 px-3 py-0.5 text-xs font-semibold shadow-sm backdrop-blur-md transition-colors"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
             </motion.div>
 
             {/* Long Description */}

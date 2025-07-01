@@ -120,12 +120,12 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                 {/*Tags*/}
                 <div className="flex-grow px-4 pb-4">
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
+                    {project.technologies.map(tech => (
                       <Badge
-                        key={tag}
+                        key={tech}
                         className="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-normal text-zinc-800 shadow-sm backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-black/5 dark:text-zinc-300"
                       >
-                        {tag}
+                        {tech}
                       </Badge>
                     ))}
                   </div>
