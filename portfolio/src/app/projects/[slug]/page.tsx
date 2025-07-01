@@ -1,13 +1,12 @@
-// File: src/app/projects/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import ProjectDetail from '@/components/projects/ProjectDetail';
 import { defaultProjects } from '@/data/projects/projects';
 
-// Generate metadata for the page
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = defaultProjects.find(
-    (p: { title: string }) => p.title.toLowerCase().replace(/\s+/g, '-') === params.slug
-  );
+  // Await params before using its properties
+  const slug = params.slug;
+
+  const project = defaultProjects.find((p: { title: string }) => p.title.toLowerCase().replace(/\s+/g, '-') === slug);
 
   if (!project) return { title: 'Project Not Found' };
 
@@ -17,23 +16,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Generate static params for all projects
 export function generateStaticParams() {
   return defaultProjects.map(project => ({
     slug: project.title.toLowerCase().replace(/\s+/g, '-'),
   }));
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  // Find the project that matches the slug
-  const project = defaultProjects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === params.slug);
+export default async function ProjectPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
 
-  // If project doesn't exist, show 404
+  const project = defaultProjects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === slug);
+
   if (!project) {
     notFound();
   }
 
-  // Add additional project details for the detail page
   const enrichedProject = {
     ...project,
     // longDescription:
@@ -51,6 +48,5 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     // ],
     // technologies: project.technologies || project.tags,
   };
-
   return <ProjectDetail project={enrichedProject} />;
 }
