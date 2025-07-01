@@ -32,13 +32,17 @@ const defaultSkills: Skill[] = [
 
 const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
   return (
-    <div className="py-6">
-      <div className="container mx-auto px-4">
+    <div className="relative px-4 py-6">
+      {/* Decorative blurred gradient orbs in background */}
+      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-green-400/20 blur-3xl"></div>
+      <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
+
+      <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
           <h2 className="pb-4 font-mono text-2xl font-bold">Skills</h2>
 
-          <Card className="dark:bg-zinc-800">
-            <div className="grid grid-cols-3 gap-8 sm:grid-cols-4 md:grid-cols-6">
+          <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+            <div className="grid grid-cols-3 gap-8 p-6 sm:grid-cols-4 md:grid-cols-6">
               {skills.map(skill => (
                 <motion.a
                   whileHover={{ scale: 1.1 }}
@@ -50,11 +54,13 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
                   className="flex items-center justify-center"
                   title={`Learn more about ${skill.name}`}
                 >
-                  <div className="text-3xl transition-colors md:text-4xl">{skill.icon}</div>
+                  <div className="rounded-full border border-white/10 bg-white/5 p-3 text-3xl shadow-sm backdrop-blur-sm transition-all hover:bg-white/10 hover:shadow-md md:text-4xl">
+                    {skill.icon}
+                  </div>
                 </motion.a>
               ))}
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     </div>
