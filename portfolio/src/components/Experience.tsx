@@ -77,7 +77,7 @@ const Experience = () => {
         <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
         <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
           {/* Glass-style TabsList */}
-          <TabsList className="mb-2 grid h-12 w-full grid-cols-2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-1 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-black/10">
+          <TabsList className="mb-2 grid h-12 w-full grid-cols-2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-1 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/10">
             {/*education*/}
             <TabsTrigger
               value="education"
@@ -98,12 +98,14 @@ const Experience = () => {
           <div className="relative">
             <TabsContent value="education" asChild>
               <div key="education" className="mt-2">
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
                   <div className="p-0">
                     <ul className="ml-10 border-l border-white/20 dark:border-white/10">
                       {education.map(item => (
-                        <li key={item.id} className="relative ml-10 py-4 transition-all hover:bg-white/5">
-                          <a
+                        <li key={item.id} className="relative ml-10 py-4 transition-all">
+                          <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             target="_blank"
                             className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                             href={item.website}
@@ -117,7 +119,7 @@ const Experience = () => {
                                 height={1000}
                               />
                             </span>
-                          </a>
+                          </motion.a>
                           <div className="flex flex-1 flex-col justify-start gap-1">
                             <time className="text-muted-foreground text-xs">
                               <span>{item.period.split(' - ')[0]}</span>
@@ -128,6 +130,7 @@ const Experience = () => {
                             <p className="text-muted-foreground text-sm">{item.title}</p>
                             <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
                           </div>
+
                           {item.skills && item.skills.length > 0 && (
                             <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
                               {item.skills.map(skill => (
@@ -150,12 +153,14 @@ const Experience = () => {
 
             <TabsContent value="work" asChild>
               <div key="work" className="mt-2">
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
                   <div className="p-0">
                     <ul className="ml-10 border-l border-white/20 dark:border-white/10">
                       {workExperience.map(item => (
-                        <li key={item.id} className="relative ml-10 py-4 transition-all hover:bg-white/5">
-                          <a
+                        <li key={item.id} className="relative ml-10 py-4 transition-all">
+                          <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             target="_blank"
                             className="absolute top-4 -left-16 flex items-center justify-center rounded-full"
                             href={item.website}
@@ -169,7 +174,7 @@ const Experience = () => {
                                 height={1000}
                               />
                             </span>
-                          </a>
+                          </motion.a>
                           <div className="flex flex-1 flex-col justify-start gap-1">
                             <time className="text-muted-foreground text-xs">
                               <span>{item.period.split(' - ')[0]}</span>

@@ -151,18 +151,22 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {sortedProjects.map(project => (
-              <div
+              <motion.div
+                whileHover={{ scale: 1.02 }}
                 key={project.title}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-2 shadow-lg backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/20"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-2 shadow-md backdrop-blur-md transition-all hover:shadow-lg dark:border-white/10 dark:bg-black/20"
               >
+                {/*Images*/}
                 <div className="border-b border-white/10 py-1">
                   <ProjectImageCarousel images={project.images} />
                 </div>
+
+                {/*Content*/}
                 <div className="p-4">
                   <div className="flex items-start justify-between">
                     <h3 className="font-mono text-lg font-semibold transition">{project.title}</h3>
                     <span className="text-xs text-zinc-500">
-                      {project.date.toLocaleDateString('en-US', {
+                      {project.date.toLocaleDateString('en-UK', {
                         year: 'numeric',
                         month: 'short',
                       })}
@@ -170,6 +174,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                   </div>
                   <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-300">{project.description}</p>
                 </div>
+
+                {/*Tags*/}
                 <div className="flex-grow px-4 pb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
@@ -182,6 +188,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                     ))}
                   </div>
                 </div>
+
+                {/*Links*/}
                 <div className="mt-auto flex gap-4 border-t border-white/10 p-4">
                   {project.link && (
                     <a
@@ -236,7 +244,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

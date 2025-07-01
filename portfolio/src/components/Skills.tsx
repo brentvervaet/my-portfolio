@@ -40,7 +40,7 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
         <div className="mx-auto w-full max-w-4xl">
           <h2 className="pb-4 font-mono text-2xl font-bold">Skills</h2>
 
-          <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+          <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
             <div className="grid grid-cols-3 gap-8 p-6 sm:grid-cols-4 md:grid-cols-6">
               {skills.map(skill => (
                 <motion.a
