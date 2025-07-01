@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { Card } from '@/components/ui/card';
 import { FaJs, FaReact, FaNodeJs, FaGitAlt, FaSwift, FaJava, FaPython } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMongodb, SiMysql, SiSpring } from 'react-icons/si';
 import { motion } from 'framer-motion';
