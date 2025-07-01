@@ -160,9 +160,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                 </div>
                 <div className="p-4">
                   <div className="flex items-start justify-between">
-                    <h3 className="font-mono text-lg font-semibold transition group-hover:text-red-500">
-                      {project.title}
-                    </h3>
+                    <h3 className="font-mono text-lg font-semibold transition">{project.title}</h3>
                     <span className="text-xs text-zinc-500">
                       {project.date.toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -190,7 +188,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-red-500"
+                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-pink-900 dark:hover:text-purple-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +215,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                       href={project.sourceCodeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-red-500"
+                      className="flex items-center gap-1 text-sm text-zinc-500 transition hover:text-pink-900 dark:hover:text-purple-200"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
