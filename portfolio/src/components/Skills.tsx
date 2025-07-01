@@ -32,9 +32,10 @@ const defaultSkills: Skill[] = [
 const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
   return (
     <div className="relative px-4 py-6">
+      {/*TODO*/}
       {/* Decorative blurred gradient orbs in background */}
-      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-green-400/20 blur-3xl"></div>
-      <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>
+      {/*<div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-green-400/20 blur-3xl"></div>*/}
+      {/*<div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>*/}
 
       <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">

@@ -90,10 +90,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
   };
 
   return (
-    <section id="projects" className="relative px-4 py-6">
+    <div id="projects" className="relative px-4 py-6">
       {/* Decorative blurred gradient orbs in background */}
-      <div className="absolute -top-20 left-1/4 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>
-      <div className="absolute right-1/4 -bottom-20 h-72 w-72 rounded-full bg-pink-400/20 blur-3xl"></div>
+      {/*TODO*/}
+      {/*<div className="absolute -top-20 left-1/4 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>*/}
+      {/*<div className="absolute right-1/4 -bottom-20 h-72 w-72 rounded-full bg-pink-400/20 blur-3xl"></div>*/}
 
       <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
@@ -249,7 +250,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
