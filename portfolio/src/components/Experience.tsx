@@ -170,6 +170,8 @@ const Experience = () => {
                   </TabsContent>
                 </motion.div>
               )}
+
+              {/* Work Experience */}
               {activeTab === 'work' && (
                 <motion.div
                   key="work"
@@ -178,6 +180,7 @@ const Experience = () => {
                   exit={{ x: 100 * direction, opacity: 0 }}
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
                 >
+                  {/*Content*/}
                   <TabsContent value="work" forceMount>
                     <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
                       <div className="p-0">
@@ -218,7 +221,7 @@ const Experience = () => {
                                 </ul>
                               </div>
                               {item.skills && item.skills.length > 0 && (
-                                <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                                <div className="mt-2 mr-8 flex flex-row flex-wrap items-start gap-2">
                                   {item.skills.map(skill => (
                                     <Badge
                                       key={skill}

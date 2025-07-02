@@ -119,7 +119,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                 </div>
 
                 {/*Tags*/}
-                <div className="flex-grow px-4 pb-4">
+                <div className="mx-4 flex-grow pb-4">
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map(tech => (
                       <Badge
