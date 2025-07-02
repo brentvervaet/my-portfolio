@@ -148,7 +148,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                 className="mb-6 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm dark:bg-black/10"
               >
                 <h2 className="mb-2 font-mono text-lg font-semibold">Technologies Used</h2>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1">
                   {project.technologies.map((tech, index) => (
                     <Badge
                       key={index}
@@ -167,7 +167,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-8 flex flex-wrap gap-3"
             >
               {project.link && (
                 <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
@@ -187,13 +187,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2"
+                        className="mr-1"
                       >
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
                       </svg>
-                      Visit Live Project
+                      Visit
                     </a>
                   </Button>
                 </motion.div>
@@ -217,7 +217,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mr-2"
+                        className="mr-1"
                       >
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
                         <path d="M9 18c-4.51 2-5-2-7-2" />
