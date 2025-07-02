@@ -109,8 +109,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {project.features && project.features.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.6 }}
                 className="mb-6 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm dark:bg-black/10"
               >
                 <h2 className="mb-2 font-mono text-lg font-semibold">Key Features</h2>
@@ -126,8 +127,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {project.challenges && project.challenges.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.6 }}
                 className="mb-6 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm dark:bg-black/10"
               >
                 <h2 className="mb-2 font-mono text-lg font-semibold">Challenges & Solutions</h2>
@@ -143,8 +145,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {project.technologies && project.technologies.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.2 }}
+                transition={{ duration: 0.6 }}
                 className="mb-6 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm dark:bg-black/10"
               >
                 <h2 className="mb-2 font-mono text-lg font-semibold">Technologies Used</h2>
@@ -165,8 +168,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             {/* Project Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               className="mt-8 flex flex-wrap gap-3"
             >
               {project.link && (
