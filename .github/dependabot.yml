@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/portfolio" # location of package.json
     schedule:
-      interval: "weekly" # or "weekly" or "daily"
+      interval: "monthly" # or "weekly" or "daily"
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore"
