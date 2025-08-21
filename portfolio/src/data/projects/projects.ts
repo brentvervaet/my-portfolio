@@ -73,7 +73,7 @@ export const defaultProjects: Project[] = [
       'Applying the MVVM architecture to keep UI, state, and data separated.',
       'Integrating favorites persistence while ensuring thumbnails display correctly.',
     ],
-    technologies: ['Swift', 'SwiftUI'],
+    technologies: ['Swift', 'SwiftUI', 'REST', 'MVVM'],
     images: ['/images/Projects/iOS-app/iOS99.png'],
     sourceCodeLink: 'git@github.com:brentvervaet/iOS-app.git',
     date: new Date('2025-08-20'),
