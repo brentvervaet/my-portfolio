@@ -48,27 +48,37 @@ export const defaultProjects: Project[] = [
     sourceCodeLink: 'https://github.com/brentvervaet/TuneWithMe.git',
     date: new Date('2024-12-10'),
   },
+  // iOS App
   {
-    title: 'iOS App',
+    title: 'RealDealMeal',
     description:
-      'A mobile application built with Swift. Still in development, this app will showcase my skills in iOS development. Should be ready by the end of august 2025.',
+      'RealDealMeal: Discover, explore, and save your favorite recipes with ease! Designed for Mobile Application Development: iOS evaluation.',
     longDescription:
-      'This is a native iOS app developed as part of an exam project for August. The app is designed to demonstrate a solid understanding of Swift and SwiftUI, showcasing interactive UI elements, smooth user flows, and practical use of iOS development principles. While the app is still evolving, it focuses on delivering a user-friendly experience and clean architecture.',
+      'RealDealMeal is an innovative iOS app that allows users to quickly and easily discover, view, and save recipes. The app provides daily recommendations, random recipes, categories, and favorites management. All data is fetched via TheMealDB API, and the app is built with SwiftUI using the MVVM architecture, fully responsive on both iPhone and iPad.\n' +
+      '\n' +
+      'This app was developed as part of my iOS evaluation, demonstrating best practices for Swift coding, state management, REST API integration, navigation, and data persistence.',
     features: [
-      'Intuitive SwiftUI-based interface with responsive design',
-      'State management using modern Swift paradigms',
-      'Animations and transitions to enhance user experience',
+      'Discover Recipes: Browse all meals alphabetically or filter by categories.',
+      'Recommended & Random Recipes: Daily suggestions and a “Random Recipe” button for inspiration.',
+      'Favorites: Add meals to favorites and store them locally using @AppStorage.',
+      'Meal Details: View ingredients, instructions, and images for each recipe.',
+      'Share Recipes: Easily share your favorite recipes via the built-in share functionality.',
+      'Adaptive UI: Supports multiple device sizes and both portrait and landscape orientations.',
+      'Search: Quickly find recipes using the search functionality.',
     ],
     challenges: [
-      'Learning curve with SwiftUI’s declarative UI approach → Solved by practicing component composition and using SwiftUI previews.',
-      'Managing state and data flow cleanly → Used @State, @Binding, and modular components to handle it efficiently.',
-      'Testing on real devices and handling deployment concerns → Used Xcode’s simulator and TestFlight for testing and feedback.',
+      'Handling optionals and null values from the API (e.g., missing thumbnails or instructions).',
+      'Implementing async/await for multiple API calls and combining random and category-based results.',
+      'Resolving duplicate IDs in ForEach in SwiftUI lists (e.g., with random meals).',
+      'Applying the MVVM architecture to keep UI, state, and data separated.',
+      'Integrating favorites persistence while ensuring thumbnails display correctly.',
     ],
     technologies: ['Swift', 'SwiftUI'],
     images: ['/images/Projects/iOS-app/iOS99.png'],
     sourceCodeLink: 'git@github.com:brentvervaet/iOS-app.git',
     date: new Date('2025-08-20'),
   },
+  // Portfolio Website
   {
     title: 'Portfolio Website',
     description:
@@ -93,6 +103,7 @@ export const defaultProjects: Project[] = [
     sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
     date: new Date('2025-06-25'),
   },
+  //IT-conference App
   {
     title: 'IT-conference App',
     description:
