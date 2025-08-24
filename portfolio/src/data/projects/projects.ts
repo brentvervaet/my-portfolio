@@ -75,7 +75,7 @@ export const defaultProjects: Project[] = [
     ],
     technologies: ['Swift', 'SwiftUI', 'REST', 'MVVM'],
     images: ['/images/Projects/iOS-app/iOS99.png'],
-    sourceCodeLink: 'git@github.com:brentvervaet/iOS-app.git',
+    sourceCodeLink: 'https://github.com/brentvervaet/RealDealMeal.git',
     date: new Date('2025-08-20'),
   },
   // Portfolio Website
