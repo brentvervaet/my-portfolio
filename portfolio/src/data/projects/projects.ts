@@ -48,7 +48,8 @@ export const defaultProjects: Project[] = [
     sourceCodeLink: 'https://github.com/brentvervaet/TuneWithMe.git',
     date: new Date('2024-12-10'),
   },
-  // iOS App
+
+  // iOS App - RealDealMeal
   {
     title: 'RealDealMeal',
     description:
@@ -74,10 +75,15 @@ export const defaultProjects: Project[] = [
       'Integrating favorites persistence while ensuring thumbnails display correctly.',
     ],
     technologies: ['Swift', 'SwiftUI', 'REST', 'MVVM'],
-    images: ['/images/Projects/iOS-app/iOS01.png'],
+    images: [
+      '/images/Projects/iOS-app/iOS01.png',
+      '/images/Projects/iOS-app/iOS02.png',
+      '/images/Projects/iOS-app/iOS03.png',
+    ],
     sourceCodeLink: 'https://github.com/brentvervaet/RealDealMeal.git',
-    date: new Date('2025-08-20'),
+    date: new Date('2025-08-28'),
   },
+
   // Portfolio Website
   {
     title: 'Portfolio Website',
