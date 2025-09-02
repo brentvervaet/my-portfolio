@@ -74,7 +74,7 @@ export const defaultProjects: Project[] = [
       'Integrating favorites persistence while ensuring thumbnails display correctly.',
     ],
     technologies: ['Swift', 'SwiftUI', 'REST', 'MVVM'],
-    images: ['/images/Projects/iOS-app/iOS99.png'],
+    images: ['/images/Projects/iOS-app/iOS01.png'],
     sourceCodeLink: 'https://github.com/brentvervaet/RealDealMeal.git',
     date: new Date('2025-08-20'),
   },
