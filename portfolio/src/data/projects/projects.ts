@@ -79,6 +79,7 @@ export const defaultProjects: Project[] = [
       '/images/Projects/iOS-app/iOS01.png',
       '/images/Projects/iOS-app/iOS02.png',
       '/images/Projects/iOS-app/iOS03.png',
+      '/images/Projects/iOS-app/iOS04.png',
     ],
     sourceCodeLink: 'https://github.com/brentvervaet/RealDealMeal.git',
     date: new Date('2025-08-28'),
