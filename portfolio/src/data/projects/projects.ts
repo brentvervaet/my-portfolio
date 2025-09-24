@@ -12,6 +12,18 @@ export interface Project {
 }
 
 export const defaultProjects: Project[] = [
+  // Fashion Portfolio - Annelies Annys
+  {
+    title: 'Fashion Portfolio - Annelies Annys',
+    description: 'A fashion portfolio website for fashion student Annelies Annys.',
+    longDescription: 'Coming soon - A sleek portfolio to showcase fashion designs and creative projects.',
+    features: ['Coming soon'],
+    challenges: ['Coming soon'],
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
+    images: [],
+    date: new Date('2025-10-01'),
+  },
+
   {
     title: 'TuneWithMe',
     description:
@@ -179,5 +191,8 @@ export const defaultProjects: Project[] = [
   ],
   sourceCodeLink: 'https://github.com/brentvervaet/FE-test-application.git',
   date: new Date('2025-09-24'),
-}
+},
+
+
+
 ];

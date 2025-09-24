@@ -45,7 +45,7 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = React.memo(({
                 <Image
                   className="rounded-xl object-contain"
                   alt={`${projectTitle} placeholder screenshot`}
-                  src="/placeholder.png"
+                  src="https://placehold.co/1000x1000/transparent/fff?text=Comming+Soon"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'contain' }}
