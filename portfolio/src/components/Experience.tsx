@@ -30,7 +30,7 @@ const education: ExperienceItem[] = [
     organization: 'HOGENT University',
     period: '2022 - Present',
     description: 'Focus on web and mobile enterprise development.',
-    logo: '/images/home/experience/hogent.png',
+    logo: '/images/optimized/home/experience/hogent.webp',
     website: 'https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/',
   },
   {
@@ -39,7 +39,7 @@ const education: ExperienceItem[] = [
     organization: 'Sint-Lodewijkscollege',
     period: '2012 - 2018',
     description: 'Diploma in modern languages and sciences with four hours of mathematics per week.',
-    logo: '/images/home/experience/stlod.png',
+    logo: '/images/optimized/home/experience/stlod.webp',
     website: 'https://www.sintlodewijkscollege.be/',
   },
 ];
@@ -55,7 +55,7 @@ const workExperience: ExperienceItem[] = [
     description: 'Software Development Internship',
     responsibilities: ['Still a student, but looking for internship opportunities.'],
     skills: ['React', 'JS', 'Java', 'Spring'],
-    logo: '/images/home/experience/hogent.png',
+    logo: '/images/optimized/home/experience/hogent.webp',
     website: 'https://www.hogent.be/en/',
   },
 ];

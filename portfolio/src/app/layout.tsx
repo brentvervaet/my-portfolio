@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'Brent Vervaet Portfolio',
     images: [
       {
-        url: '/images/home/brent-vervaet.JPG',
+        url: '/images/optimized/home/brent-vervaet.webp',
         width: 1200,
         height: 630,
         alt: 'Brent Vervaet - Full-Stack Developer',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
     description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-    images: ['/images/home/brent-vervaet.JPG'],
+    images: ['/images/optimized/home/brent-vervaet.webp'],
     creator: '@brentvervaet',
   },
   robots: {
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Person',
               name: 'Brent Vervaet',
               url: 'https://brentvervaet-dev.vercel.app',
-              image: 'https://brentvervaet-dev.vercel.app/images/home/brent-vervaet.JPG',
+              image: 'https://brentvervaet-dev.vercel.app/images/optimized/home/brent-vervaet.webp',
               jobTitle: 'Full-Stack Developer',
               description: 'Full-stack developer specializing in React, Next.js, Swift, and Java',
               alumniOf: 'HOGENT University',

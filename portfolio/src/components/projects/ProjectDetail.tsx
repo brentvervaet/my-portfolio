@@ -1,10 +1,10 @@
 'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import React from 'react';
 
 interface ProjectDetailProps {
   project: {
@@ -68,7 +68,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           >
             <ProjectImageCarousel
               images={project.images}
-              // className="h-[300px] overflow-hidden rounded-xl md:h-[400px]"
+              projectTitle={project.title}
+              size="large"
             />
           </motion.div>
 

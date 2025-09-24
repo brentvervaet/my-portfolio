@@ -11,7 +11,7 @@ interface ProjectsProps {
   projects?: Project[];
 }
 
-const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
+const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjects }) => {
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
 
   const sortedProjects = [...projects].sort((a, b) => {
@@ -211,6 +211,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
       </div>
     </div>
   );
-};
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;

@@ -6,9 +6,18 @@ import React from 'react';
 interface ProjectImageCarouselProps {
   images: string[];
   projectTitle?: string;
+  size?: 'default' | 'large';
 }
 
-const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, projectTitle = 'Project' }) => {
+const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = React.memo(({ 
+  images, 
+  projectTitle = 'Project', 
+  size = 'default' 
+}) => {
+  const containerClasses = size === 'large' 
+    ? 'h-80 w-full max-w-2xl' 
+    : 'h-64 w-full max-w-md';
+
   return (
     <div className="relative" role="region" aria-label={`${projectTitle} screenshots`}>
       <Carousel className="w-full">
@@ -16,29 +25,32 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, pro
           {images.length > 0 ? (
             images.map((src, idx) => (
               <CarouselItem key={idx} className="flex justify-center">
-                <Image
-                  className="aspect-auto rounded-xl object-cover"
-                  alt={`${projectTitle} screenshot ${idx + 1} of ${images.length}`}
-                  src={src}
-                  width={800}
-                  height={600}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                  priority={idx === 0}
-                />
+                <div className={`relative overflow-hidden rounded-xl bg-white/5 dark:bg-black/5 ${containerClasses}`}>
+                  <Image
+                    className="rounded-xl object-contain"
+                    alt={`${projectTitle} screenshot ${idx + 1} of ${images.length}`}
+                    src={src}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'contain' }}
+                    priority={idx === 0}
+                    loading={idx === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
               </CarouselItem>
             ))
           ) : (
             <CarouselItem className="flex justify-center">
-              <Image
-                className="aspect-auto rounded-xl object-cover"
-                alt={`${projectTitle} placeholder screenshot`}
-                src="/placeholder.png"
-                width={800}
-                height={600}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: 'cover' }}
-              />
+              <div className={`relative overflow-hidden rounded-xl bg-white/5 dark:bg-black/5 ${containerClasses}`}>
+                <Image
+                  className="rounded-xl object-contain"
+                  alt={`${projectTitle} placeholder screenshot`}
+                  src="/placeholder.png"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
             </CarouselItem>
           )}
         </CarouselContent>
@@ -57,6 +69,8 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, pro
       </Carousel>
     </div>
   );
-};
+});
+
+ProjectImageCarousel.displayName = 'ProjectImageCarousel';
 
 export default ProjectImageCarousel;
