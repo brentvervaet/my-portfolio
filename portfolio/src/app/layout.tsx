@@ -66,8 +66,7 @@ export const metadata: Metadata = {
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
     description:
       'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-    images: ['/images/optimized/home/brent-vervaet.webp'],
-    creator: '@brentvervaet',
+    images: ['/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico'],
   },
   robots: {
     index: true,
