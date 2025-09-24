@@ -14,6 +14,17 @@ if (!fs.existsSync(OPTIMIZED_DIR)) {
 
 async function optimizeImage(inputPath, outputPath) {
   try {
+    // Check if WebP version already exists and is newer than source
+    if (fs.existsSync(outputPath)) {
+      const inputStats = fs.statSync(inputPath);
+      const outputStats = fs.statSync(outputPath);
+      
+      if (outputStats.mtime >= inputStats.mtime) {
+        console.log(`⏭️  Skipped ${path.basename(inputPath)} (already optimized)`);
+        return;
+      }
+    }
+    
     const stats = fs.statSync(inputPath);
     const originalSize = stats.size;
     
@@ -68,10 +79,26 @@ async function main() {
   console.log('🚀 Starting image optimization...\n');
   
   const startTime = Date.now();
+  let processedCount = 0;
+  let skippedCount = 0;
+  
+  // Override console.log to count operations
+  const originalLog = console.log;
+  console.log = (...args) => {
+    if (args[0]?.includes('✅')) processedCount++;
+    if (args[0]?.includes('⏭️')) skippedCount++;
+    originalLog(...args);
+  };
+  
   await processDirectory(PUBLIC_IMAGES_DIR);
+  
+  // Restore original console.log
+  console.log = originalLog;
+  
   const endTime = Date.now();
   
   console.log(`\n✨ Image optimization completed in ${((endTime - startTime) / 1000).toFixed(2)}s`);
+  console.log(`📊 Processed: ${processedCount} images, Skipped: ${skippedCount} images`);
   console.log(`📁 Optimized images saved to: ${OPTIMIZED_DIR}`);
 }
 

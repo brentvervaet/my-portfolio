@@ -172,10 +172,10 @@ export const defaultProjects: Project[] = [
     '/images/optimized/Projects/GamifiedDashboard/dashboard02.webp',
     '/images/optimized/Projects/GamifiedDashboard/dashboard03.webp',
     '/images/optimized/Projects/GamifiedDashboard/dashboard04.webp',
-    // '/images/optimized/Projects/GamifiedDashboard/dashboard05.webp',
-    // '/images/optimized/Projects/GamifiedDashboard/dashboard06.webp',
-    // '/images/optimized/Projects/GamifiedDashboard/dashboard07.webp',
-    // '/images/optimized/Projects/GamifiedDashboard/dashboard08.webp'
+    '/images/optimized/Projects/GamifiedDashboard/dashboard05.webp',
+    '/images/optimized/Projects/GamifiedDashboard/dashboard06.webp',
+    '/images/optimized/Projects/GamifiedDashboard/dashboard07.webp',
+    '/images/optimized/Projects/GamifiedDashboard/dashboard08.webp'
   ],
   sourceCodeLink: 'https://github.com/brentvervaet/FE-test-application.git',
   date: new Date('2025-09-24'),
