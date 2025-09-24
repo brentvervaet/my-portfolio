@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
+//TODO: max 4 projects, with a "See all projects" link to /projects page
+
 interface ProjectsProps {
   projects?: Project[];
 }
