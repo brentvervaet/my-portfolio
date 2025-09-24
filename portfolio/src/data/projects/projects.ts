@@ -153,48 +153,45 @@ export const defaultProjects: Project[] = [
   },
 
   // Vue.js Web App - Gamified Dashboard
-{
-  title: 'Gamified Dashboard',
-  description:
-    'Gamified Dashboard: A modern Vue.js application featuring user profiles, XP progression, and achievement tracking with smooth animations! Designed for StriveCloud technical test for a possible internship.',
-  longDescription:
-    'The Gamified Dashboard is an interactive Vue.js web application that demonstrates modern frontend development practices. The app features a comprehensive user dashboard with profile management, XP progression tracking, and achievement unlocking mechanics. Built with Vue 3 Composition API, TypeScript, and Pinia for state management, it showcases responsive design with Bootstrap 5 and smooth user interactions.\n' +
-    '\n' +
-    'This application was developed as part of a technical test for StriveCloud for a possible internship, demonstrating best practices for Vue.js development, TypeScript integration, state management patterns, component architecture, and modern frontend tooling with Vite.',
-  features: [
-    'User Profile Management: Display user information with avatar, name, level, and XP progression.',
-    'Interactive XP System: Add XP functionality with smooth progress animations and level-up celebrations.',
-    'Achievement Tracking: Grid display of achievements with locked/unlocked states and XP rewards.',
-    'Loading States: Professional skeleton components and loading indicators for better UX.',
-    'Error Handling: Robust error management with retry functionality and user-friendly messages.',
-    'Responsive Design: Mobile-first Bootstrap 5 implementation supporting all device sizes.',
-    'Real-time Updates: Instant UI updates when gaining XP or unlocking achievements.',
-    'Modern Architecture: Component-based structure with proper separation of concerns.',
-  ],
-  challenges: [
-    'Implementing proper TypeScript interfaces and maintaining type safety throughout the application.',
-    'Creating smooth XP progression animations and level-up celebrations with confetti effects.',
-    'Building reusable skeleton loading components that match the actual content structure.',
-    'Managing complex state with Pinia including loading states, error handling, and data normalization.',
-    'Implementing responsive design patterns that work seamlessly across mobile and desktop.',
-    'Handling asynchronous operations with proper error boundaries and retry mechanisms.',
-    'Creating a scalable component architecture with proper props and event handling.',
-  ],
-  technologies: ['Vue 3', 'TypeScript', 'Bootstrap 5', 'Vite'],
-  images: [
-    '/images/optimized/Projects/GamifiedDashboard/dashboard01.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard02.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard03.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard04.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard05.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard06.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard07.webp',
-    '/images/optimized/Projects/GamifiedDashboard/dashboard08.webp'
-  ],
-  sourceCodeLink: 'https://github.com/brentvervaet/FE-test-application.git',
-  date: new Date('2025-09-24'),
-},
-
-
-
+  {
+    title: 'Gamified Dashboard',
+    description:
+      'Gamified Dashboard: A modern Vue.js application featuring user profiles, XP progression, and achievement tracking with smooth animations! Designed for StriveCloud technical test for a possible internship.',
+    longDescription:
+      'The Gamified Dashboard is an interactive Vue.js web application that demonstrates modern frontend development practices. The app features a comprehensive user dashboard with profile management, XP progression tracking, and achievement unlocking mechanics. Built with Vue 3 Composition API, TypeScript, and Pinia for state management, it showcases responsive design with Bootstrap 5 and smooth user interactions.\n' +
+      '\n' +
+      'This application was developed as part of a technical test for StriveCloud for a possible internship, demonstrating best practices for Vue.js development, TypeScript integration, state management patterns, component architecture, and modern frontend tooling with Vite.',
+    features: [
+      'User Profile Management: Display user information with avatar, name, level, and XP progression.',
+      'Interactive XP System: Add XP functionality with smooth progress animations and level-up celebrations.',
+      'Achievement Tracking: Grid display of achievements with locked/unlocked states and XP rewards.',
+      'Loading States: Professional skeleton components and loading indicators for better UX.',
+      'Error Handling: Robust error management with retry functionality and user-friendly messages.',
+      'Responsive Design: Mobile-first Bootstrap 5 implementation supporting all device sizes.',
+      'Real-time Updates: Instant UI updates when gaining XP or unlocking achievements.',
+      'Modern Architecture: Component-based structure with proper separation of concerns.',
+    ],
+    challenges: [
+      'Implementing proper TypeScript interfaces and maintaining type safety throughout the application.',
+      'Creating smooth XP progression animations and level-up celebrations with confetti effects.',
+      'Building reusable skeleton loading components that match the actual content structure.',
+      'Managing complex state with Pinia including loading states, error handling, and data normalization.',
+      'Implementing responsive design patterns that work seamlessly across mobile and desktop.',
+      'Handling asynchronous operations with proper error boundaries and retry mechanisms.',
+      'Creating a scalable component architecture with proper props and event handling.',
+    ],
+    technologies: ['Vue 3', 'TypeScript', 'Bootstrap 5', 'Vite'],
+    images: [
+      '/images/optimized/Projects/GamifiedDashboard/dashboard01.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard02.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard03.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard04.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard05.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard06.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard07.webp',
+      '/images/optimized/Projects/GamifiedDashboard/dashboard08.webp',
+    ],
+    sourceCodeLink: 'https://github.com/brentvervaet/FE-test-application.git',
+    date: new Date('2025-09-24'),
+  },
 ];

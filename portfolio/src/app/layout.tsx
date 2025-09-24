@@ -8,25 +8,36 @@ import { Fira_Code, Inter } from 'next/font/google';
 import React from 'react';
 import './globals.css';
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter'
+  variable: '--font-inter',
 });
 
-const firaCode = Fira_Code({ 
+const firaCode = Fira_Code({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fira-code'
+  variable: '--font-fira-code',
 });
 
 export const metadata: Metadata = {
   title: {
     default: 'Brent Vervaet | Full-Stack Developer',
-    template: '%s | Brent Vervaet'
+    template: '%s | Brent Vervaet',
   },
-  description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-  keywords: ['Brent Vervaet', 'Full-Stack Developer', 'React', 'Next.js', 'Swift', 'Java', 'Portfolio', 'Web Development', 'Mobile Development'],
+  description:
+    'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+  keywords: [
+    'Brent Vervaet',
+    'Full-Stack Developer',
+    'React',
+    'Next.js',
+    'Swift',
+    'Java',
+    'Portfolio',
+    'Web Development',
+    'Mobile Development',
+  ],
   authors: [{ name: 'Brent Vervaet' }],
   creator: 'Brent Vervaet',
   metadataBase: new URL('https://brentvervaet-dev.vercel.app'),
@@ -38,7 +49,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://brentvervaet-dev.vercel.app',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
-    description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    description:
+      'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     siteName: 'Brent Vervaet Portfolio',
     images: [
       {
@@ -52,7 +64,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
-    description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    description:
+      'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     images: ['/images/optimized/home/brent-vervaet.webp'],
     creator: '@brentvervaet',
   },
@@ -71,10 +84,10 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' }
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
     ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico'
+    apple: '/favicon.ico',
   },
 };
 
@@ -101,16 +114,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               description: 'Full-stack developer specializing in React, Next.js, Swift, and Java',
               alumniOf: 'HOGENT University',
               knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-              sameAs: [
-                'https://github.com/brentvervaet',
-                'https://linkedin.com/in/brent-vervaet'
-              ]
-            })
+              sameAs: ['https://github.com/brentvervaet', 'https://linkedin.com/in/brent-vervaet'],
+            }),
           }}
         />
       </head>
       <body
-        className={`flex min-h-screen flex-col bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white font-sans`}
+        className={`flex min-h-screen flex-col bg-zinc-100 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AnimatedBackground />

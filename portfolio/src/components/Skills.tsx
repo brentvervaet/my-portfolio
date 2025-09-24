@@ -2,7 +2,25 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FaJava } from 'react-icons/fa';
-import { SiCss3, SiGit, SiHtml5, SiJavascript, SiJira, SiMongodb, SiMysql, SiNeo4J, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiSpring, SiSwift, SiTailwindcss, SiTypescript, SiVuedotjs } from 'react-icons/si';
+import {
+  SiCss3,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiJira,
+  SiMongodb,
+  SiMysql,
+  SiNeo4J,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiSpring,
+  SiSwift,
+  SiTailwindcss,
+  SiTypescript,
+  SiVuedotjs,
+} from 'react-icons/si';
 
 interface Skill {
   name: string;
@@ -24,26 +42,26 @@ const defaultSkills: Skill[] = [
   { name: 'Next.js', icon: <SiNextdotjs />, url: 'https://nextjs.org/' },
   { name: 'Vue', icon: <SiVuedotjs />, url: 'https://vuejs.org/' },
   { name: 'Tailwind CSS', icon: <SiTailwindcss />, url: 'https://tailwindcss.com/' },
-  
+
   // TODO:
   // { name: 'C#', icon: <SiSharp />, url: 'https://docs.microsoft.com/en-us/dotnet/csharp/' },
   // { name: '.NET', icon: <SiDotnet />, url: 'https://dotnet.microsoft.com/' },
   // { name: 'Blazor', icon: <SiBlazor />, url: 'https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor' },
-  
+
   // Backend/Server Technologies
   { name: 'Node.js', icon: <SiNodedotjs />, url: 'https://nodejs.org/' },
   { name: 'Java', icon: <FaJava />, url: 'https://www.java.com/' },
   { name: 'Spring', icon: <SiSpring />, url: 'https://spring.io/' },
   { name: 'Python', icon: <SiPython />, url: 'https://www.python.org/' },
-  
+
   // Databases
   { name: 'MySQL', icon: <SiMysql />, url: 'https://www.mysql.com/' },
   { name: 'MongoDB', icon: <SiMongodb />, url: 'https://www.mongodb.com/' },
   { name: 'Neo4j', icon: <SiNeo4J />, url: 'https://neo4j.com/' },
-  
+
   // Mobile Development
   { name: 'Swift', icon: <SiSwift />, url: 'https://developer.apple.com/swift/' },
-  
+
   // Development Tools
   { name: 'Git', icon: <SiGit />, url: 'https://git-scm.com/' },
   { name: 'Jira', icon: <SiJira />, url: 'https://www.atlassian.com/software/jira' },
@@ -59,9 +77,11 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
 
       <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
-          <h2 className="pb-4 font-mono text-2xl font-bold" id="skills-section">Skills</h2>
+          <h2 className="pb-4 font-mono text-2xl font-bold" id="skills-section">
+            Skills
+          </h2>
 
-          <div 
+          <div
             className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20"
             role="region"
             aria-labelledby="skills-section"
@@ -75,7 +95,7 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
                   href={skill.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent rounded-full"
+                  className="flex items-center justify-center rounded-full focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none"
                   title={`Learn more about ${skill.name}`}
                   aria-label={`Learn more about ${skill.name} - opens in new tab`}
                 >

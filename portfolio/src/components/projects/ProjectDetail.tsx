@@ -66,11 +66,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="border-b border-white/10 p-2"
           >
-            <ProjectImageCarousel
-              images={project.images}
-              projectTitle={project.title}
-              size="large"
-            />
+            <ProjectImageCarousel images={project.images} projectTitle={project.title} size="large" />
           </motion.div>
 
           {/* Project Info */}
