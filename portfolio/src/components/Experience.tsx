@@ -27,7 +27,7 @@ const education: ExperienceItem[] = [
   {
     id: 1,
     title: 'Bachelor of Science in Applied Informatics',
-    organization: 'HOGENT University',
+    organization: 'HOGENT',
     period: '2022 - Present',
     description: 'Focus on web and mobile enterprise development.',
     logo: '/images/optimized/home/experience/hogent.webp',
@@ -38,7 +38,7 @@ const education: ExperienceItem[] = [
     title: 'ASO modern languages and sciences',
     organization: 'Sint-Lodewijkscollege',
     period: '2012 - 2018',
-    description: 'Diploma in modern languages and sciences with four hours of mathematics per week.',
+    description: '',
     logo: '/images/optimized/home/experience/stlod.webp',
     website: 'https://www.sintlodewijkscollege.be/',
   },
