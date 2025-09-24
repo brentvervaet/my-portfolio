@@ -25,13 +25,13 @@ body {
 }
 
 ::selection {
-    background-color: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #059669;
 }
 
 .dark ::selection {
-    background-color: rgba(239, 68, 68, 0.6);
-    color: #fecaca;
+    background-color: rgba(34, 197, 94, 0.4);
+    color: #6ee7b7;
 }
 
 @theme inline {
