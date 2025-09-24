@@ -118,6 +118,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             }),
           }}
         />
+        <title>Portfolio</title>
       </head>
       <body
         className={`flex min-h-screen flex-col bg-zinc-100 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
