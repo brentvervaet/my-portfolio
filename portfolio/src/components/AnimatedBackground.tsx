@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 export default function AnimatedBackground() {
   return (
     <motion.div
-      className="fixed inset-0 -z-10 bg-gradient-to-br from-blue-200 via-pink-200 to-purple-200 opacity-30 dark:from-blue-900 dark:via-pink-900 dark:to-purple-900"
+      className="fixed inset-0 -z-10 bg-gradient-to-br from-blue-300 via-cyan-300 to-green-300 opacity-60 dark:from-blue-800 dark:via-cyan-800 dark:to-green-800"
       animate={{
         backgroundPosition: ['0% 0%', '100% 100%'],
       }}
       transition={{
-        duration: 12,
+        duration: 10,
         repeat: Infinity,
-        repeatType: 'reverse',
+        repeatType: 'mirror',
         ease: 'linear',
       }}
       style={{ backgroundSize: '200% 200%' }}
