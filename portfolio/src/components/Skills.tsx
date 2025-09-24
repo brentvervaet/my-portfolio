@@ -1,8 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { FaGitAlt, FaJava, FaJs, FaNodeJs, FaPython, FaReact, FaSwift } from 'react-icons/fa';
-import { SiMongodb, SiMysql, SiNextdotjs, SiSpring, SiTailwindcss } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
+import { SiCss3, SiGit, SiHtml5, SiJavascript, SiJira, SiMongodb, SiMysql, SiNeo4J, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiSpring, SiSwift, SiTailwindcss, SiTypescript, SiVuedotjs } from 'react-icons/si';
 
 interface Skill {
   name: string;
@@ -15,18 +15,38 @@ interface SkillsProps {
 }
 
 const defaultSkills: Skill[] = [
-  { name: 'JavaScript', icon: <FaJs />, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-  { name: 'React', icon: <FaReact />, url: 'https://reactjs.org/' },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss />, url: 'https://tailwindcss.com/' },
+  // Frontend Web Technologies
+  { name: 'HTML', icon: <SiHtml5 />, url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+  { name: 'CSS', icon: <SiCss3 />, url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+  { name: 'JavaScript', icon: <SiJavascript />, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+  { name: 'TypeScript', icon: <SiTypescript />, url: 'https://www.typescriptlang.org/' },
+  { name: 'React', icon: <SiReact />, url: 'https://reactjs.org/' },
   { name: 'Next.js', icon: <SiNextdotjs />, url: 'https://nextjs.org/' },
-  { name: 'Node.js', icon: <FaNodeJs />, url: 'https://nodejs.org/' },
+  { name: 'Vue', icon: <SiVuedotjs />, url: 'https://vuejs.org/' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, url: 'https://tailwindcss.com/' },
+  
+  // TODO:
+  // { name: 'C#', icon: <SiSharp />, url: 'https://docs.microsoft.com/en-us/dotnet/csharp/' },
+  // { name: '.NET', icon: <SiDotnet />, url: 'https://dotnet.microsoft.com/' },
+  // { name: 'Blazor', icon: <SiBlazor />, url: 'https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor' },
+  
+  // Backend/Server Technologies
+  { name: 'Node.js', icon: <SiNodedotjs />, url: 'https://nodejs.org/' },
   { name: 'Java', icon: <FaJava />, url: 'https://www.java.com/' },
   { name: 'Spring', icon: <SiSpring />, url: 'https://spring.io/' },
-  { name: 'Swift', icon: <FaSwift />, url: 'https://developer.apple.com/swift/' },
-  { name: 'Python', icon: <FaPython />, url: 'https://www.python.org/' },
-  { name: 'Git', icon: <FaGitAlt />, url: 'https://git-scm.com/' },
+  { name: 'Python', icon: <SiPython />, url: 'https://www.python.org/' },
+  
+  // Databases
   { name: 'MySQL', icon: <SiMysql />, url: 'https://www.mysql.com/' },
   { name: 'MongoDB', icon: <SiMongodb />, url: 'https://www.mongodb.com/' },
+  { name: 'Neo4j', icon: <SiNeo4J />, url: 'https://neo4j.com/' },
+  
+  // Mobile Development
+  { name: 'Swift', icon: <SiSwift />, url: 'https://developer.apple.com/swift/' },
+  
+  // Development Tools
+  { name: 'Git', icon: <SiGit />, url: 'https://git-scm.com/' },
+  { name: 'Jira', icon: <SiJira />, url: 'https://www.atlassian.com/software/jira' },
 ];
 
 const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {

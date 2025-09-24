@@ -54,7 +54,7 @@ const workExperience: ExperienceItem[] = [
     period: '2025 - 2026',
     description: 'Software Development Internship',
     responsibilities: ['Internship starting February 2025'],
-    skills: [], //TODO add skills later
+    skills: ['HTML5', 'Angular', 'React', 'Ionic', 'Capacitor', 'Flutter', 'Java', 'Kotlin', 'Swift', 'REST', 'PHP', 'Laravel', 'MySQL', 'Node.js', 'MongoDB'],
     logo: '/images/optimized/home/experience/endare.webp',
     website: 'https://www.endare.com',
   },
