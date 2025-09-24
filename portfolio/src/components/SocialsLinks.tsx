@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
+import React from 'react';
 
 type SocialLink = {
   href: string;
@@ -80,7 +80,7 @@ export default function SocialLinks({ className = '', showResumeButton = true }:
             whileTap={{ rotate: -2, scale: 0.5 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.1 }}
-            href="/resume.pdf"
+            href="/CV_Brent_Vervaet.pdf"
             download
           >
             <Download className="mr-2 h-3 w-3" />
