@@ -49,14 +49,14 @@ const workExperience: ExperienceItem[] = [
   // Your existing work experience data
   {
     id: 1,
-    title: 'Student Software Developer',
-    organization: 'HOGENT',
-    period: '2022 - Present',
+    title: 'Software Development Intern',
+    organization: 'Endare',
+    period: '2025 - 2026',
     description: 'Software Development Internship',
-    responsibilities: ['Still a student, but looking for internship opportunities.'],
-    skills: ['React', 'JS', 'Java', 'Spring'],
-    logo: '/images/optimized/home/experience/hogent.webp',
-    website: 'https://www.hogent.be/en/',
+    responsibilities: ['Internship starting February 2025'],
+    skills: [], //TODO add skills later
+    logo: '/images/optimized/home/experience/endare.webp',
+    website: 'https://www.endare.com',
   },
 ];
 

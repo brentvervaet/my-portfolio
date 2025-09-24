@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const Page = () => {
@@ -73,8 +72,9 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 className="dark:text-zinc-400"
               >
-                I also enjoy playing video games or reading a good book to unwind. These activities help me maintain a
-                balanced lifestyle and often inspire fresh perspectives that I bring back to my work.
+                I also enjoy playing video games or reading a good book to unwind.
+                And when the weather&apos;s nice, you might find me on the golf course trying to convince myself that my swing is getting better (spoiler: it&apos;s not).
+                These activities help me maintain a balanced lifestyle and often inspire fresh perspectives that I bring back to my work.
               </motion.p>
 
               <motion.div
