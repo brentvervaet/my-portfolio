@@ -50,11 +50,11 @@ export const metadata: Metadata = {
     url: 'https://brentvervaet-dev.vercel.app',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
     description:
-      'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+      'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
     siteName: 'Brent Vervaet Portfolio',
     images: [
       {
-        url: '/images/optimized/home/brent-vervaet.webp',
+        url: '/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico',
         width: 1200,
         height: 630,
         alt: 'Brent Vervaet - Full-Stack Developer',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
     description:
-      'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+      'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
     images: ['/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico'],
   },
   robots: {
