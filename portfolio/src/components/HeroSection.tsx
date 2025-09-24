@@ -20,9 +20,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
         whileTap={{ rotate: 10, scale: 0.9 }}
         className="rounded-full border border-white/20 bg-white/10 p-1 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20"
       >
-        <Link href={'https://www.instagram.com/brentiedebentley/'} target="_blank" rel="noopener noreferrer">
+        <Link 
+          href={'https://www.instagram.com/brentiedebentley/'} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Visit Brent Vervaet's Instagram profile"
+        >
           <Avatar className="h-24 w-24 border-2 border-white/30 shadow-inner dark:border-white/20">
-            <AvatarImage src="/images/home/brent-vervaet.JPG" alt="Brent Vervaet" />
+            <AvatarImage 
+              src="/images/home/brent-vervaet.JPG" 
+              alt="Brent Vervaet - Full-stack developer portrait" 
+            />
             <AvatarFallback className="bg-gradient-to-br from-blue-400/30 to-purple-400/30 backdrop-blur-xl">
               BV
             </AvatarFallback>
@@ -38,7 +46,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
             transition={{ duration: 1.2, ease: 'easeInOut' }}
             onHoverStart={() => setWave(true)}
             onAnimationComplete={() => setWave(false)}
-            aria-label="waving hand"
+            aria-label="Animated waving hand emoji"
+            role="img"
           >
             👋
           </motion.span>

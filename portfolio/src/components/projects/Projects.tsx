@@ -1,11 +1,11 @@
 'use client';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
-import Link from 'next/link';
 import { defaultProjects, Project } from '@/data/projects/projects';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 interface ProjectsProps {
   projects?: Project[];
@@ -36,14 +36,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
       <div className="relative z-10 container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="font-mono text-2xl font-bold">Projects</h2>
+            <h2 className="font-mono text-2xl font-bold" id="projects-section">Projects</h2>
             <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.1 }}>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={toggleSortOrder}
-                className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all dark:border-white/10 dark:bg-black/20"
+                className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all dark:border-white/10 dark:bg-black/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
+                aria-label={`Currently sorting by ${sortOrder} projects. Click to sort by ${sortOrder === 'newest' ? 'oldest' : 'newest'} projects`}
               >
                 {sortOrder === 'newest' ? (
                   <>
@@ -87,7 +88,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
               </Button>
             </motion.div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div 
+            className="grid grid-cols-1 gap-6 md:grid-cols-2"
+            role="region"
+            aria-labelledby="projects-section"
+          >
             {sortedProjects.map(project => (
               <motion.div
                 whileHover={{ scale: 1.02 }}
@@ -96,7 +101,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
               >
                 {/*Images*/}
                 <div className="border-b border-white/10 py-1">
-                  <ProjectImageCarousel images={project.images} />
+                  <ProjectImageCarousel images={project.images} projectTitle={project.title} />
                 </div>
 
                 {/*Content*/}
@@ -104,7 +109,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects = defaultProjects }) => {
                   <div className="flex items-start justify-between">
                     <Link
                       href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="group-hover:text-primary"
+                      className="group-hover:text-primary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent rounded"
+                      aria-label={`View details for ${project.title} project`}
                     >
                       <h3 className="font-mono text-lg font-semibold transition">{project.title}</h3>
                     </Link>

@@ -1,25 +1,107 @@
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Footer from '@/components/Footer';
-import { ThemeProvider } from 'next-themes';
-import React from 'react';
-import PageTransition from '@/components/PageTransition';
-import Header from '@/components/Header';
-import type { Metadata } from 'next';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import PageTransition from '@/components/PageTransition';
+import type { Metadata, Viewport } from 'next';
+import { ThemeProvider } from 'next-themes';
+import { Fira_Code, Inter } from 'next/font/google';
+import React from 'react';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+});
+
+const firaCode = Fira_Code({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fira-code'
+});
 
 export const metadata: Metadata = {
-  title: 'Brent Vervaet | Portfolio',
-  description: 'Personal portfolio showcasing my projects and skills',
+  title: {
+    default: 'Brent Vervaet | Full-Stack Developer',
+    template: '%s | Brent Vervaet'
+  },
+  description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+  keywords: ['Brent Vervaet', 'Full-Stack Developer', 'React', 'Next.js', 'Swift', 'Java', 'Portfolio', 'Web Development', 'Mobile Development'],
+  authors: [{ name: 'Brent Vervaet' }],
+  creator: 'Brent Vervaet',
+  metadataBase: new URL('https://brentvervaet-dev.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://brentvervaet-dev.vercel.app',
+    title: 'Brent Vervaet | Full-Stack Developer Portfolio',
+    description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    siteName: 'Brent Vervaet Portfolio',
+    images: [
+      {
+        url: '/images/home/brent-vervaet.JPG',
+        width: 1200,
+        height: 630,
+        alt: 'Brent Vervaet - Full-Stack Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brent Vervaet | Full-Stack Developer Portfolio',
+    description: 'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    images: ['/images/home/brent-vervaet.JPG'],
+    creator: '@brentvervaet',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${firaCode.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Brent Vervaet',
+              url: 'https://brentvervaet-dev.vercel.app',
+              image: 'https://brentvervaet-dev.vercel.app/images/home/brent-vervaet.JPG',
+              jobTitle: 'Full-Stack Developer',
+              description: 'Full-stack developer specializing in React, Next.js, Swift, and Java',
+              alumniOf: 'HOGENT University',
+              knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+              sameAs: [
+                'https://github.com/brentvervaet',
+                'https://linkedin.com/in/brent-vervaet'
+              ]
+            })
+          }}
+        />
+      </head>
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
+        className={`flex min-h-screen flex-col bg-zinc-100 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white font-sans`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AnimatedBackground />

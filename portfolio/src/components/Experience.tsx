@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 interface ExperienceItem {
   id: number;
@@ -131,10 +131,11 @@ const Experience = () => {
                                   <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border border-white/30 shadow-sm transition-all hover:shadow-md">
                                     <Image
                                       className="bg-background aspect-square h-full w-full object-contain"
-                                      alt={item.organization}
+                                      alt={`${item.organization} logo`}
                                       src={item.logo ?? '/placeholder-logo.png'}
-                                      width={1000}
-                                      height={1000}
+                                      width={48}
+                                      height={48}
+                                      sizes="48px"
                                     />
                                   </span>
                                 </motion.a>
@@ -197,10 +198,11 @@ const Experience = () => {
                                 <span className="relative flex size-12 shrink-0 overflow-hidden rounded-full border border-white/30 shadow-sm transition-all hover:shadow-md">
                                   <Image
                                     className="bg-background aspect-square h-full w-full object-contain"
-                                    alt={item.organization}
+                                    alt={`${item.organization} logo`}
                                     src={item.logo ?? '/placeholder-logo.png'}
-                                    width={1000}
-                                    height={1000}
+                                    width={48}
+                                    height={48}
+                                    sizes="48px"
                                   />
                                 </span>
                               </motion.a>

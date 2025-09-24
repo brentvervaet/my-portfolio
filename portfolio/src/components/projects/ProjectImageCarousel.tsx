@@ -1,15 +1,16 @@
 'use client';
-import React from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import React from 'react';
 
 interface ProjectImageCarouselProps {
   images: string[];
+  projectTitle?: string;
 }
 
-const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) => {
+const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images, projectTitle = 'Project' }) => {
   return (
-    <div className="relative">
+    <div className="relative" role="region" aria-label={`${projectTitle} screenshots`}>
       <Carousel className="w-full">
         <CarouselContent>
           {images.length > 0 ? (
@@ -17,11 +18,13 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) =
               <CarouselItem key={idx} className="flex justify-center">
                 <Image
                   className="aspect-auto rounded-xl object-cover"
-                  alt={`Project screenshot ${idx + 1}`}
+                  alt={`${projectTitle} screenshot ${idx + 1} of ${images.length}`}
                   src={src}
-                  width={2000}
-                  height={2000}
+                  width={800}
+                  height={600}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }}
+                  priority={idx === 0}
                 />
               </CarouselItem>
             ))
@@ -29,10 +32,11 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) =
             <CarouselItem className="flex justify-center">
               <Image
                 className="aspect-auto rounded-xl object-cover"
-                alt="Project screenshot placeholder"
+                alt={`${projectTitle} placeholder screenshot`}
                 src="/placeholder.png"
-                width={1000}
-                height={1000}
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: 'cover' }}
               />
             </CarouselItem>
@@ -40,8 +44,14 @@ const ProjectImageCarousel: React.FC<ProjectImageCarouselProps> = ({ images }) =
         </CarouselContent>
         {images.length > 1 && (
           <>
-            <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30" />
-            <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30" />
+            <CarouselPrevious 
+              className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30"
+              aria-label="Previous image"
+            />
+            <CarouselNext 
+              className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 shadow-sm backdrop-blur-xl hover:bg-white/20 dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30"
+              aria-label="Next image"
+            />
           </>
         )}
       </Carousel>
