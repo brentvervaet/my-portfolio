@@ -122,7 +122,7 @@ export const defaultProjects: Project[] = [
       'First time using TypeScript and Next.js → Solved with AI assistance, intelligent code suggestions (IntelliSense), and prior experience with Node.js.',
     ],
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
-    images: ['/images/optimized/Projects/Portfolio/Portfolio01.webp'],
+    images: ['/images/optimized/Projects/Portfolio/portfolio01.webp'],
     link: 'https://brentvervaet-dev.vercel.app',
     sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
     date: new Date('2025-06-25'),
