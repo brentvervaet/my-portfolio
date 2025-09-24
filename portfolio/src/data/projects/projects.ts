@@ -21,6 +21,8 @@ export const defaultProjects: Project[] = [
     challenges: ['Coming soon'],
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
     images: [],
+    link: 'https://anneliesannys.vercel.app/',
+    sourceCodeLink: 'https://github.com/brentvervaet/annelies-annys-portfolio',
     date: new Date('2025-10-01'),
   },
 
