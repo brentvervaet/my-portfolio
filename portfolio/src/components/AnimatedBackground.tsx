@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import React from 'react';
 
 export default function AnimatedBackground() {
   return (
@@ -11,7 +10,7 @@ export default function AnimatedBackground() {
         backgroundPosition: ['0% 0%', '100% 100%'],
       }}
       transition={{
-        duration: 20,
+        duration: 12,
         repeat: Infinity,
         repeatType: 'reverse',
         ease: 'linear',
