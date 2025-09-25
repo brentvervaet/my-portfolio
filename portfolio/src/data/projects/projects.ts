@@ -19,10 +19,13 @@ export const defaultProjects: Project[] = [
     longDescription: 'Coming soon - A sleek portfolio to showcase fashion designs and creative projects.',
     features: ['Coming soon'],
     challenges: ['Coming soon'],
-    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
-    images: [],
+    technologies: ['Vue', 'TypeScript', 'Tailwind CSS'],
+    images: [
+      '/images/optimized/Projects/AnneliesPortfolio/portfolio01.webp',
+      '/images/optimized/Projects/AnneliesPortfolio/portfolio02.webp',
+    ],
     link: 'https://anneliesannys.vercel.app/',
-    sourceCodeLink: 'https://github.com/brentvervaet/annelies-annys-portfolio',
+    sourceCodeLink: 'https://github.com/brentvervaet/anneliesannys-portfolio',
     date: new Date('2025-10-01'),
   },
 
@@ -122,13 +125,14 @@ export const defaultProjects: Project[] = [
       'First time using TypeScript and Next.js → Solved with AI assistance, intelligent code suggestions (IntelliSense), and prior experience with Node.js.',
     ],
     technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
-    images: ['/images/optimized/Projects/Portfolio/portfolio01.webp',
+    images: [
+      '/images/optimized/Projects/Portfolio/portfolio01.webp',
       '/images/optimized/Projects/Portfolio/portfolio02.webp',
       '/images/optimized/Projects/Portfolio/portfolio03.webp',
       '/images/optimized/Projects/Portfolio/portfolio04.webp',
       '/images/optimized/Projects/Portfolio/portfolio05.webp',
       '/images/optimized/Projects/Portfolio/portfolio06.webp',
-      '/images/optimized/Projects/Portfolio/portfolio07.webp'
+      '/images/optimized/Projects/Portfolio/portfolio07.webp',
     ],
     link: 'https://brentvervaet-dev.vercel.app',
     sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
