@@ -1,4 +1,5 @@
 'use client';
+import { Section, SectionHeading } from '@/components/Section';
 import SocialLinks from '@/components/SocialsLinks';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { motion } from 'framer-motion';
@@ -11,12 +12,12 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
-  <section className="relative space-y-8 py-16">
-    <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row">
+  <Section id="home" className="relative">
+    <div className="relative z-10 flex flex-col items-center gap-10 md:flex-row md:items-start">
       <motion.div
         whileHover={{ rotate: -10, scale: 1.1 }}
         whileTap={{ rotate: 10, scale: 0.9 }}
-        className="rounded-full border border-white/20 bg-white/10 p-1 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20"
+        className="glass rounded-full p-1"
       >
         <Link
           href={'https://www.instagram.com/brentiedebentley/'}
@@ -36,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
         </Link>
       </motion.div>
       <div className="flex flex-col items-center md:items-start">
-        <h1 className="font-mono text-3xl font-bold">
+        <SectionHeading as="h1" className="text-3xl md:text-4xl mb-4">
           Hi, I&apos;m Brent{' '}
           <motion.span
             style={{ display: 'inline-block', originX: 0.7, originY: 0.7 }}
@@ -48,17 +49,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
           >
             👋
           </motion.span>
-        </h1>
-        <p className="mb-4 text-center md:text-left dark:text-zinc-400">
+        </SectionHeading>
+        <p className="mb-4 max-w-xl text-center text-base md:text-left dark:text-zinc-400">
           A full-stack developer focused on creating beautiful and functional web and mobile experiences.
         </p>
-        <div className="mb-2 flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
+        <div className="mb-4 flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
           <Link
             href="https://www.google.com/maps/place/Gent"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open Ghent location in Google Maps"
-            className="mb-2 flex items-center gap-2 text-zinc-600 dark:text-zinc-400"
+            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +82,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
         <SocialLinks className="mt-2" />
       </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default HeroSection;

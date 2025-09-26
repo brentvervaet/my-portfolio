@@ -150,3 +150,21 @@ body {
         @apply bg-background text-foreground;
     }
 }
+
+@layer components {
+    .glass {
+        @apply border border-white/15 bg-white/10 dark:border-white/10 dark:bg-black/20 backdrop-blur-xl shadow-md;
+    }
+
+    .glass-subtle {
+        @apply border border-white/10 bg-white/5 dark:border-white/5 dark:bg-black/10 backdrop-blur-md shadow-sm;
+    }
+
+    .surface-divider {
+        @apply border-t border-white/10 dark:border-white/5;
+    }
+
+    .section-heading {
+        @apply font-mono text-2xl font-bold mb-4 tracking-tight;
+    }
+}

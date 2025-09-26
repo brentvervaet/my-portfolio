@@ -1,5 +1,6 @@
 'use client';
 import ProjectImageCarousel from '@/components/projects/ProjectImageCarousel';
+import { Section, SectionHeading } from '@/components/Section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { defaultProjects, Project } from '@/data/projects/projects';
@@ -29,78 +30,74 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
   };
 
   return (
-    <div id="projects" className="relative px-4 py-6">
-      <div className="relative z-10 container mx-auto">
-        <div className="mx-auto w-full max-w-4xl">
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="font-mono text-2xl font-bold" id="projects-section">
-              Projects
-            </h2>
-            <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.1 }}>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleSortOrder}
-                className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:border-white/10 dark:bg-black/20"
-                title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
-                aria-label={`Currently sorting by ${sortOrder} projects. Click to sort by ${sortOrder === 'newest' ? 'oldest' : 'newest'} projects`}
-              >
-                {sortOrder === 'newest' ? (
-                  <>
-                    Latest
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-arrow-down"
-                    >
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                  </>
-                ) : (
-                  <>
-                    Oldest
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-arrow-up"
-                    >
-                      <line x1="12" y1="19" x2="12" y2="5"></line>
-                      <polyline points="5 12 12 5 19 12"></polyline>
-                    </svg>
-                  </>
-                )}
-              </Button>
-            </motion.div>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2" role="region" aria-labelledby="projects-section">
+    <Section id="projects">
+      <div className="mb-6 flex items-center justify-between">
+        <SectionHeading id="projects-section">Projects</SectionHeading>
+        <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.1 }}>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleSortOrder}
+            className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:border-white/10 dark:bg-black/20"
+            title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
+            aria-label={`Currently sorting by ${sortOrder} projects. Click to sort by ${sortOrder === 'newest' ? 'oldest' : 'newest'} projects`}
+          >
+            {sortOrder === 'newest' ? (
+              <>
+                Latest
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-down"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </>
+            ) : (
+              <>
+                Oldest
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-up"
+                >
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+              </>
+            )}
+          </Button>
+        </motion.div>
+      </div>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2" role="region" aria-labelledby="projects-section">
             {sortedProjects.map(project => (
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 key={project.title}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-2 shadow-md backdrop-blur-md transition-all hover:shadow-lg dark:border-white/10 dark:bg-black/20"
+                className="group flex flex-col overflow-hidden rounded-2xl glass p-0 transition-all hover:shadow-lg"
               >
                 {/*Images*/}
-                <div className="border-b border-white/10 py-1">
+                <div className="surface-divider py-1">
                   <ProjectImageCarousel images={project.images} projectTitle={project.title} />
                 </div>
 
                 {/*Content*/}
-                <div className="p-4">
+                <div className="p-5">
                   <div className="flex items-start justify-between">
                     <Link
                       href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
@@ -120,7 +117,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
                 </div>
 
                 {/*Tags*/}
-                <div className="mx-4 flex-grow pb-4">
+                <div className="px-5 pb-5 flex-grow">
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map(tech => (
                       <Badge
@@ -138,7 +135,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="flex flex-wrap gap-3 border-t border-white/10 p-2 pt-3"
+                  className="flex flex-wrap gap-3 surface-divider p-4 pt-4"
                 >
                   {project.link && (
                     <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
@@ -202,9 +199,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
               </motion.div>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
+    </Section>
   );
 });
 

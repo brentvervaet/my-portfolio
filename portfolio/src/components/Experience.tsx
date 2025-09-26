@@ -1,4 +1,5 @@
 'use client';
+import { Section, SectionHeading } from '@/components/Section';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -75,10 +76,9 @@ const Experience = () => {
   const direction = activeTab === 'education' && prevTab === 'work' ? -1 : 1;
 
   return (
-    <div className="relative px-4 py-6">
-      <div className="relative container mx-auto">
-        <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
-        <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
+    <Section id="experience" size="default">
+      <SectionHeading>Experience</SectionHeading>
+      <Tabs defaultValue="education" className="w-full" onValueChange={handleTabChange}>
           {/* Glass-style TabsList */}
           <TabsList className="mb-2 grid h-12 w-full grid-cols-2 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-1 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/10">
             {/*education*/}
@@ -112,7 +112,7 @@ const Experience = () => {
                 >
                   <TabsContent value="education" forceMount>
                     <div key="education" className="mt-2">
-                      <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                      <div className="glass overflow-hidden rounded-2xl">
                         <div className="p-0">
                           <ul className="ml-10 border-l border-white/20 dark:border-white/10">
                             {education.map(item => (
@@ -135,7 +135,7 @@ const Experience = () => {
                                     />
                                   </span>
                                 </motion.a>
-                                <div className="flex flex-1 flex-col justify-start gap-1">
+                                <div className="flex flex-1 flex-col justify-start gap-1 pr-8">
                                   <time className="text-muted-foreground text-xs">
                                     <span>{item.period.split(' - ')[0]}</span>
                                     <span> - </span>
@@ -143,11 +143,11 @@ const Experience = () => {
                                   </time>
                                   <h2 className="leading-none font-semibold">{item.organization}</h2>
                                   <p className="text-muted-foreground text-sm">{item.title}</p>
-                                  <p className="prose dark:prose-invert pr-8 text-sm">{item.description}</p>
+                                  <p className="prose dark:prose-invert text-sm">{item.description}</p>
                                 </div>
 
                                 {item.skills && item.skills.length > 0 && (
-                                  <div className="mt-2 flex flex-row flex-wrap items-start gap-2">
+                                  <div className="mt-3 flex flex-row flex-wrap items-start gap-2">
                                     {item.skills.map(skill => (
                                       <Badge
                                         key={skill}
@@ -179,7 +179,7 @@ const Experience = () => {
                 >
                   {/*Content*/}
                   <TabsContent value="work" forceMount>
-                    <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-md backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+                    <div className="glass overflow-hidden rounded-2xl">
                       <div className="p-0">
                         <ul className="ml-10 border-l border-white/20 dark:border-white/10">
                           {workExperience.map(item => (
@@ -202,7 +202,7 @@ const Experience = () => {
                                   />
                                 </span>
                               </motion.a>
-                              <div className="flex flex-1 flex-col justify-start gap-1">
+                              <div className="flex flex-1 flex-col justify-start gap-1 pr-8">
                                 <time className="text-muted-foreground text-xs">
                                   <span>{item.period.split(' - ')[0]}</span>
                                   <span> - </span>
@@ -210,7 +210,7 @@ const Experience = () => {
                                 </time>
                                 <h2 className="leading-none font-semibold">{item.organization}</h2>
                                 <p className="text-muted-foreground text-sm">{item.title}</p>
-                                <ul className="ml-4 list-outside list-disc">
+                                <ul className="ml-4 list-outside list-disc text-sm">
                                   {item.responsibilities?.map((responsibility, idx) => (
                                     <li key={`${item.id}-resp-${idx}`} className="prose dark:prose-invert pr-8 text-sm">
                                       {responsibility}
@@ -219,7 +219,7 @@ const Experience = () => {
                                 </ul>
                               </div>
                               {item.skills && item.skills.length > 0 && (
-                                <div className="mt-2 mr-8 flex flex-row flex-wrap items-start gap-2">
+                                <div className="mt-3 mr-8 flex flex-row flex-wrap items-start gap-2">
                                   {item.skills.map(skill => (
                                     <Badge
                                       key={skill}
@@ -241,8 +241,7 @@ const Experience = () => {
             </AnimatePresence>
           </div>
         </Tabs>
-      </div>
-    </div>
+    </Section>
   );
 };
 
