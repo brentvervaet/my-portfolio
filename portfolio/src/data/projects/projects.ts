@@ -29,6 +29,7 @@ export const defaultProjects: Project[] = [
     date: new Date('2025-10-01'),
   },
 
+  //TuneWithMe Web App
   {
     title: 'TuneWithMe',
     description:
@@ -138,6 +139,7 @@ export const defaultProjects: Project[] = [
     sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
     date: new Date('2025-06-25'),
   },
+
   //IT-conference App
   {
     title: 'IT-conference App',
@@ -191,7 +193,7 @@ export const defaultProjects: Project[] = [
       'Handling asynchronous operations with proper error boundaries and retry mechanisms.',
       'Creating a scalable component architecture with proper props and event handling.',
     ],
-    technologies: ['Vue 3', 'TypeScript', 'Bootstrap 5', 'Vite'],
+    technologies: ['Vue', 'TypeScript', 'Bootstrap'],
     images: [
       '/images/optimized/Projects/GamifiedDashboard/dashboard01.webp',
       '/images/optimized/Projects/GamifiedDashboard/dashboard02.webp',
