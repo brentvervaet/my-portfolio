@@ -24,11 +24,6 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   return (
     <main className="relative mx-auto max-w-3xl px-4 py-8">
-      {/* Decorative blurred gradient orbs */}
-      {/*TODO*/}
-      {/*<div className="absolute -top-20 -left-20 z-0 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></div>*/}
-      {/*<div className="absolute -right-20 -bottom-20 z-0 h-72 w-72 rounded-full bg-purple-400/20 blur-3xl"></div>*/}
-
       <div className="relative z-10 mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

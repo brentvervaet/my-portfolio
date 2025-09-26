@@ -54,23 +54,8 @@ const workExperience: ExperienceItem[] = [
     period: '2025 - 2026',
     description: 'Software Development Internship',
     responsibilities: ['Internship starting February 2025'],
-    skills: [
-      'HTML5',
-      'Angular',
-      'React',
-      'Ionic',
-      'Capacitor',
-      'Flutter',
-      'Java',
-      'Kotlin',
-      'Swift',
-      'REST',
-      'PHP',
-      'Laravel',
-      'MySQL',
-      'Node.js',
-      'MongoDB',
-    ],
+
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Node.js', 'Laravel', 'Python', 'SQL', 'REST'],
     logo: '/images/optimized/home/experience/endare.webp',
     website: 'https://www.endare.com',
   },
@@ -91,11 +76,6 @@ const Experience = () => {
 
   return (
     <div className="relative px-4 py-6">
-      {/* Decorative blurred gradient orbs in background */}
-      {/*TODO*/}
-      {/*<motion.div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl"></motion.div>*/}
-      {/*<motion.div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-purple-400/20 blur-2xl"></motion.div>*/}
-
       <div className="relative container mx-auto">
         <h2 className="mb-8 font-mono text-2xl font-bold">Experience</h2>
         <Tabs defaultValue="education" className="mx-auto w-full max-w-4xl" onValueChange={handleTabChange}>
