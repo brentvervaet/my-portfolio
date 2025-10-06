@@ -26,7 +26,7 @@ export const defaultProjects: Project[] = [
     ],
     link: 'https://anneliesannys.vercel.app/',
     sourceCodeLink: 'https://github.com/brentvervaet/anneliesannys-portfolio',
-    date: new Date('2025-10-01'),
+    date: new Date('2025-11-01'),
   },
 
   //TuneWithMe Web App

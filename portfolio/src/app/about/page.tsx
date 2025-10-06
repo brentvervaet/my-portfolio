@@ -31,9 +31,10 @@ const Page = () => {
               >
                 <h3 className="mb-2 font-mono text-xl font-bold">Background</h3>
                 <p className="dark:text-zinc-400">
-                  My journey into web development began with a curiosity about how digital experiences are built.
-                  I&apos;ve since developed a strong foundation in both frontend and backend technologies, with a
-                  particular interest in React, JS, Java & Spring.
+                  My journey into web development began with a passion for technology and creativity. This is why I
+                  relish the combination of both aspects in my role as a full-stack developer. I have established a
+                  solid foundation in both frontend and backend technologies, primarily concentrating on frontend
+                  frameworks such as React and JavaScript.
                 </p>
               </motion.div>
 
@@ -55,8 +56,7 @@ const Page = () => {
                   >
                     Pink on Red
                   </a>{' '}
-                  whether it&apos;s jamming with friends or performing live. Music has always been a creative outlet
-                  that complements my technical work.
+                  whether we&apos;re just jamming or performing live.
                 </p>
               </motion.div>
 
@@ -68,9 +68,8 @@ const Page = () => {
                 className="dark:text-zinc-400"
               >
                 I also enjoy playing video games or reading a good book to unwind. And when the weather&apos;s nice, you
-                might find me on the golf course trying to convince myself that my swing is getting better (spoiler:
-                it&apos;s not). These activities help me maintain a balanced lifestyle and often inspire fresh
-                perspectives that I bring back to my work.
+                might find me on the golf course 🏌️‍♂️trying to convince myself that my swing is getting better (spoiler:
+                it&apos;s not).
               </motion.p>
 
               <motion.div
