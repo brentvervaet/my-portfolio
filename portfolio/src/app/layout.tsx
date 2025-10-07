@@ -48,8 +48,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://brentvervaet.dev',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
-    description:
-      'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
+    description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
     siteName: 'Brent Vervaet Portfolio',
     images: [
       {
@@ -63,8 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
-    description:
-      'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
+    description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
     images: ['/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico'],
   },
   robots: {
@@ -85,9 +83,7 @@ export const metadata: Metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
@@ -123,7 +119,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body
         className={`flex min-h-screen flex-col bg-teal-100 font-sans text-zinc-900 antialiased dark:bg-teal-900 dark:text-white`}
       >
-        
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
             <Header />

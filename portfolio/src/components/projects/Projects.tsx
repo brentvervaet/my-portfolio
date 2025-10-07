@@ -85,120 +85,120 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
         </motion.div>
       </div>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2" role="region" aria-labelledby="projects-section">
-            {sortedProjects.map(project => (
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                key={project.title}
-                className="group flex flex-col overflow-hidden rounded-2xl glass p-0 transition-all hover:shadow-lg"
-              >
-                {/*Images*/}
-                <div className="surface-divider py-1">
-                  <ProjectImageCarousel images={project.images} projectTitle={project.title} />
-                </div>
+        {sortedProjects.map(project => (
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            key={project.title}
+            className="group glass flex flex-col overflow-hidden rounded-2xl p-0 transition-all hover:shadow-lg"
+          >
+            {/*Images*/}
+            <div className="surface-divider py-1">
+              <ProjectImageCarousel images={project.images} projectTitle={project.title} />
+            </div>
 
-                {/*Content*/}
-                <div className="p-5">
-                  <div className="flex items-start justify-between">
-                    <Link
-                      href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="group-hover:text-primary rounded focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none"
-                      aria-label={`View details for ${project.title} project`}
-                    >
-                      <h3 className="font-mono text-lg font-semibold transition">{project.title}</h3>
-                    </Link>
-                    <span className="text-xs text-zinc-500">
-                      {project.date.toLocaleDateString('en-UK', {
-                        year: 'numeric',
-                        month: 'short',
-                      })}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-300">{project.description}</p>
-                </div>
-
-                {/*Tags*/}
-                <div className="px-5 pb-5 flex-grow">
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.map(tech => (
-                      <Badge
-                        key={tech}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-normal text-zinc-800 shadow-sm backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-black/5 dark:text-zinc-300"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {/*Links*/}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="flex flex-wrap gap-3 surface-divider p-4 pt-4"
+            {/*Content*/}
+            <div className="p-5">
+              <div className="flex items-start justify-between">
+                <Link
+                  href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="group-hover:text-primary rounded focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none"
+                  aria-label={`View details for ${project.title} project`}
                 >
-                  {project.link && (
-                    <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="rounded-full border border-white/20 bg-white/5 px-6 shadow-md backdrop-blur-xl transition-all hover:bg-white/10 dark:border-white/10 dark:bg-black/10 dark:hover:bg-black/20"
-                      >
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mr-1"
-                          >
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" y1="14" x2="21" y2="3" />
-                          </svg>
-                          Visit
-                        </a>
-                      </Button>
-                    </motion.div>
-                  )}
+                  <h3 className="font-mono text-lg font-semibold transition">{project.title}</h3>
+                </Link>
+                <span className="text-xs text-zinc-500">
+                  {project.date.toLocaleDateString('en-UK', {
+                    year: 'numeric',
+                    month: 'short',
+                  })}
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-300">{project.description}</p>
+            </div>
 
-                  {project.sourceCodeLink && (
-                    <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="rounded-full border border-white/20 bg-white/5 px-6 shadow-md backdrop-blur-xl transition-all hover:bg-white/10 dark:border-white/10 dark:bg-black/10 dark:hover:bg-black/20"
+            {/*Tags*/}
+            <div className="flex-grow px-5 pb-5">
+              <div className="flex flex-wrap gap-1">
+                {project.technologies.map(tech => (
+                  <Badge
+                    key={tech}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-normal text-zinc-800 shadow-sm backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-black/5 dark:text-zinc-300"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/*Links*/}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="surface-divider flex flex-wrap gap-3 p-4 pt-4"
+            >
+              {project.link && (
+                <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="rounded-full border border-white/20 bg-white/5 px-6 shadow-md backdrop-blur-xl transition-all hover:bg-white/10 dark:border-white/10 dark:bg-black/10 dark:hover:bg-black/20"
+                  >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mr-1"
                       >
-                        <a href={project.sourceCodeLink} target="_blank" rel="noopener noreferrer">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mr-1"
-                          >
-                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                            <path d="M9 18c-4.51 2-5-2-7-2" />
-                          </svg>
-                          Source Code
-                        </a>
-                      </Button>
-                    </motion.div>
-                  )}
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                      Visit
+                    </a>
+                  </Button>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
+              )}
+
+              {project.sourceCodeLink && (
+                <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="rounded-full border border-white/20 bg-white/5 px-6 shadow-md backdrop-blur-xl transition-all hover:bg-white/10 dark:border-white/10 dark:bg-black/10 dark:hover:bg-black/20"
+                  >
+                    <a href={project.sourceCodeLink} target="_blank" rel="noopener noreferrer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mr-1"
+                      >
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                      </svg>
+                      Source Code
+                    </a>
+                  </Button>
+                </motion.div>
+              )}
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
     </Section>
   );
 });

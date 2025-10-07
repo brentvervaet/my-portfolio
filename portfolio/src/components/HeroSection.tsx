@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
         </Link>
       </motion.div>
       <div className="flex flex-col items-center md:items-start">
-        <SectionHeading as="h1" className="text-3xl md:text-4xl mb-4">
+        <SectionHeading as="h1" className="mb-4 text-3xl md:text-4xl">
           Hi, I&apos;m Brent{' '}
           <motion.span
             style={{ display: 'inline-block', originX: 0.7, originY: 0.7 }}

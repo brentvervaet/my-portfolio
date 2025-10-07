@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { FaJava } from 'react-icons/fa';
 import {
-    SiCss3,
-    SiGit,
-    SiHtml5,
-    SiJavascript,
-    SiJira,
-    SiMongodb,
-    SiMysql,
-    SiNeo4J,
-    SiNextdotjs,
-    SiNodedotjs,
-    SiPython,
-    SiReact,
-    SiSpring,
-    SiSwift,
-    SiTailwindcss,
-    SiTypescript,
-    SiVuedotjs,
+  SiCss3,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiJira,
+  SiMongodb,
+  SiMysql,
+  SiNeo4J,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiSpring,
+  SiSwift,
+  SiTailwindcss,
+  SiTypescript,
+  SiVuedotjs,
 } from 'react-icons/si';
 
 interface Skill {
@@ -72,11 +72,7 @@ const Skills: React.FC<SkillsProps> = ({ skills = defaultSkills }) => {
   return (
     <Section id="skills" size="default">
       <SectionHeading id="skills-section">Skills</SectionHeading>
-      <div
-        aria-label={'region'}
-        aria-labelledby="skills-section"
-        className="glass overflow-hidden rounded-2xl"
-      >
+      <div aria-label={'region'} aria-labelledby="skills-section" className="glass overflow-hidden rounded-2xl">
         <div className="grid grid-cols-3 gap-8 p-6 sm:grid-cols-4 md:grid-cols-6">
           {skills.map(skill => (
             <motion.a

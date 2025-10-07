@@ -27,7 +27,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/20 dark:border-white/10 pt-6"
+                className="border-t border-white/20 pt-6 dark:border-white/10"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold">Background</h2>
                 <p className="dark:text-zinc-400">

@@ -14,13 +14,7 @@ interface SectionProps {
  * - default: larger vertical rhythm for major content
  * - compact: slightly reduced for subordinate sections
  */
-export const Section: React.FC<SectionProps> = ({
-  id,
-  children,
-  className,
-  size = 'default',
-  noMaxWidth = false,
-}) => {
+export const Section: React.FC<SectionProps> = ({ id, children, className, size = 'default', noMaxWidth = false }) => {
   // New tighter vertical rhythm (base 8 -> scaled) per user request
   // default: py-8 md:py-12, compact: py-6 md:py-8
   const vertical = size === 'compact' ? 'py-6 md:py-8' : 'py-8 md:py-12';
@@ -39,7 +33,11 @@ interface SectionHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({ children, className, as = 'h2', ...rest }) => {
   const Tag: ElementType = as;
-  return <Tag className={cn('section-heading', className)} {...rest}>{children}</Tag>;
+  return (
+    <Tag className={cn('section-heading', className)} {...rest}>
+      {children}
+    </Tag>
+  );
 };
 
 export default Section;
