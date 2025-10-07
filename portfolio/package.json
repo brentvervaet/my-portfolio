@@ -6,6 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
     "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
@@ -30,6 +33,7 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "@next/bundle-analyzer": "^15.5.4",
+    "@next/eslint-plugin-next": "^15.5.4",
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^24.7.0",
