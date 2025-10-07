@@ -1,4 +1,3 @@
-import AnimatedBackground from '@/components/AnimatedBackground';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PageTransition from '@/components/PageTransition';
@@ -120,11 +119,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <title>Portfolio</title>
       </head>
+
       <body
         className={`flex min-h-screen flex-col bg-zinc-100 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
       >
+        
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <AnimatedBackground />
           <div className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
             <Header />
             <PageTransition>{children}</PageTransition>
