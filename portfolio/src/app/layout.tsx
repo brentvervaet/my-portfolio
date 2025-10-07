@@ -121,7 +121,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
 
       <body
-        className={`flex min-h-screen flex-col bg-zinc-100 font-sans text-zinc-900 antialiased dark:bg-zinc-900 dark:text-white`}
+        className={`flex min-h-screen flex-col bg-teal-100 font-sans text-zinc-900 antialiased dark:bg-teal-900 dark:text-white`}
       >
         
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
