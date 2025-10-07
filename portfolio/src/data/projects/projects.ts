@@ -135,7 +135,7 @@ export const defaultProjects: Project[] = [
       '/images/optimized/Projects/Portfolio/portfolio06.webp',
       '/images/optimized/Projects/Portfolio/portfolio07.webp',
     ],
-    link: 'https://brentvervaet-dev.vercel.app',
+    link: 'https://brentvervaet.dev',
     sourceCodeLink: 'https://github.com/brentvervaet/my-portfolio.git',
     date: new Date('2025-06-25'),
   },
