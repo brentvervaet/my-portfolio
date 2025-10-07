@@ -29,7 +29,7 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 className="border-t border-white/10 pt-6"
               >
-                <h3 className="mb-2 font-mono text-xl font-bold">Background</h3>
+                <h2 className="mb-2 font-mono text-xl font-bold">Background</h2>
                 <p className="dark:text-zinc-400">
                   My journey into web development began with a passion for technology and creativity. This is why I
                   relish the combination of both aspects in my role as a full-stack developer. I have established a
@@ -45,7 +45,7 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 className="border-t border-white/10 pt-6"
               >
-                <h3 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h3>
+                <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h2>
                 <p className="dark:text-zinc-400">
                   When I&apos;m not coding, I love to play music with my band,{' '}
                   <a
@@ -79,7 +79,7 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 className="border-t border-white/10 pt-6"
               >
-                <h3 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">My Approach</h3>
+                <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">My Approach</h2>
                 <p className="dark:text-zinc-400">
                   I believe in creating solutions that are not only technically sound but also user-focused and
                   accessible. Every project is an opportunity to learn something new and push my skills further.
