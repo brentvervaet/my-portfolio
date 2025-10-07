@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PUBLIC_IMAGES_DIR = path.join(__dirname, '../public/images');
 const OPTIMIZED_DIR = path.join(PUBLIC_IMAGES_DIR, 'optimized');
