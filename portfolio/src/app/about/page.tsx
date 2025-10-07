@@ -6,7 +6,7 @@ const Page = () => {
     <main className="relative mx-auto max-w-3xl p-10">
       <div className="container mx-auto">
         <div className="mx-auto w-full max-w-4xl">
-          <div className="overflow-hidden rounded-2xl border border-white/30 bg-white/10 p-8 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
+          <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/20">
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
@@ -27,7 +27,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/30 dark:border-white/10 pt-6"
+                className="border-t border-white/20 dark:border-white/10 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold">Background</h2>
                 <p className="dark:text-zinc-400">
@@ -43,7 +43,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/30 pt-6"
+                className="border-t border-white/20 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h2>
                 <p className="dark:text-zinc-400">
@@ -77,7 +77,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/30 pt-6"
+                className="border-t border-white/20 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">My Approach</h2>
                 <p className="dark:text-zinc-400">
@@ -91,7 +91,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="mt-6 border-t border-white/30 pt-6"
+                className="mt-6 border-t border-white/20 pt-6"
               >
                 <p className="text-center text-sm font-light dark:text-zinc-400">
                   Don&apos;t hesitate to reach out if you want to collaborate on a project or discuss ideas. I&apos;m
