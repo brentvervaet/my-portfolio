@@ -27,7 +27,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/10 pt-6"
+                className="border-t border-white/20 dark:border-white/10 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold">Background</h2>
                 <p className="dark:text-zinc-400">
@@ -43,7 +43,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/10 pt-6"
+                className="border-t border-white/20 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">Outside of Coding</h2>
                 <p className="dark:text-zinc-400">
@@ -52,7 +52,7 @@ const Page = () => {
                     href="https://linktr.ee/pinkonred"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold text-red-500 hover:underline"
+                    className="font-bold text-pink-500 hover:underline"
                   >
                     Pink on Red
                   </a>{' '}
@@ -77,7 +77,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="border-t border-white/10 pt-6"
+                className="border-t border-white/20 pt-6"
               >
                 <h2 className="mb-2 font-mono text-xl font-bold text-zinc-900 dark:text-white">My Approach</h2>
                 <p className="dark:text-zinc-400">
@@ -91,7 +91,7 @@ const Page = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6 }}
-                className="mt-6 border-t border-white/10 pt-6"
+                className="mt-6 border-t border-white/20 pt-6"
               >
                 <p className="text-center text-sm font-light dark:text-zinc-400">
                   Don&apos;t hesitate to reach out if you want to collaborate on a project or discuss ideas. I&apos;m
