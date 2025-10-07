@@ -1,12 +1,12 @@
 'use client';
+import SocialLinks from '@/components/SocialsLinks';
+import ThemeToggle from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import Link from 'next/link';
-import SocialLinks from '@/components/SocialsLinks';
-import { useState } from 'react';
-import ThemeToggle from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function Header() {
         {!isMenuOpen && (
           <SheetTrigger asChild>
             <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9, opacity: 0 }}>
-              <Button variant={'link'} size="icon" className="md:hidden" asChild>
+              <Button variant={'link'} size="icon" className="md:hidden" asChild aria-label='Open menu'>
                 <Menu className="size-lg h-6 w-6" />
               </Button>
             </motion.button>
