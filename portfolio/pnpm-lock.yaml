@@ -66,6 +66,9 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^15.5.4
         version: 15.5.4
+      '@next/eslint-plugin-next':
+        specifier: ^15.5.4
+        version: 15.5.4
       '@shadcn/ui':
         specifier: ^0.0.4
         version: 0.0.4
