@@ -35,8 +35,8 @@ export default function Header() {
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
         {!isMenuOpen && (
           <SheetTrigger asChild>
-            <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9, opacity: 0 }}>
-              <Button variant={'link'} size="icon" className="md:hidden" asChild aria-label='Open menu'>
+            <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9, opacity: 0 }} aria-label='Open menu'>
+              <Button variant={'link'} size="icon" className="md:hidden" asChild >
                 <Menu className="size-lg h-6 w-6" />
               </Button>
             </motion.button>
