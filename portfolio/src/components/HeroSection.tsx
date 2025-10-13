@@ -79,7 +79,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
             <span>Ghent 9000, Belgium</span>
           </Link>
         </div>
-        <SocialLinks className="mt-2" />
+        {/*TODO: edit resume*/}
+        <SocialLinks className="mt-2" showResumeButton={false} />
       </div>
     </div>
   </Section>
