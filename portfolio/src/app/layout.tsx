@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://brentvervaet.dev',
-    title: 'Brent Vervaet | Full-Stack Developer ',
+    title: 'Brent Vervaet | Full-Stack Developer',
     description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
     siteName: 'Brent Vervaet - Portfolio',
     images: [
       {
-        url: '/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico',
+        url: '/images/optimized/home/brent-vervaet.webp',
         width: 1200,
         height: 630,
         alt: 'Brent Vervaet - Full-Stack Developer',
@@ -53,7 +53,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer Portfolio',
     description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
-    images: ['/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico'],
+    images: ['/images/optimized/home/brent-vervaet.webp'],
+    creator: '@_brentie_',
   },
   robots: {
     index: true,
@@ -103,7 +104,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             }),
           }}
         />
-        <title>Portfolio</title>
       </head>
 
       <body
