@@ -25,18 +25,8 @@ export const metadata: Metadata = {
     template: '%s | Brent Vervaet',
   },
   description:
-    'Full-stack developer specializing in React, Next.js, Swift, and Java. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-  keywords: [
-    'Brent Vervaet',
-    'Full-Stack Developer',
-    'React',
-    'Next.js',
-    'Swift',
-    'Java',
-    'Portfolio',
-    'Web Development',
-    'Mobile Development',
-  ],
+    'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+  keywords: ['Brent Vervaet', 'Full-Stack Developer', 'Portfolio', 'Web Development', 'Mobile Development'],
   authors: [{ name: 'Brent Vervaet' }],
   creator: 'Brent Vervaet',
   metadataBase: new URL('https://brentvervaet.dev'),
@@ -47,9 +37,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://brentvervaet.dev',
-    title: 'Brent Vervaet | Full-Stack Developer Portfolio',
+    title: 'Brent Vervaet | Full-Stack Developer ',
     description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
-    siteName: 'Brent Vervaet Portfolio',
+    siteName: 'Brent Vervaet - Portfolio',
     images: [
       {
         url: '/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico',
