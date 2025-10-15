@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://brentvervaet.dev',
     title: 'Brent Vervaet | Full-Stack Developer',
-    description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
+    description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     siteName: 'Brent Vervaet - Portfolio',
     images: [
       {
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brent Vervaet | Full-Stack Developer Portfolio',
-    description: 'A full-stack developer focused on creating beautiful and functional web and mobile experiences.',
+    title: 'Brent Vervaet | Full-Stack Developer',
+    description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     images: ['/images/optimized/home/brent-vervaet.webp'],
     creator: '@_brentie_',
   },
@@ -97,7 +97,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               url: 'https://brentvervaet.dev',
               image: 'https://brentvervaet.dev/images/optimized/home/brent-vervaet.webp',
               jobTitle: 'Full-Stack Developer',
-              description: 'Full-stack developer specializing front-end and mobile development.',
+              description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
               alumniOf: 'HOGENT University',
               knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'TypeScript', 'Tailwind CSS', 'Node.js'],
               sameAs: ['https://github.com/brentvervaet', 'https://linkedin.com/in/brent-vervaet'],
