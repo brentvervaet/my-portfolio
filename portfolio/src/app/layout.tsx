@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/optimized/home/brent-vervaet.webp',
-        width: 1200,
-        height: 630,
+        width: 1378,
+        height: 1378,
         alt: 'Brent Vervaet - Full-Stack Developer',
       },
     ],
