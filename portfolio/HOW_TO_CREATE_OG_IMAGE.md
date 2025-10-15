@@ -17,7 +17,6 @@ Google is showing a random project screenshot (IT-Conference app) because:
 3. Design includes:
    - Your name: **Brent Vervaet**
    - Title: **Full-Stack Developer**
-   - Tech stack: React • Next.js • Swift • Java
    - Your photo (optional)
    - Website: brentvervaet.dev
    - Use your brand colors (teal theme)

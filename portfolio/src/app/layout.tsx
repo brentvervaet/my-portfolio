@@ -98,9 +98,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               image: 'https://brentvervaet.dev/images/optimized/home/brent-vervaet.webp',
               jobTitle: 'Full-Stack Developer',
               description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-              alumniOf: 'HOGENT University',
-              knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-              sameAs: ['https://github.com/brentvervaet', 'https://linkedin.com/in/brent-vervaet'],
+              //TODO: O7/2026
+              // alumniOf: 'HOGENT University',
+              knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'Vue', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+              sameAs: ['https://github.com/brentvervaet', 'https://linkedin.com/in/brentvervaet', 'https://twitter.com/_brentie_', 'https://brentvervaet.dev', 'https://www.instagram.com/brentiedebentley/'],
             }),
           }}
         />
