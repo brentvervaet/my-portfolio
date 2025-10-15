@@ -24,7 +24,7 @@ export const defaultProjects: Project[] = [
       '/images/optimized/Projects/AnneliesPortfolio/portfolio01.webp',
       '/images/optimized/Projects/AnneliesPortfolio/portfolio02.webp',
     ],
-    link: 'https://anneliesannys.vercel.app/',
+    link: 'https://anneliesannys.com',
     sourceCodeLink: 'https://github.com/brentvervaet/anneliesannys-portfolio',
     date: new Date('2025-11-01'),
   },
