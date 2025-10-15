@@ -3,6 +3,7 @@
 ## The Problem
 
 Google is showing a random project screenshot (IT-Conference app) because:
+
 1. Your current image (`brent-vervaet.webp`) is square (1378x1378)
 2. OG images should be landscape (1200x630) for best results
 3. Square images get cropped awkwardly on social media
@@ -39,6 +40,7 @@ Use [og-image.vercel.app](https://og-image.vercel.app/) to generate one dynamica
 ## Design Tips
 
 ### Layout Example
+
 ```
 ┌────────────────────────────────────────────────┐
 │                                                │
@@ -52,6 +54,7 @@ Use [og-image.vercel.app](https://og-image.vercel.app/) to generate one dynamica
 ```
 
 ### Design Guidelines
+
 - ✅ Use large, bold text (minimum 60px for name)
 - ✅ High contrast (dark bg + light text or vice versa)
 - ✅ Keep important content in center (edges get cropped)
@@ -65,6 +68,7 @@ Use [og-image.vercel.app](https://og-image.vercel.app/) to generate one dynamica
 ## After Creating the Image
 
 ### 1. Save the file
+
 ```
 /public/og-image.png  (or .jpg)
 ```
@@ -72,6 +76,7 @@ Use [og-image.vercel.app](https://og-image.vercel.app/) to generate one dynamica
 ### 2. Update your metadata in `src/app/layout.tsx`
 
 Change this:
+
 ```typescript
 images: [
   {
@@ -84,6 +89,7 @@ images: [
 ```
 
 To this:
+
 ```typescript
 images: [
   {
@@ -98,6 +104,7 @@ images: [
 ### 3. Clear Google's cache
 
 After deploying, use these tools to refresh:
+
 - [Google Search Console](https://search.google.com/search-console) - Request re-indexing
 - [Facebook Debugger](https://developers.facebook.com/tools/debug/) - Clear cache
 - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
