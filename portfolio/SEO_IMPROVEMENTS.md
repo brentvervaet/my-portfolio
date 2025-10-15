@@ -3,25 +3,31 @@
 ## Issues Fixed
 
 ### 1. ❌ **Incorrect Image URLs in Metadata**
+
 **Problem:** OpenGraph and Twitter images were using absolute file system paths:
+
 ```typescript
 url: '/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ico'
 ```
 
 **Fixed:** Changed to proper web URLs:
+
 ```typescript
 url: '/images/optimized/home/brent-vervaet.webp'
 ```
 
 ### 2. ❌ **Hardcoded Title Tag**
+
 **Problem:** `<title>Portfolio</title>` in `layout.tsx` was overriding the metadata title.
 
 **Fixed:** Removed the hardcoded title tag. Next.js will automatically generate it from metadata.
 
 ### 3. ❌ **Missing Twitter Creator**
+
 **Fixed:** Added `creator: '@brentvervaet'` to Twitter metadata.
 
 ### 4. ❌ **Missing About Page Metadata**
+
 **Problem:** About page had no SEO metadata.
 
 **Fixed:** Created `/src/app/about/layout.tsx` with proper metadata (since the page is a client component).
@@ -31,13 +37,17 @@ url: '/images/optimized/home/brent-vervaet.webp'
 ## New SEO Files Added
 
 ### 1. ✅ **robots.txt** (`/public/robots.txt`)
+
 Static robots.txt file that search engines can access at `/robots.txt`.
 
 ### 2. ✅ **Dynamic Robots** (`/src/app/robots.ts`)
+
 Next.js route handler for dynamic robots.txt generation.
 
 ### 3. ✅ **Dynamic Sitemap** (`/src/app/sitemap.ts`)
+
 Automatically generates sitemap.xml with:
+
 - Homepage (priority: 1.0)
 - About page (priority: 0.8)
 - All project pages (priority: 0.7)
@@ -48,9 +58,11 @@ Automatically generates sitemap.xml with:
 ## Current Metadata Structure
 
 ### Root Layout (`/src/app/layout.tsx`)
+
 ✅ **Correct placement** - Metadata should be in the root layout for default/fallback values.
 
 Contains:
+
 - Default title and template
 - Description, keywords, authors
 - OpenGraph metadata
@@ -61,9 +73,11 @@ Contains:
 - Icons/favicons
 
 ### About Page (`/src/app/about/layout.tsx`)
+
 Contains page-specific metadata that overrides the default.
 
 ### Project Pages (`/src/app/projects/[slug]/page.tsx`)
+
 Already has dynamic metadata generation with `generateMetadata()` function ✅
 
 ---
@@ -83,21 +97,27 @@ Already has dynamic metadata generation with `generateMetadata()` function ✅
 ## Testing Your SEO
 
 ### 1. Check Sitemap
+
 Visit: `https://brentvervaet.dev/sitemap.xml`
 
 ### 2. Check Robots.txt
+
 Visit: `https://brentvervaet.dev/robots.txt`
 
 ### 3. Test OpenGraph Tags
-Use: https://www.opengraph.xyz/ or https://socialsharepreview.com/
+
+Use: <https://www.opengraph.xyz/> or <https://socialsharepreview.com/>
 
 ### 4. Test Twitter Cards
-Use: https://cards-dev.twitter.com/validator
+
+Use: <https://cards-dev.twitter.com/validator>
 
 ### 5. Google Rich Results Test
-Use: https://search.google.com/test/rich-results
+
+Use: <https://search.google.com/test/rich-results>
 
 ### 6. Lighthouse SEO Audit
+
 Run in Chrome DevTools → Lighthouse → SEO
 
 ---
