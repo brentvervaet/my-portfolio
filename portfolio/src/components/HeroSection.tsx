@@ -16,8 +16,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
     <div className="relative z-10 flex flex-col items-center gap-10 md:flex-row md:items-start">
       <motion.div
         whileHover={{ rotate: -10, scale: 1.1 }}
-        whileTap={{ rotate: 10, scale: 0.9 }}
-        className="glass rounded-full p-1"
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+        className="glass rounded-full p-1 will-change-transform"
       >
         <Link
           href={'https://www.instagram.com/brentiedebentley/'}
@@ -42,10 +42,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
           <motion.span
             style={{ display: 'inline-block', originX: 0.7, originY: 0.7 }}
             animate={wave ? { rotate: [0, 20, -10, 20, 0] } : { rotate: 0 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
             onHoverStart={() => setWave(true)}
             onAnimationComplete={() => setWave(false)}
             aria-label="Animated waving hand emoji"
+            className="will-change-transform"
           >
             👋
           </motion.span>

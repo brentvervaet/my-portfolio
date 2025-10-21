@@ -10,6 +10,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Improve scrolling performance */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 body {
     min-height: 100vh;
     font-family: var(--font-inter), 'Roboto', sans-serif;
@@ -17,7 +24,31 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     transition: background-color 0.6s ease, color 0.6s ease;
+}
 
+/* GPU-accelerated animated background */
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient {
+    animation: gradient-shift 20s ease infinite;
+    will-change: background-position;
+}
+
+/* Optimize transforms for better performance */
+@media (prefers-reduced-motion: no-preference) {
+    .will-change-transform {
+        will-change: transform;
+    }
 }
 
 .font-mono {
