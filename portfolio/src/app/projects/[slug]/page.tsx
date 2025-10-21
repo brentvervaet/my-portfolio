@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const projectImage = project.images[0] || '/images/optimized/home/brent-vervaet.webp';
+  const projectImage = project.images[0] || '/images/home/brent-vervaet.webp';
 
   return {
     title: `${project.title} | Brent Vervaet`,

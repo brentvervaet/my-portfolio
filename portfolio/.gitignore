@@ -42,9 +42,3 @@ next-env.d.ts
 
 #md
 PERFORMANCE_OPTIMIZATION.md
-
-# Original images (keep optimized versions only)
-/public/images/Projects/
-/public/images/home/
-# Keep optimized versions
-!/public/images/optimized/

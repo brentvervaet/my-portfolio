@@ -13,7 +13,7 @@ url: '/Users/brentvervaet/Code/Projects/my-portfolio/portfolio/public/favicon.ic
 **Fixed:** Changed to proper web URLs:
 
 ```typescript
-url: '/images/optimized/home/brent-vervaet.webp'
+url: '/images/home/brent-vervaet.webp'
 ```
 
 ### 2. ❌ **Hardcoded Title Tag**
@@ -128,7 +128,7 @@ Run in Chrome DevTools → Lighthouse → SEO
 2. **Add OG Image** - Create a dedicated OG image at `/public/images/og-image.png` (1200x630px)
 3. **Google Search Console** - Submit your sitemap
 4. **Google Analytics** - Add tracking if not already present
-5. **Performance** - Ensure all images are optimized (you already have /optimized/ folder ✅)
+5. **Performance** - Ensure all images are optimized
 6. **Accessibility** - Run accessibility audits
 7. **Schema.org** - Consider adding more structured data (e.g., BreadcrumbList, WebSite)
 

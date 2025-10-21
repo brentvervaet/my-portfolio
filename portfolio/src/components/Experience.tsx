@@ -31,7 +31,7 @@ const education: ExperienceItem[] = [
     organization: 'HOGENT',
     period: '2022 - Present',
     description: 'Focus on web and mobile enterprise development.',
-    logo: '/images/optimized/home/experience/hogent.webp',
+    logo: '/images/home/experience/hogent.webp',
     website: 'https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/',
   },
   {
@@ -40,7 +40,7 @@ const education: ExperienceItem[] = [
     organization: 'Sint-Lodewijkscollege',
     period: '2012 - 2018',
     description: '',
-    logo: '/images/optimized/home/experience/stlod.webp',
+    logo: '/images/home/experience/stlod.webp',
     website: 'https://www.sintlodewijkscollege.be/',
   },
 ];
@@ -57,7 +57,7 @@ const workExperience: ExperienceItem[] = [
     responsibilities: ['Internship starting February 2025'],
 
     skills: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Node.js', 'Laravel', 'Python', 'SQL', 'REST'],
-    logo: '/images/optimized/home/experience/endare.webp',
+    logo: '/images/home/experience/endare.webp',
     website: 'https://www.endare.com',
   },
 ];

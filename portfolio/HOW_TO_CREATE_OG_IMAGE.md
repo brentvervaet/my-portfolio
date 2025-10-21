@@ -80,7 +80,7 @@ Change this:
 ```typescript
 images: [
   {
-    url: '/images/optimized/home/brent-vervaet.webp',
+    url: '/images/home/brent-vervaet.webp',
     width: 1378,
     height: 1378,
     alt: 'Brent Vervaet - Full-Stack Developer',

@@ -21,8 +21,8 @@ export const defaultProjects: Project[] = [
     challenges: ['Coming soon'],
     technologies: ['Vue', 'TypeScript', 'Tailwind CSS'],
     images: [
-      '/images/optimized/Projects/AnneliesPortfolio/portfolio01.webp',
-      '/images/optimized/Projects/AnneliesPortfolio/portfolio02.webp',
+      '/images/Projects/AnneliesPortfolio/portfolio01.webp',
+      '/images/Projects/AnneliesPortfolio/portfolio02.webp',
     ],
     link: 'https://anneliesannys.com',
     sourceCodeLink: 'https://github.com/brentvervaet/anneliesannys-portfolio',

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'Brent Vervaet - Portfolio',
     images: [
       {
-        url: '/images/optimized/home/brent-vervaet.webp',
+        url: '/images/home/brent-vervaet.webp',
         width: 1378,
         height: 1378,
         alt: 'Brent Vervaet - Full-Stack Developer',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer',
     description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-    images: ['/images/optimized/home/brent-vervaet.webp'],
+    images: ['/images/home/brent-vervaet.webp'],
     creator: '@_brentie_',
   },
   robots: {
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Person',
               name: 'Brent Vervaet',
               url: 'https://brentvervaet.dev',
-              image: 'https://brentvervaet.dev/images/optimized/home/brent-vervaet.webp',
+              image: 'https://brentvervaet.dev/images/home/brent-vervaet.webp',
               jobTitle: 'Full-Stack Developer',
               description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
               //TODO: O7/2026
