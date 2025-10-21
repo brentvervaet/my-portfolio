@@ -12,9 +12,9 @@ export interface Project {
 }
 
 export const defaultProjects: Project[] = [
-  // Fashion Portfolio - Annelies Annys
+  // Fashion Portfolio: Annelies Annys
   {
-    title: 'Fashion Portfolio - Annelies Annys',
+    title: 'Annelies Annys Portfolio',
     description: 'A fashion portfolio website for fashion student Annelies Annys.',
     longDescription: 'Coming soon - A sleek portfolio to showcase fashion designs and creative projects.',
     features: ['Coming soon'],
