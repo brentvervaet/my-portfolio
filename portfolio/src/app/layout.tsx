@@ -39,7 +39,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://brentvervaet.dev',
     title: 'Brent Vervaet | Full-Stack Developer',
-    description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    description:
+      'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     siteName: 'Brent Vervaet - Portfolio',
     images: [
       {
@@ -53,9 +54,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Brent Vervaet | Full-Stack Developer',
-    description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+    description:
+      'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
     images: ['/images/home/brent-vervaet.webp'],
-    creator: '@_brentie_',
+    creator: '@brentieV',
   },
   robots: {
     index: true,
@@ -98,11 +100,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               url: 'https://brentvervaet.dev',
               image: 'https://brentvervaet.dev/images/home/brent-vervaet.webp',
               jobTitle: 'Full-Stack Developer',
-              description: 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
+              description:
+                'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
               //TODO: O7/2026
               // alumniOf: 'HOGENT University',
               knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'Vue', 'TypeScript', 'Tailwind CSS', 'Node.js'],
-              sameAs: ['https://github.com/brentvervaet', 'https://linkedin.com/in/brentvervaet', 'https://twitter.com/_brentie_', 'https://brentvervaet.dev', 'https://www.instagram.com/brentiedebentley/'],
+              sameAs: [
+                'https://github.com/brentvervaet',
+                'https://linkedin.com/in/brentvervaet',
+                'https://twitter.com/_brentie_',
+                'https://brentvervaet.dev',
+                'https://www.instagram.com/brentiedebentley/',
+              ],
             }),
           }}
         />
@@ -111,7 +120,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body
         className={`flex min-h-screen flex-col bg-teal-100 font-sans text-zinc-900 antialiased dark:bg-teal-900 dark:text-white`}
       >
-                  <AnimatedBackground />
+        <AnimatedBackground />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
             <Header />
