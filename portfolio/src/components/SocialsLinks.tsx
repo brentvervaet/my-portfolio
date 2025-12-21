@@ -16,7 +16,7 @@ type SocialLinksProps = {
   showResumeButton?: boolean;
 };
 
-export default function SocialLinks({ className = '', showResumeButton = true }: Readonly<SocialLinksProps>) {
+export default function SocialLinks({ className = '', showResumeButton = false }: Readonly<SocialLinksProps>) {
   const socialLinks: SocialLink[] = [
     {
       href: 'https://github.com/brentvervaet',
