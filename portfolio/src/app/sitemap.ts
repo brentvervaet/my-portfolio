@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic project pages
   const projectPages: MetadataRoute.Sitemap = defaultProjects.map(project => ({
-    url: `${baseUrl}/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`,
+    url: `${baseUrl}/projects/${project.title.toLowerCase().replaceAll(/\s+/g, '-')}`,
     lastModified: project.date,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
