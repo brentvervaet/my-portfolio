@@ -44,11 +44,6 @@ const defaultSkills: Skill[] = [
   { name: 'Vue', icon: <SiVuedotjs />, url: 'https://vuejs.org/' },
   { name: 'Tailwind CSS', icon: <SiTailwindcss />, url: 'https://tailwindcss.com/' },
 
-  // TODO: future skills
-  // { name: 'C#', icon: <SiSharp />, url: 'https://docs.microsoft.com/en-us/dotnet/csharp/' },
-  // { name: '.NET', icon: <SiDotnet />, url: 'https://dotnet.microsoft.com/' },
-  // { name: 'Blazor', icon: <SiBlazor />, url: 'https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor' },
-
   // Backend/Server Technologies
   { name: 'Node.js', icon: <SiNodedotjs />, url: 'https://nodejs.org/' },
   { name: 'Java', icon: <FaJava />, url: 'https://www.java.com/' },

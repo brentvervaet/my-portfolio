@@ -4,14 +4,15 @@ import Header from '@/components/Header';
 import PageTransition from '@/components/PageTransition';
 import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
-import { Fira_Code, Inter } from 'next/font/google';
+import { Fira_Code, Roboto } from 'next/font/google';
 import React from 'react';
 import './globals.css';
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-roboto',
 });
 
 const firaCode = Fira_Code({
@@ -88,7 +89,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${firaCode.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${roboto.variable} ${firaCode.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
