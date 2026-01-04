@@ -7,8 +7,6 @@ import { defaultProjects, Project } from '@/data/projects/projects';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-//TODO: max 4 projects, with a "See all projects" link to /projects page
-
 interface ProjectsProps {
   projects?: Project[];
 }
@@ -36,7 +34,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
           variant="ghost"
           size="sm"
           onClick={toggleSortOrder}
-          className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all hover:scale-105 active:scale-95 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:border-white/10 dark:bg-black/20"
+          className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-4 text-xs shadow-md backdrop-blur-md transition-all hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none active:scale-95 dark:border-white/10 dark:bg-black/20"
           title={sortOrder === 'newest' ? 'Sort by oldest first' : 'Sort by latest first'}
           aria-label={`Currently sorting by ${sortOrder} projects. Click to sort by ${sortOrder === 'newest' ? 'oldest' : 'newest'} projects`}
         >
@@ -85,7 +83,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
         {sortedProjects.map(project => (
           <div
             key={project.title}
-            className="group glass flex flex-col overflow-hidden rounded-2xl p-0 transition-all hover:scale-[1.02] hover:shadow-lg will-change-transform"
+            className="group glass flex flex-col overflow-hidden rounded-2xl p-0 transition-all will-change-transform hover:scale-[1.02] hover:shadow-lg"
           >
             {/*Images*/}
             <div className="surface-divider py-1">
@@ -96,7 +94,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
             <div className="p-5">
               <div className="flex items-start justify-between">
                 <Link
-                  href={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/projects/${project.title.toLowerCase().replaceAll(/\s+/g, '-')}`}
                   className="group-hover:text-primary rounded focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none"
                   aria-label={`View details for ${project.title} project`}
                 >
@@ -113,7 +111,7 @@ const Projects: React.FC<ProjectsProps> = React.memo(({ projects = defaultProjec
             </div>
 
             {/*Tags*/}
-            <div className="flex-grow px-5 pb-5">
+            <div className="grow px-5 pb-5">
               <div className="flex flex-wrap gap-1">
                 {project.technologies.map(tech => (
                   <Badge

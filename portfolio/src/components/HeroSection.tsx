@@ -26,10 +26,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ wave, setWave }) => (
           aria-label="Visit Brent Vervaet's Instagram profile"
         >
           <Avatar className="h-24 w-24 border-2 border-white/30 shadow-inner dark:border-white/20">
-            <AvatarImage
-              src="/images/home/brent-vervaet.webp"
-              alt="Brent Vervaet - Full-stack developer portrait"
-            />
+            <AvatarImage src="/images/home/brent-vervaet.webp" alt="Brent Vervaet - Full-stack developer portrait" />
             <AvatarFallback className="bg-gradient-to-br from-blue-400/30 to-purple-400/30 backdrop-blur-xl">
               BV
             </AvatarFallback>

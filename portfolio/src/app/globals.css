@@ -19,7 +19,7 @@ html {
 
 body {
     min-height: 100vh;
-    font-family: var(--font-inter), 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv03";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -52,7 +52,7 @@ body {
 }
 
 .font-mono {
-    font-family: var(--font-fira-code), 'Fira Code', monospace;
+    font-family: 'Fira Code', monospace;
 }
 
 ::selection {

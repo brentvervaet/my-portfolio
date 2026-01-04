@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();

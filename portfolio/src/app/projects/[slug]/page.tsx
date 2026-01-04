@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = defaultProjects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === slug);
 
   if (!project) {
-    return { 
+    return {
       title: 'Project Not Found | Brent Vervaet',
-      description: 'The requested project was not found.'
+      description: 'The requested project was not found.',
     };
   }
 

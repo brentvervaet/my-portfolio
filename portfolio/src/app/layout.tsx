@@ -102,9 +102,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               jobTitle: 'Full-Stack Developer',
               description:
                 'Full-stack developer specializing in frontend & backend technologies. Explore my portfolio featuring web applications, mobile apps, and innovative projects.',
-              //TODO: O7/2026
-              // alumniOf: 'HOGENT University',
-              knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'Vue', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+              knowsAbout: ['React', 'Next.js', 'Swift', 'Java', 'C#', 'Vue', 'TypeScript', 'Tailwind CSS', 'Node.js'],
               sameAs: [
                 'https://github.com/brentvervaet',
                 'https://linkedin.com/in/brentvervaet',
@@ -115,6 +113,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             }),
           }}
         />
+        <title></title>
       </head>
 
       <body
@@ -122,7 +121,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       >
         <AnimatedBackground />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl grow px-4 sm:px-6 lg:px-8">
             <Header />
             <PageTransition>{children}</PageTransition>
           </div>
